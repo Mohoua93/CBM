@@ -52,7 +52,6 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  position: relative;
   z-index: 1101;
 }
 
@@ -63,18 +62,6 @@
   margin: 6px auto;
   background: #f5f1e8;
   transition: 0.3s ease;
-}
-
-.header__burger--open span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.header__burger--open span:nth-child(2) {
-  opacity: 0;
-}
-
-.header__burger--open span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
 }
 
 .header__mobile-menu {

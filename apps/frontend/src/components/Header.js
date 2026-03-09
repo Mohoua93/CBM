@@ -19,16 +19,20 @@ function Header() {
   }, [location.pathname]);
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [menuOpen]);
+
+  const getDesktopLinkClass = ({ isActive }) =>
+    isActive ? "header__link header__link--active" : "header__link";
+
+  const getMobileLinkClass = ({ isActive }) =>
+    isActive
+      ? "header__mobile-link header__mobile-link--active"
+      : "header__mobile-link";
 
   return (
     <header className="header">
@@ -38,72 +42,39 @@ function Header() {
         </NavLink>
 
         <nav className="header__nav">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "header__link header__link--active" : "header__link"
-            }
-          >
+          <NavLink to="/" className={getDesktopLinkClass}>
             Accueil
           </NavLink>
-
-          <NavLink
-            to="/a-propos"
-            className={({ isActive }) =>
-              isActive ? "header__link header__link--active" : "header__link"
-            }
-          >
+          <NavLink to="/a-propos" className={getDesktopLinkClass}>
             À propos
           </NavLink>
-
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              isActive ? "header__link header__link--active" : "header__link"
-            }
-          >
+          <NavLink to="/services" className={getDesktopLinkClass}>
             Services
           </NavLink>
-
-          <NavLink
-            to="/flotte"
-            className={({ isActive }) =>
-              isActive ? "header__link header__link--active" : "header__link"
-            }
-          >
+          <NavLink to="/flotte" className={getDesktopLinkClass}>
             Flotte
           </NavLink>
-
-          <NavLink
-            to="/reservation"
-            className={({ isActive }) =>
-              isActive ? "header__link header__link--active" : "header__link"
-            }
-          >
+          <NavLink to="/reservation" className={getDesktopLinkClass}>
             Réservation
           </NavLink>
-
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive ? "header__link header__link--active" : "header__link"
-            }
-          >
+          <NavLink to="/contact" className={getDesktopLinkClass}>
             Contact
           </NavLink>
         </nav>
 
-        <button
-          className={`header__burger ${menuOpen ? "header__burger--open" : ""}`}
-          type="button"
-          aria-label="Ouvrir le menu"
-          aria-expanded={menuOpen}
-          onClick={toggleMenu}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        {!menuOpen && (
+          <button
+            className="header__burger"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-expanded={menuOpen}
+            onClick={toggleMenu}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        )}
       </div>
 
       <div
@@ -127,73 +98,40 @@ function Header() {
         </div>
 
         <nav className="header__mobile-nav">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive
-                ? "header__mobile-link header__mobile-link--active"
-                : "header__mobile-link"
-            }
-            onClick={closeMenu}
-          >
+          <NavLink to="/" className={getMobileLinkClass} onClick={closeMenu}>
             Accueil
           </NavLink>
-
           <NavLink
             to="/a-propos"
-            className={({ isActive }) =>
-              isActive
-                ? "header__mobile-link header__mobile-link--active"
-                : "header__mobile-link"
-            }
+            className={getMobileLinkClass}
             onClick={closeMenu}
           >
             À propos
           </NavLink>
-
           <NavLink
             to="/services"
-            className={({ isActive }) =>
-              isActive
-                ? "header__mobile-link header__mobile-link--active"
-                : "header__mobile-link"
-            }
+            className={getMobileLinkClass}
             onClick={closeMenu}
           >
             Services
           </NavLink>
-
           <NavLink
             to="/flotte"
-            className={({ isActive }) =>
-              isActive
-                ? "header__mobile-link header__mobile-link--active"
-                : "header__mobile-link"
-            }
+            className={getMobileLinkClass}
             onClick={closeMenu}
           >
             Flotte
           </NavLink>
-
           <NavLink
             to="/reservation"
-            className={({ isActive }) =>
-              isActive
-                ? "header__mobile-link header__mobile-link--active"
-                : "header__mobile-link"
-            }
+            className={getMobileLinkClass}
             onClick={closeMenu}
           >
             Réservation
           </NavLink>
-
           <NavLink
             to="/contact"
-            className={({ isActive }) =>
-              isActive
-                ? "header__mobile-link header__mobile-link--active"
-                : "header__mobile-link"
-            }
+            className={getMobileLinkClass}
             onClick={closeMenu}
           >
             Contact
