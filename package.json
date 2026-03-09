@@ -1,4 +1,13 @@
 {
   "name": "cbm",
-  "packageManager": "yarn@4.9.2"
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:front": "yarn workspace frontend start",
+    "dev:back": "yarn workspace backend dev",
+    "start:back": "yarn workspace backend start",
+    "build:front": "yarn workspace frontend build"
+  }
 }
