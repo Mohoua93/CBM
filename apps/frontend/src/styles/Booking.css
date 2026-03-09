@@ -1,0 +1,233 @@
+.booking-page {
+  background: #050505;
+  color: #f5f1e8;
+}
+
+.booking-hero {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 90px 48px 70px;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 42px;
+  align-items: start;
+}
+
+.booking-hero__content {
+  padding-top: 18px;
+}
+
+.booking-hero__eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #c9a24b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.booking-hero__title {
+  margin: 0 0 28px;
+  color: #c9a24b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 5vw, 5.2rem);
+  line-height: 0.96;
+  font-weight: 500;
+}
+
+.booking-hero__text {
+  max-width: 520px;
+  margin: 0 0 34px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.booking-hero__highlights {
+  display: grid;
+  gap: 18px;
+  max-width: 520px;
+}
+
+.booking-highlight {
+  padding: 20px 22px;
+  border: 1px solid rgba(201, 162, 75, 0.12);
+  background: #080808;
+}
+
+.booking-highlight__number {
+  display: block;
+  margin-bottom: 8px;
+  color: #c9a24b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.booking-highlight p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.booking-form-card {
+  background: rgba(6, 6, 6, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 40px 34px 34px;
+}
+
+.booking-form-card h2 {
+  margin: 0 0 28px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 500;
+}
+
+.booking-form-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.booking-field-page {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-field-page--full {
+  grid-column: 1 / -1;
+}
+
+.booking-field-page label {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+}
+
+.booking-field-page input,
+.booking-field-page select,
+.booking-field-page textarea {
+  width: 100%;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f5f1e8;
+  font-size: 1rem;
+  outline: none;
+}
+
+.booking-field-page input,
+.booking-field-page select {
+  height: 56px;
+  padding: 0 16px;
+}
+
+.booking-field-page textarea {
+  min-height: 170px;
+  padding: 16px;
+  resize: vertical;
+}
+
+.booking-field-page input::placeholder,
+.booking-field-page textarea::placeholder {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.booking-field-page input:focus,
+.booking-field-page select:focus,
+.booking-field-page textarea:focus {
+  border-color: #c9a24b;
+}
+
+.booking-submit {
+  margin-top: 24px;
+  min-width: 220px;
+  height: 56px;
+  padding: 0 26px;
+  border: 1px solid #c9a24b;
+  background: #c9a24b;
+  color: #101010;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.booking-submit:hover {
+  background: #d8b15b;
+  border-color: #d8b15b;
+}
+
+.booking-info {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 48px 110px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.booking-info__card {
+  padding: 28px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #070707;
+}
+
+.booking-info__card h3 {
+  margin: 0 0 14px;
+  color: #c9a24b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.booking-info__card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 1100px) {
+  .booking-hero {
+    grid-template-columns: 1fr;
+    padding: 70px 32px 56px;
+  }
+
+  .booking-info {
+    grid-template-columns: 1fr;
+    padding: 0 32px 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-hero {
+    padding: 56px 20px 46px;
+  }
+
+  .booking-form-card {
+    padding: 30px 20px 24px;
+  }
+
+  .booking-form-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-field-page--full {
+    grid-column: auto;
+  }
+
+  .booking-submit {
+    width: 100%;
+  }
+
+  .booking-info {
+    padding: 0 20px 70px;
+  }
+
+  .booking-hero__title {
+    font-size: 2.8rem;
+  }
+}
