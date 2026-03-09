@@ -1,4 +1,4 @@
-import "./MainLayout.css";
+import "../styles/MainLayout.css";
 
 function MainLayout({ children }) {
   return (
