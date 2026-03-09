@@ -1,0 +1,308 @@
+.home {
+  background: #050505;
+  color: #f5f1e8;
+}
+
+.home__hero {
+  position: relative;
+  min-height: calc(100vh - 92px);
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  align-items: stretch;
+  overflow: hidden;
+  background: #050505;
+}
+
+.home__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.94) 0%,
+    rgba(0, 0, 0, 0.85) 28%,
+    rgba(0, 0, 0, 0.55) 56%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home__hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 90px 48px 90px 64px;
+  max-width: 760px;
+}
+
+.home__hero-media {
+  position: relative;
+  min-height: 100%;
+}
+
+.home__hero-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(1.72);
+}
+
+.home__title {
+  margin: 0 0 28px;
+  color: #c9a24b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.4rem, 6vw, 5.8rem);
+  line-height: 0.95;
+  font-weight: 500;
+}
+
+.home__subtitle {
+  max-width: 520px;
+  margin: 0 0 38px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.home__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  height: 58px;
+  padding: 0 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.home__btn--gold {
+  background: #c9a24b;
+  border: 1px solid #c9a24b;
+  color: #111111;
+}
+
+.home__btn--gold:hover {
+  background: #d7b15f;
+  border-color: #d7b15f;
+}
+
+.home__btn--outline {
+  background: transparent;
+  border: 1px solid #c9a24b;
+  color: #ffffff;
+}
+
+.home__btn--outline:hover {
+  background: rgba(201, 162, 75, 0.12);
+}
+
+.home__services,
+.home__booking {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 110px 48px;
+}
+
+.section-heading {
+  margin-bottom: 54px;
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #c9a24b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.section-heading p {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.service-card {
+  min-height: 280px;
+  padding: 40px 30px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #060606;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-card__icon-wrap {
+  margin-bottom: 24px;
+  color: #c9a24b;
+}
+
+.service-card__icon {
+  width: 54px;
+  height: 54px;
+}
+
+.service-card h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  margin: 0 0 26px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.service-card__link {
+  margin-top: auto;
+  color: #c9a24b;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.service-card__link:hover {
+  text-decoration: underline;
+}
+
+.home__booking {
+  padding-top: 60px;
+}
+
+.booking-form {
+  margin-top: 44px;
+}
+
+.booking-form__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.booking-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-field label {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+}
+
+.booking-field select,
+.booking-field input {
+  width: 100%;
+  height: 62px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0a0a0a;
+  color: #f5f1e8;
+  font-size: 1rem;
+  outline: none;
+}
+
+.booking-field select:focus,
+.booking-field input:focus {
+  border-color: #c9a24b;
+}
+
+.booking-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+@media (max-width: 1100px) {
+  .home__hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .home__hero-content {
+    padding: 60px 32px 40px;
+    max-width: 100%;
+  }
+
+  .home__hero-media {
+    height: 540px;
+  }
+
+  .services-grid,
+  .booking-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home__services,
+  .home__booking {
+    padding: 90px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home__hero-content {
+    padding: 48px 20px 32px;
+  }
+
+  .home__hero-media {
+    height: 420px;
+  }
+
+  .home__title {
+    font-size: 3rem;
+  }
+
+  .home__subtitle {
+    font-size: 1.05rem;
+  }
+
+  .home__services,
+  .home__booking {
+    padding: 70px 20px;
+  }
+
+  .home__actions {
+    flex-direction: column;
+  }
+
+  .home__btn {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .booking-form__actions {
+    justify-content: stretch;
+  }
+
+  .booking-form__actions .home__btn {
+    width: 100%;
+  }
+}
