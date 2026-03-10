@@ -1,164 +1,233 @@
+import { useTranslation } from "react-i18next";
 import "../styles/Booking.css";
 
 function Booking() {
+  const { t } = useTranslation();
+
   return (
     <div className="booking-page">
       <section className="booking-hero">
         <div className="booking-hero__content">
-          <span className="booking-hero__eyebrow">Réservation</span>
+          <span className="booking-hero__eyebrow">
+            {t("bookingPage.hero.eyebrow")}
+          </span>
 
           <h1 className="booking-hero__title">
-            Réservez votre
+            {t("bookingPage.hero.titleLine1")}
             <br />
-            chauffeur privé
+            {t("bookingPage.hero.titleLine2")}
           </h1>
 
           <p className="booking-hero__text">
-            Réservez votre trajet en quelques instants. CBM vous accompagne pour
-            vos transferts privés, déplacements professionnels, événements,
-            mariages et mises à disposition.
+            {t("bookingPage.hero.text")}
           </p>
 
           <div className="booking-hero__highlights">
             <div className="booking-highlight">
               <span className="booking-highlight__number">24/7</span>
-              <p>Disponibilité sur réservation</p>
+              <p>{t("bookingPage.hero.highlights.availability")}</p>
             </div>
 
             <div className="booking-highlight">
               <span className="booking-highlight__number">Premium</span>
-              <p>Service discret et haut de gamme</p>
+              <p>{t("bookingPage.hero.highlights.premium")}</p>
             </div>
 
             <div className="booking-highlight">
-              <span className="booking-highlight__number">Sur mesure</span>
-              <p>Prestations adaptées à vos besoins</p>
+              <span className="booking-highlight__number">
+                {t("bookingPage.hero.highlights.customLabel")}
+              </span>
+              <p>{t("bookingPage.hero.highlights.customText")}</p>
             </div>
           </div>
         </div>
 
         <div className="booking-form-card">
-          <h2>Demande de réservation</h2>
+          <h2>{t("bookingPage.form.title")}</h2>
 
           <form className="booking-form-page">
             <div className="booking-form-page__grid">
               <div className="booking-field-page">
-                <label htmlFor="service">Type de service</label>
+                <label htmlFor="service">
+                  {t("bookingPage.form.serviceLabel")}
+                </label>
+
                 <select id="service" name="service">
-                  <option value="">Sélectionnez</option>
-                  <option value="transfert">Transfert privé</option>
-                  <option value="mise-a-disposition">Mise à disposition</option>
-                  <option value="evenement">Événement</option>
-                  <option value="mariage">Mariage</option>
-                  <option value="conciergerie">Conciergerie</option>
+                  <option value="">
+                    {t("bookingPage.form.selectPlaceholder")}
+                  </option>
+
+                  <option value="transfert">
+                    {t("bookingPage.form.serviceOptions.transfer")}
+                  </option>
+
+                  <option value="mise-a-disposition">
+                    {t("bookingPage.form.serviceOptions.availability")}
+                  </option>
+
+                  <option value="evenement">
+                    {t("bookingPage.form.serviceOptions.event")}
+                  </option>
+
+                  <option value="mariage">
+                    {t("bookingPage.form.serviceOptions.wedding")}
+                  </option>
+
+                  <option value="conciergerie">
+                    {t("bookingPage.form.serviceOptions.concierge")}
+                  </option>
                 </select>
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="vehicle">Véhicule souhaité</label>
+                <label htmlFor="vehicle">
+                  {t("bookingPage.form.vehicleLabel")}
+                </label>
+
                 <select id="vehicle" name="vehicle">
-                  <option value="">Sélectionnez</option>
-                  <option value="classe-s-e">Mercedes Classe S / Classe E</option>
-                  <option value="classe-v">Mercedes Classe V</option>
-                  <option value="range-rover">Range Rover</option>
+                  <option value="">
+                    {t("bookingPage.form.selectPlaceholder")}
+                  </option>
+
+                  <option value="classe-s-e">
+                    {t("bookingPage.form.vehicleOptions.classSE")}
+                  </option>
+
+                  <option value="classe-v">
+                    {t("bookingPage.form.vehicleOptions.classV")}
+                  </option>
+
+                  <option value="range-rover">
+                    {t("bookingPage.form.vehicleOptions.rangeRover")}
+                  </option>
                 </select>
               </div>
 
               <div className="booking-field-page booking-field-page--full">
-                <label htmlFor="pickup">Adresse de départ</label>
+                <label htmlFor="pickup">
+                  {t("bookingPage.form.pickupLabel")}
+                </label>
+
                 <input
                   id="pickup"
                   name="pickup"
                   type="text"
-                  placeholder="Ex : Aéroport CDG, Paris, Hôtel..."
+                  placeholder={t("bookingPage.form.pickupPlaceholder")}
                 />
               </div>
 
               <div className="booking-field-page booking-field-page--full">
-                <label htmlFor="destination">Destination</label>
+                <label htmlFor="destination">
+                  {t("bookingPage.form.destinationLabel")}
+                </label>
+
                 <input
                   id="destination"
                   name="destination"
                   type="text"
-                  placeholder="Ex : Paris 8e, Gare, Lieu d’événement..."
+                  placeholder={t("bookingPage.form.destinationPlaceholder")}
                 />
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="date">Date</label>
+                <label htmlFor="date">
+                  {t("bookingPage.form.dateLabel")}
+                </label>
+
                 <input id="date" name="date" type="date" />
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="time">Heure</label>
+                <label htmlFor="time">
+                  {t("bookingPage.form.timeLabel")}
+                </label>
+
                 <input id="time" name="time" type="time" />
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="passengers">Nombre de passagers</label>
+                <label htmlFor="passengers">
+                  {t("bookingPage.form.passengersLabel")}
+                </label>
+
                 <input
                   id="passengers"
                   name="passengers"
                   type="number"
                   min="1"
-                  placeholder="1"
+                  placeholder={t("bookingPage.form.passengersPlaceholder")}
                 />
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="luggage">Bagages</label>
+                <label htmlFor="luggage">
+                  {t("bookingPage.form.luggageLabel")}
+                </label>
+
                 <input
                   id="luggage"
                   name="luggage"
                   type="number"
                   min="0"
-                  placeholder="0"
+                  placeholder={t("bookingPage.form.luggagePlaceholder")}
                 />
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="name">Nom complet</label>
+                <label htmlFor="name">
+                  {t("bookingPage.form.nameLabel")}
+                </label>
+
                 <input
                   id="name"
                   name="name"
                   type="text"
-                  placeholder="Votre nom"
+                  placeholder={t("bookingPage.form.namePlaceholder")}
                 />
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="phone">Téléphone</label>
+                <label htmlFor="phone">
+                  {t("bookingPage.form.phoneLabel")}
+                </label>
+
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder="+33 6 00 00 00 00"
+                  placeholder={t("bookingPage.form.phonePlaceholder")}
                 />
               </div>
 
               <div className="booking-field-page booking-field-page--full">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">
+                  {t("bookingPage.form.emailLabel")}
+                </label>
+
                 <input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="votre@email.com"
+                  placeholder={t("bookingPage.form.emailPlaceholder")}
                 />
               </div>
 
               <div className="booking-field-page booking-field-page--full">
-                <label htmlFor="details">Précisions</label>
+                <label htmlFor="details">
+                  {t("bookingPage.form.detailsLabel")}
+                </label>
+
                 <textarea
                   id="details"
                   name="details"
                   rows="6"
-                  placeholder="Ajoutez ici toute précision utile : numéro de vol, attente, trajet retour, besoins spécifiques..."
+                  placeholder={t("bookingPage.form.detailsPlaceholder")}
                 ></textarea>
               </div>
             </div>
 
             <button type="submit" className="booking-submit">
-              Envoyer la demande
+              {t("bookingPage.form.submitButton")}
             </button>
           </form>
         </div>
@@ -166,27 +235,18 @@ function Booking() {
 
       <section className="booking-info">
         <div className="booking-info__card">
-          <h3>Comment ça fonctionne</h3>
-          <p>
-            Remplissez votre demande, nous vous recontactons rapidement pour
-            confirmer les détails, le véhicule adapté et la disponibilité.
-          </p>
+          <h3>{t("bookingPage.info.howItWorks.title")}</h3>
+          <p>{t("bookingPage.info.howItWorks.text")}</p>
         </div>
 
         <div className="booking-info__card">
-          <h3>Réponse rapide</h3>
-          <p>
-            Nos équipes traitent vos demandes avec réactivité afin de vous
-            proposer une solution adaptée dans les meilleurs délais.
-          </p>
+          <h3>{t("bookingPage.info.fastResponse.title")}</h3>
+          <p>{t("bookingPage.info.fastResponse.text")}</p>
         </div>
 
         <div className="booking-info__card">
-          <h3>Service premium</h3>
-          <p>
-            Chauffeurs professionnels, véhicules haut de gamme et accompagnement
-            discret pour une expérience irréprochable.
-          </p>
+          <h3>{t("bookingPage.info.premiumService.title")}</h3>
+          <p>{t("bookingPage.info.premiumService.text")}</p>
         </div>
       </section>
     </div>

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "../styles/Footer.css";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="footer">
@@ -11,39 +13,36 @@ function Footer() {
           <Link to="/" className="footer__logo">
             CBM
           </Link>
-          <p className="footer__text">
-            Service de chauffeur privé premium pour vos déplacements, événements
-            et réservations sur mesure.
-          </p>
+          <p className="footer__text">{t("footer.description")}</p>
         </div>
 
         <div className="footer__links">
-          <h3 className="footer__title">Navigation</h3>
+          <h3 className="footer__title">{t("footer.navigationTitle")}</h3>
           <nav className="footer__nav">
             <Link to="/" className="footer__link">
-              Accueil
+              {t("nav.home")}
             </Link>
             <Link to="/a-propos" className="footer__link">
-              À propos
+              {t("nav.about")}
             </Link>
             <Link to="/services" className="footer__link">
-              Services
+              {t("nav.services")}
             </Link>
             <Link to="/flotte" className="footer__link">
-              Flotte
+              {t("nav.fleet")}
             </Link>
             <Link to="/reservation" className="footer__link">
-              Réservation
+              {t("nav.booking")}
             </Link>
             <Link to="/contact" className="footer__link">
-              Contact
+              {t("nav.contact")}
             </Link>
           </nav>
         </div>
 
         <div className="footer__contact">
-          <h3 className="footer__title">Contact</h3>
-          <p className="footer__text">Disponible pour vos demandes 24/7</p>
+          <h3 className="footer__title">{t("footer.contactTitle")}</h3>
+          <p className="footer__text">{t("footer.availability")}</p>
           <a href="tel:+33000000000" className="footer__link">
             +33 0 00 00 00 00
           </a>
@@ -54,7 +53,9 @@ function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <p>© {currentYear} CBM. Tous droits réservés.</p>
+        <p>
+          © {currentYear} CBM. {t("footer.rights")}
+        </p>
       </div>
     </footer>
   );

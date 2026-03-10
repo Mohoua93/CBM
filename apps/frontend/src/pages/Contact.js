@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "../styles/Contact.css";
 import heroImage from "../assets/hero-vtc.png";
 
@@ -57,19 +58,21 @@ function WhatsAppIcon() {
 }
 
 function Contact() {
+  const { t } = useTranslation();
+
   return (
     <div className="contact-page">
       <section className="contact-hero">
         <div className="contact-hero__overlay"></div>
 
         <div className="contact-hero__content">
-          <h1>Contact</h1>
+          <h1>{t("contactPage.hero.title")}</h1>
         </div>
 
         <div className="contact-hero__media">
           <img
             src={heroImage}
-            alt="Chauffeur privé CBM"
+            alt={t("contactPage.hero.imageAlt")}
             className="contact-hero__image"
           />
         </div>
@@ -78,40 +81,48 @@ function Contact() {
       <section className="contact-section">
         <div className="contact-card">
           <div className="contact-card__intro">
-            <h2>Contactez-nous</h2>
-            <p>
-              Pour toute demande de renseignements, réservation ou devis,
-              contactez-nous via le formulaire ci-dessous ou directement par
-              téléphone et WhatsApp.
-            </p>
+            <h2>{t("contactPage.intro.title")}</h2>
+            <p>{t("contactPage.intro.text")}</p>
           </div>
 
           <form className="contact-form">
             <div className="contact-form__row contact-form__row--full">
-              <input type="text" name="name" placeholder="Nom" />
+              <input
+                type="text"
+                name="name"
+                placeholder={t("contactPage.form.namePlaceholder")}
+              />
             </div>
 
             <div className="contact-form__row">
-              <input type="tel" name="phone" placeholder="Téléphone" />
-              <input type="email" name="email" placeholder="Email" />
+              <input
+                type="tel"
+                name="phone"
+                placeholder={t("contactPage.form.phonePlaceholder")}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder={t("contactPage.form.emailPlaceholder")}
+              />
             </div>
 
             <div className="contact-form__row contact-form__row--full">
               <textarea
                 name="message"
-                placeholder="Message"
+                placeholder={t("contactPage.form.messagePlaceholder")}
                 rows="8"
               ></textarea>
             </div>
 
             <button type="submit" className="contact-form__submit">
-              Envoyer
+              {t("contactPage.form.submitButton")}
             </button>
           </form>
 
           <div className="contact-info">
             <article className="contact-info__block">
-              <h3>Informations</h3>
+              <h3>{t("contactPage.info.title")}</h3>
 
               <div className="contact-info__item">
                 <PhoneIcon />
@@ -127,7 +138,7 @@ function Contact() {
             </article>
 
             <article className="contact-info__block">
-              <h3>WhatsApp</h3>
+              <h3>{t("contactPage.whatsapp.title")}</h3>
 
               <div className="contact-info__item">
                 <WhatsAppIcon />
@@ -146,7 +157,7 @@ function Contact() {
                 rel="noreferrer"
                 className="contact-info__whatsapp-btn"
               >
-                Discuter sur WhatsApp
+                {t("contactPage.whatsapp.button")}
               </a>
             </article>
           </div>

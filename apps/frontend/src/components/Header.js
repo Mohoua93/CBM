@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 import "../styles/Header.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -43,30 +46,34 @@ function Header() {
 
         <nav className="header__nav">
           <NavLink to="/" className={getDesktopLinkClass}>
-            Accueil
+            {t("nav.home")}
           </NavLink>
           <NavLink to="/a-propos" className={getDesktopLinkClass}>
-            À propos
+            {t("nav.about")}
           </NavLink>
           <NavLink to="/services" className={getDesktopLinkClass}>
-            Services
+            {t("nav.services")}
           </NavLink>
           <NavLink to="/flotte" className={getDesktopLinkClass}>
-            Flotte
+            {t("nav.fleet")}
           </NavLink>
           <NavLink to="/reservation" className={getDesktopLinkClass}>
-            Réservation
+            {t("nav.booking")}
           </NavLink>
           <NavLink to="/contact" className={getDesktopLinkClass}>
-            Contact
+            {t("nav.contact")}
           </NavLink>
+
+          <div className="header__languages">
+            <LanguageSwitcher />
+          </div>
         </nav>
 
         {!menuOpen && (
           <button
             className="header__burger"
             type="button"
-            aria-label="Ouvrir le menu"
+            aria-label={t("header.openMenu")}
             aria-expanded={menuOpen}
             onClick={toggleMenu}
           >
@@ -90,7 +97,7 @@ function Header() {
           <button
             className="header__mobile-close"
             type="button"
-            aria-label="Fermer le menu"
+            aria-label={t("header.closeMenu")}
             onClick={closeMenu}
           >
             ×
@@ -99,43 +106,47 @@ function Header() {
 
         <nav className="header__mobile-nav">
           <NavLink to="/" className={getMobileLinkClass} onClick={closeMenu}>
-            Accueil
+            {t("nav.home")}
           </NavLink>
           <NavLink
             to="/a-propos"
             className={getMobileLinkClass}
             onClick={closeMenu}
           >
-            À propos
+            {t("nav.about")}
           </NavLink>
           <NavLink
             to="/services"
             className={getMobileLinkClass}
             onClick={closeMenu}
           >
-            Services
+            {t("nav.services")}
           </NavLink>
           <NavLink
             to="/flotte"
             className={getMobileLinkClass}
             onClick={closeMenu}
           >
-            Flotte
+            {t("nav.fleet")}
           </NavLink>
           <NavLink
             to="/reservation"
             className={getMobileLinkClass}
             onClick={closeMenu}
           >
-            Réservation
+            {t("nav.booking")}
           </NavLink>
           <NavLink
             to="/contact"
             className={getMobileLinkClass}
             onClick={closeMenu}
           >
-            Contact
+            {t("nav.contact")}
           </NavLink>
+
+          <div className="header__mobile-languages">
+            <LanguageSwitcher />
+          </div>
         </nav>
       </div>
     </header>

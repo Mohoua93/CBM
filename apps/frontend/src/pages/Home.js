@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "../styles/Home.css";
 import heroImage from "../assets/hero-vtc.png";
 
@@ -73,6 +74,8 @@ function ClockIcon() {
 }
 
 function Home() {
+  const { t } = useTranslation();
+
   return (
     <div className="home">
       <section className="home__hero">
@@ -80,22 +83,20 @@ function Home() {
 
         <div className="home__hero-content">
           <h1 className="home__title">
-            Chauffeur Privé
+            {t("home.hero.titleLine1")}
             <br />
-            de Prestige
+            {t("home.hero.titleLine2")}
           </h1>
 
-          <p className="home__subtitle">
-            Transport haut de gamme pour événements, mariages, soirées...
-          </p>
+          <p className="home__subtitle">{t("home.hero.subtitle")}</p>
 
           <div className="home__actions">
             <Link to="/reservation" className="home__btn home__btn--gold">
-              Réserver
+              {t("home.hero.bookingButton")}
             </Link>
 
             <Link to="/contact" className="home__btn home__btn--outline">
-              Contactez-nous
+              {t("home.hero.contactButton")}
             </Link>
           </div>
         </div>
@@ -103,7 +104,7 @@ function Home() {
         <div className="home__hero-media">
           <img
             src={heroImage}
-            alt="Chauffeur privé CBM"
+            alt={t("home.hero.imageAlt")}
             className="home__hero-image"
           />
         </div>
@@ -111,7 +112,7 @@ function Home() {
 
       <section className="home__services">
         <div className="section-heading section-heading--center">
-          <h2>Nos Services</h2>
+          <h2>{t("home.services.title")}</h2>
         </div>
 
         <div className="services-grid">
@@ -119,10 +120,10 @@ function Home() {
             <div className="service-card__icon-wrap">
               <CarIcon />
             </div>
-            <h3>Transport Privé</h3>
-            <p>Trajets personnalisés pour courtes et longues distances.</p>
+            <h3>{t("home.services.privateTransport.title")}</h3>
+            <p>{t("home.services.privateTransport.description")}</p>
             <Link to="/services" className="service-card__link">
-              En savoir plus
+              {t("home.services.learnMore")}
             </Link>
           </article>
 
@@ -130,10 +131,10 @@ function Home() {
             <div className="service-card__icon-wrap">
               <BellIcon />
             </div>
-            <h3>Conciergerie</h3>
-            <p>Réservations de restaurants, activités, événements.</p>
+            <h3>{t("home.services.concierge.title")}</h3>
+            <p>{t("home.services.concierge.description")}</p>
             <Link to="/services" className="service-card__link">
-              En savoir plus
+              {t("home.services.learnMore")}
             </Link>
           </article>
 
@@ -141,10 +142,10 @@ function Home() {
             <div className="service-card__icon-wrap">
               <ClockIcon />
             </div>
-            <h3>Mise à Disposition</h3>
-            <p>Véhicule avec chauffeur pour plusieurs heures.</p>
+            <h3>{t("home.services.availability.title")}</h3>
+            <p>{t("home.services.availability.description")}</p>
             <Link to="/services" className="service-card__link">
-              En savoir plus
+              {t("home.services.learnMore")}
             </Link>
           </article>
         </div>
@@ -152,42 +153,44 @@ function Home() {
 
       <section className="home__booking">
         <div className="section-heading section-heading--center">
-          <h2>Réservation</h2>
-          <p>Réservez votre chauffeur privé avec CBM</p>
+          <h2>{t("home.booking.title")}</h2>
+          <p>{t("home.booking.subtitle")}</p>
         </div>
 
         <form className="booking-form">
           <div className="booking-form__grid">
             <div className="booking-field">
-              <label htmlFor="service">Type de service</label>
+              <label htmlFor="service">{t("home.booking.serviceLabel")}</label>
               <select id="service" name="service">
-                <option>Choisir un service</option>
-                <option>Transport privé</option>
-                <option>Conciergerie</option>
-                <option>Mise à disposition</option>
+                <option>{t("home.booking.servicePlaceholder")}</option>
+                <option>{t("home.booking.serviceOption1")}</option>
+                <option>{t("home.booking.serviceOption2")}</option>
+                <option>{t("home.booking.serviceOption3")}</option>
               </select>
             </div>
 
             <div className="booking-field">
-              <label htmlFor="date">Date</label>
+              <label htmlFor="date">{t("home.booking.dateLabel")}</label>
               <input id="date" name="date" type="date" />
             </div>
 
             <div className="booking-field">
-              <label htmlFor="passengers">Nombre de passagers</label>
+              <label htmlFor="passengers">
+                {t("home.booking.passengersLabel")}
+              </label>
               <input
                 id="passengers"
                 name="passengers"
                 type="number"
                 min="1"
-                placeholder="1"
+                placeholder={t("home.booking.passengersPlaceholder")}
               />
             </div>
           </div>
 
           <div className="booking-form__actions">
             <button type="submit" className="home__btn home__btn--gold">
-              Réserver
+              {t("home.booking.submitButton")}
             </button>
           </div>
         </form>
