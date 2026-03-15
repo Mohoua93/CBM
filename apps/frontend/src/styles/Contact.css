@@ -210,6 +210,25 @@
   background: #25bf61;
 }
 
+.contact-form__feedback {
+  margin: 8px 0 18px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-form__feedback--success {
+  color: #58d68d;
+}
+
+.contact-form__feedback--error {
+  color: #ff6b6b;
+}
+
+.contact-form__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 @media (max-width: 1100px) {
   .contact-hero {
     grid-template-columns: 1fr;

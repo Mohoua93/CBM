@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../styles/Contact.css";
 import heroImage from "../assets/hero-vtc.png";
+
+const API_URL =
+  process.env.REACT_APP_API_URL || "https://cbm-fibk.onrender.com";
 
 function PhoneIcon() {
   return (
@@ -60,6 +64,82 @@ function WhatsAppIcon() {
 function Contact() {
   const { t } = useTranslation();
 
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const [feedback, setFeedback] = useState({
+    type: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    setFeedback({ type: "", message: "" });
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setFeedback({
+        type: "error",
+        message: "Veuillez renseigner votre nom, votre email et votre message.",
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Impossible d'envoyer le message.");
+      }
+
+      setFeedback({
+        type: "success",
+        message: data.message || "Votre message a bien été envoyé.",
+      });
+
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setFeedback({
+        type: "error",
+        message:
+          error.message ||
+          "Une erreur est survenue. Merci de réessayer plus tard.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <div className="contact-page">
       <section className="contact-hero">
@@ -85,11 +165,13 @@ function Contact() {
             <p>{t("contactPage.intro.text")}</p>
           </div>
 
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="contact-form__row contact-form__row--full">
               <input
                 type="text"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder={t("contactPage.form.namePlaceholder")}
               />
             </div>
@@ -98,11 +180,15 @@ function Contact() {
               <input
                 type="tel"
                 name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder={t("contactPage.form.phonePlaceholder")}
               />
               <input
                 type="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder={t("contactPage.form.emailPlaceholder")}
               />
             </div>
@@ -110,13 +196,33 @@ function Contact() {
             <div className="contact-form__row contact-form__row--full">
               <textarea
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder={t("contactPage.form.messagePlaceholder")}
                 rows="8"
               ></textarea>
             </div>
 
-            <button type="submit" className="contact-form__submit">
-              {t("contactPage.form.submitButton")}
+            {feedback.message && (
+              <p
+                className={`contact-form__feedback ${
+                  feedback.type === "success"
+                    ? "contact-form__feedback--success"
+                    : "contact-form__feedback--error"
+                }`}
+              >
+                {feedback.message}
+              </p>
+            )}
+
+            <button
+              type="submit"
+              className="contact-form__submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting
+                ? "Envoi en cours..."
+                : t("contactPage.form.submitButton")}
             </button>
           </form>
 

@@ -7,8 +7,69 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+].filter(Boolean);
+
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Origin not allowed by CORS"));
+    },
+  })
+);
+
 app.use(express.json());
+
+function escapeHtml(value = "") {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+async function sendBrevoEmail({ subject, replyTo, htmlContent }) {
+  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json",
+      "api-key": process.env.BREVO_API_KEY,
+    },
+    body: JSON.stringify({
+      sender: {
+        name: "CBM",
+        email: process.env.FROM_EMAIL,
+      },
+      to: [
+        {
+          email: process.env.CONTACT_TO_EMAIL,
+        },
+      ],
+      replyTo: {
+        email: replyTo,
+      },
+      subject,
+      htmlContent,
+    }),
+  });
+
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(data.message || "Erreur lors de l'envoi de l'email.");
+  }
+
+  return data;
+}
 
 app.get("/", (req, res) => {
   res.send("API CBM en ligne");
@@ -16,6 +77,61 @@ app.get("/", (req, res) => {
 
 app.get("/api/test", (req, res) => {
   res.json({ message: "Backend opérationnel" });
+});
+
+app.get("/api/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
+app.post("/api/contact", async (req, res) => {
+  try {
+    const { name, phone, email, message } = req.body;
+
+    if (!name || !email || !message) {
+      return res.status(400).json({
+        message: "Veuillez renseigner le nom, l'email et le message.",
+      });
+    }
+
+    if (
+      !process.env.BREVO_API_KEY ||
+      !process.env.FROM_EMAIL ||
+      !process.env.CONTACT_TO_EMAIL
+    ) {
+      return res.status(500).json({
+        message: "Le service email n'est pas configuré correctement.",
+      });
+    }
+
+    const safeName = escapeHtml(name);
+    const safePhone = escapeHtml(phone || "Non renseigné");
+    const safeEmail = escapeHtml(email);
+    const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
+
+    await sendBrevoEmail({
+      subject: `Nouveau message de contact - ${name}`,
+      replyTo: email,
+      htmlContent: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111;">
+          <h2>Nouveau message depuis le site CBM</h2>
+          <p><strong>Nom :</strong> ${safeName}</p>
+          <p><strong>Téléphone :</strong> ${safePhone}</p>
+          <p><strong>Email :</strong> ${safeEmail}</p>
+          <p><strong>Message :</strong><br />${safeMessage}</p>
+        </div>
+      `,
+    });
+
+    return res.status(200).json({
+      message: "Votre message a bien été envoyé.",
+    });
+  } catch (error) {
+    console.error("Erreur /api/contact :", error);
+
+    return res.status(500).json({
+      message: "Une erreur est survenue lors de l'envoi du message.",
+    });
+  }
 });
 
 app.listen(PORT, () => {
