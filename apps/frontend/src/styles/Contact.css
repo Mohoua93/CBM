@@ -134,6 +134,7 @@
 }
 
 .contact-form__submit {
+  border-radius: 20px;
   min-width: 150px;
   height: 54px;
   padding: 0 28px;

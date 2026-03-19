@@ -75,9 +75,10 @@
 }
 
 .about-card {
-  padding: 30px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
   background: #070707;
+    border: 2.5px solid #c9a24b;
+    padding: 30px 28px;
+    border-radius: 20px;
 }
 
 .about-card h3 {
@@ -107,8 +108,9 @@
 
 .about-value {
   padding: 28px 26px;
-  border: 1px solid rgba(201, 162, 75, 0.12);
-  background: #080808;
+    border: 2.5px solid #c9a24b;
+    background: #080808;
+    border-radius: 20px;
 }
 
 .about-value__label {

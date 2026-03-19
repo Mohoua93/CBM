@@ -237,8 +237,8 @@ function Contact() {
 
               <div className="contact-info__item">
                 <MailIcon />
-                <a href="mailto:contact@cbm-chauffeur.com">
-                  contact@cbm-chauffeur.com
+                <a href="mailto:contact@cbmservicesandcar.fr">
+                  contact@cbmservciesandcar.fr
                 </a>
               </div>
             </article>

@@ -34,9 +34,12 @@
 
 .header__link {
   color: #f5f1e8;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.25s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.25s ease;
+    border: 2.5px solid #c9a24b;
+    border-radius: 20px;
+    padding: 5px 5px;
 }
 
 .header__link:hover,

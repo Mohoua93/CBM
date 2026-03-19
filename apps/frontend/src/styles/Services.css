@@ -53,9 +53,10 @@
 }
 
 .service-box {
+  border-radius: 20px;
   min-height: 260px;
   padding: 34px 30px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 2.5px solid #c9a24b;
   background: #070707;
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
@@ -137,6 +138,7 @@
 }
 
 .services-btn--gold {
+  border-radius: 20px;
   background: #c9a24b;
   border: 1px solid #c9a24b;
   color: #101010;
@@ -151,6 +153,7 @@
   background: transparent;
   border: 1px solid #c9a24b;
   color: #ffffff;
+      border-radius: 20px;
 }
 
 .services-btn--outline:hover {
