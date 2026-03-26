@@ -3,6 +3,9 @@ import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import "../styles/Booking.css";
 
+const API_URL =
+  process.env.REACT_APP_API_URL || "https://api.cbmservicesandcar.fr";
+
 const heroVariants = {
   hidden: { opacity: 0, y: 35 },
   show: {
@@ -92,44 +95,61 @@ function Booking() {
     e.preventDefault();
 
     setStatus({
-      loading: true,
+      loading: false,
       error: "",
       success: "",
     });
 
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.pickup.trim() ||
+      !formData.destination.trim() ||
+      !formData.date.trim() ||
+      !formData.time.trim()
+    ) {
+      setStatus({
+        loading: false,
+        error:
+          t("bookingPage.form.requiredFieldsError") ||
+          "Veuillez renseigner le nom, l'email, le départ, la destination, la date et l'heure.",
+        success: "",
+      });
+      return;
+    }
+
     try {
-      const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/reservation`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      setStatus({
+        loading: true,
+        error: "",
+        success: "",
+      });
+
+      const response = await fetch(`${API_URL}/api/reservation`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(
-          data.message || t("bookingPage.form.errorMessage")
-        );
+        throw new Error(data.message || t("bookingPage.form.errorMessage"));
       }
 
       setStatus({
         loading: false,
         error: "",
-        success:
-          data.message || t("bookingPage.form.successMessage"),
+        success: data.message || t("bookingPage.form.successMessage"),
       });
 
       setFormData(initialFormData);
     } catch (error) {
       setStatus({
         loading: false,
-        error:
-          error.message || t("bookingPage.form.errorMessage"),
+        error: error.message || t("bookingPage.form.errorMessage"),
         success: "",
       });
     }
@@ -154,9 +174,7 @@ function Booking() {
             {t("bookingPage.hero.titleLine2")}
           </h1>
 
-          <p className="booking-hero__text">
-            {t("bookingPage.hero.text")}
-          </p>
+          <p className="booking-hero__text">{t("bookingPage.hero.text")}</p>
 
           <motion.div
             className="booking-hero__highlights"
@@ -222,23 +240,18 @@ function Booking() {
                   <option value="">
                     {t("bookingPage.form.selectPlaceholder")}
                   </option>
-
                   <option value="transfert">
                     {t("bookingPage.form.serviceOptions.transfer")}
                   </option>
-
                   <option value="mise-a-disposition">
                     {t("bookingPage.form.serviceOptions.availability")}
                   </option>
-
                   <option value="evenement">
                     {t("bookingPage.form.serviceOptions.event")}
                   </option>
-
                   <option value="mariage">
                     {t("bookingPage.form.serviceOptions.wedding")}
                   </option>
-
                   <option value="conciergerie">
                     {t("bookingPage.form.serviceOptions.concierge")}
                   </option>
@@ -259,15 +272,12 @@ function Booking() {
                   <option value="">
                     {t("bookingPage.form.selectPlaceholder")}
                   </option>
-
                   <option value="classe-s-e">
                     {t("bookingPage.form.vehicleOptions.classSE")}
                   </option>
-
                   <option value="classe-v">
                     {t("bookingPage.form.vehicleOptions.classV")}
                   </option>
-
                   <option value="range-rover">
                     {t("bookingPage.form.vehicleOptions.rangeRover")}
                   </option>
@@ -305,9 +315,7 @@ function Booking() {
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="date">
-                  {t("bookingPage.form.dateLabel")}
-                </label>
+                <label htmlFor="date">{t("bookingPage.form.dateLabel")}</label>
 
                 <input
                   id="date"
@@ -319,9 +327,7 @@ function Booking() {
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="time">
-                  {t("bookingPage.form.timeLabel")}
-                </label>
+                <label htmlFor="time">{t("bookingPage.form.timeLabel")}</label>
 
                 <input
                   id="time"
@@ -365,9 +371,7 @@ function Booking() {
               </div>
 
               <div className="booking-field-page">
-                <label htmlFor="name">
-                  {t("bookingPage.form.nameLabel")}
-                </label>
+                <label htmlFor="name">{t("bookingPage.form.nameLabel")}</label>
 
                 <input
                   id="name"
