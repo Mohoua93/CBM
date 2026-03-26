@@ -6,18 +6,23 @@ import Fleet from "../pages/Fleet";
 import Booking from "../pages/Booking";
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
+import ScrollToTop from "../components/ScrollToTop";
 
 function AppRouter() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/a-propos" element={<About />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/flotte" element={<Fleet />} />
-      <Route path="/reservation" element={<Booking />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/a-propos" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/flotte" element={<Fleet />} />
+        <Route path="/reservation" element={<Booking />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 

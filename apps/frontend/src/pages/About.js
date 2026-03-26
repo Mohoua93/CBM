@@ -1,5 +1,32 @@
 import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
 import "../styles/About.css";
+
+const cardsContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const cardItem = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+    scale: 0.96,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 function About() {
   const { t } = useTranslation();
@@ -28,22 +55,43 @@ function About() {
           <p>{t("aboutPage.story.text")}</p>
         </div>
 
-        <div className="about-story__grid">
-          <article className="about-card">
+        <motion.div
+          className="about-story__grid"
+          variants={cardsContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.article
+            className="about-card"
+            variants={cardItem}
+            whileHover={{ y: -8, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 220, damping: 18 }}
+          >
             <h3>{t("aboutPage.cards.experience.title")}</h3>
             <p>{t("aboutPage.cards.experience.text")}</p>
-          </article>
+          </motion.article>
 
-          <article className="about-card">
+          <motion.article
+            className="about-card"
+            variants={cardItem}
+            whileHover={{ y: -8, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 220, damping: 18 }}
+          >
             <h3>{t("aboutPage.cards.family.title")}</h3>
             <p>{t("aboutPage.cards.family.text")}</p>
-          </article>
+          </motion.article>
 
-          <article className="about-card">
+          <motion.article
+            className="about-card"
+            variants={cardItem}
+            whileHover={{ y: -8, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 220, damping: 18 }}
+          >
             <h3>{t("aboutPage.cards.premium.title")}</h3>
             <p>{t("aboutPage.cards.premium.text")}</p>
-          </article>
-        </div>
+          </motion.article>
+        </motion.div>
       </section>
 
       <section className="about-values">

@@ -1,5 +1,57 @@
 import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
 import "../styles/Booking.css";
+
+const heroVariants = {
+  hidden: { opacity: 0, y: 35 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const cardsContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+    scale: 0.97,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const formVariants = {
+  hidden: { opacity: 0, y: 35, scale: 0.98 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
 
 function Booking() {
   const { t } = useTranslation();
@@ -7,7 +59,12 @@ function Booking() {
   return (
     <div className="booking-page">
       <section className="booking-hero">
-        <div className="booking-hero__content">
+        <motion.div
+          className="booking-hero__content"
+          variants={heroVariants}
+          initial="hidden"
+          animate="show"
+        >
           <span className="booking-hero__eyebrow">
             {t("bookingPage.hero.eyebrow")}
           </span>
@@ -22,27 +79,52 @@ function Booking() {
             {t("bookingPage.hero.text")}
           </p>
 
-          <div className="booking-hero__highlights">
-            <div className="booking-highlight">
-              <span className="booking-highlight__number">24/7</span>
-              <p>{t("bookingPage.hero.highlights.availability")}</p>
-            </div>
+          <motion.div
+            className="booking-hero__highlights"
+            variants={cardsContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.15 }}
+          >
+            <motion.div
+              className="booking-info__card"
+              variants={cardVariants}
+              whileHover={{ y: -8, scale: 1.015 }}
+              transition={{ type: "spring", stiffness: 220, damping: 18 }}
+            >
+              <h3>{t("bookingPage.info.howItWorks.title")}</h3>
+              <p>{t("bookingPage.info.howItWorks.text")}</p>
+            </motion.div>
 
-            <div className="booking-highlight">
-              <span className="booking-highlight__number">Premium</span>
-              <p>{t("bookingPage.hero.highlights.premium")}</p>
-            </div>
+            <motion.div
+              className="booking-info__card"
+              variants={cardVariants}
+              whileHover={{ y: -8, scale: 1.015 }}
+              transition={{ type: "spring", stiffness: 220, damping: 18 }}
+            >
+              <h3>{t("bookingPage.info.fastResponse.title")}</h3>
+              <p>{t("bookingPage.info.fastResponse.text")}</p>
+            </motion.div>
 
-            <div className="booking-highlight">
-              <span className="booking-highlight__number">
-                {t("bookingPage.hero.highlights.customLabel")}
-              </span>
-              <p>{t("bookingPage.hero.highlights.customText")}</p>
-            </div>
-          </div>
-        </div>
+            <motion.div
+              className="booking-info__card"
+              variants={cardVariants}
+              whileHover={{ y: -8, scale: 1.015 }}
+              transition={{ type: "spring", stiffness: 220, damping: 18 }}
+            >
+              <h3>{t("bookingPage.info.premiumService.title")}</h3>
+              <p>{t("bookingPage.info.premiumService.text")}</p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
-        <div className="booking-form-card">
+        <motion.div
+          className="booking-form-card"
+          variants={formVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <h2>{t("bookingPage.form.title")}</h2>
 
           <form className="booking-form-page">
@@ -230,24 +312,7 @@ function Booking() {
               {t("bookingPage.form.submitButton")}
             </button>
           </form>
-        </div>
-      </section>
-
-      <section className="booking-info">
-        <div className="booking-info__card">
-          <h3>{t("bookingPage.info.howItWorks.title")}</h3>
-          <p>{t("bookingPage.info.howItWorks.text")}</p>
-        </div>
-
-        <div className="booking-info__card">
-          <h3>{t("bookingPage.info.fastResponse.title")}</h3>
-          <p>{t("bookingPage.info.fastResponse.text")}</p>
-        </div>
-
-        <div className="booking-info__card">
-          <h3>{t("bookingPage.info.premiumService.title")}</h3>
-          <p>{t("bookingPage.info.premiumService.text")}</p>
-        </div>
+        </motion.div>
       </section>
     </div>
   );
