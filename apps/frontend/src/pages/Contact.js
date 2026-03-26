@@ -4,7 +4,7 @@ import "../styles/Contact.css";
 import heroImage from "../assets/hero-vtc.png";
 
 const API_URL =
-  process.env.REACT_APP_API_URL || "https://cbm-fibk.onrender.com";
+  process.env.REACT_APP_API_URL || "https://api.cbmservicesandcar.fr";
 
 function PhoneIcon() {
   return (
