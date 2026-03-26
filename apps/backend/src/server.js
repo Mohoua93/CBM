@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 const allowedOrigins = [
   process.env.FRONTEND_URL,
+  process.env.FRONTEND_URL_WWW,
   "http://localhost:3000",
   "http://127.0.0.1:3000",
 ].filter(Boolean);
@@ -152,6 +153,98 @@ app.post("/api/contact", async (req, res) => {
 
     return res.status(500).json({
       message: "Une erreur est survenue lors de l'envoi du message.",
+    });
+  }
+});
+
+app.post("/api/reservation", async (req, res) => {
+  try {
+    const {
+      service,
+      vehicle,
+      pickup,
+      destination,
+      date,
+      time,
+      passengers,
+      luggage,
+      name,
+      phone,
+      email,
+      details,
+    } = req.body;
+
+    if (!name || !email || !pickup || !destination || !date || !time) {
+      return res.status(400).json({
+        message:
+          "Veuillez renseigner le nom, l'email, le départ, la destination, la date et l'heure.",
+      });
+    }
+
+    if (!isValidEmail(email)) {
+      return res.status(400).json({
+        message: "Veuillez renseigner une adresse email valide.",
+      });
+    }
+
+    if (
+      !process.env.BREVO_API_KEY ||
+      !process.env.FROM_EMAIL ||
+      !process.env.CONTACT_TO_EMAIL
+    ) {
+      return res.status(500).json({
+        message: "Le service email n'est pas configuré correctement.",
+      });
+    }
+
+    const safeService = escapeHtml(String(service || "Non renseigné").trim());
+    const safeVehicle = escapeHtml(String(vehicle || "Non renseigné").trim());
+    const safePickup = escapeHtml(String(pickup).trim());
+    const safeDestination = escapeHtml(String(destination).trim());
+    const safeDate = escapeHtml(String(date).trim());
+    const safeTime = escapeHtml(String(time).trim());
+    const safePassengers = escapeHtml(
+      String(passengers || "Non renseigné").trim()
+    );
+    const safeLuggage = escapeHtml(String(luggage || "Non renseigné").trim());
+    const safeName = escapeHtml(String(name).trim());
+    const safePhone = escapeHtml(String(phone || "Non renseigné").trim());
+    const safeEmail = escapeHtml(String(email).trim());
+    const safeDetails = escapeHtml(String(details || "").trim()).replace(
+      /\n/g,
+      "<br />"
+    );
+
+    await sendBrevoEmail({
+      subject: `Nouvelle réservation - ${sanitizeHeader(name).slice(0, 80)}`,
+      replyTo: sanitizeHeader(email),
+      htmlContent: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111;">
+          <h2>Nouvelle demande de réservation</h2>
+          <p><strong>Service :</strong> ${safeService}</p>
+          <p><strong>Véhicule :</strong> ${safeVehicle}</p>
+          <p><strong>Départ :</strong> ${safePickup}</p>
+          <p><strong>Destination :</strong> ${safeDestination}</p>
+          <p><strong>Date :</strong> ${safeDate}</p>
+          <p><strong>Heure :</strong> ${safeTime}</p>
+          <p><strong>Passagers :</strong> ${safePassengers}</p>
+          <p><strong>Bagages :</strong> ${safeLuggage}</p>
+          <p><strong>Nom :</strong> ${safeName}</p>
+          <p><strong>Téléphone :</strong> ${safePhone}</p>
+          <p><strong>Email :</strong> ${safeEmail}</p>
+          <p><strong>Détails :</strong><br />${safeDetails || "Aucun détail"}</p>
+        </div>
+      `,
+    });
+
+    return res.status(200).json({
+      message: "Votre demande de réservation a bien été envoyée.",
+    });
+  } catch (error) {
+    console.error("Erreur /api/reservation :", error);
+
+    return res.status(500).json({
+      message: "Une erreur est survenue lors de l'envoi de la réservation.",
     });
   }
 });
