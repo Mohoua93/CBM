@@ -157,9 +157,6 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-app.get("/api/reservation", (req, res) => {
-  res.json({ message: "OK RESERVATION" });
-});
 
 app.post("/api/reservation", async (req, res) => {
   try {
