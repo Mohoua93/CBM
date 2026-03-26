@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import "../styles/Booking.css";
@@ -53,8 +54,86 @@ const formVariants = {
   },
 };
 
+const initialFormData = {
+  service: "",
+  vehicle: "",
+  pickup: "",
+  destination: "",
+  date: "",
+  time: "",
+  passengers: "",
+  luggage: "",
+  name: "",
+  phone: "",
+  email: "",
+  details: "",
+};
+
 function Booking() {
   const { t } = useTranslation();
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [status, setStatus] = useState({
+    loading: false,
+    error: "",
+    success: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setStatus({
+      loading: true,
+      error: "",
+      success: "",
+    });
+
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/reservation`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.message || t("bookingPage.form.errorMessage")
+        );
+      }
+
+      setStatus({
+        loading: false,
+        error: "",
+        success:
+          data.message || t("bookingPage.form.successMessage"),
+      });
+
+      setFormData(initialFormData);
+    } catch (error) {
+      setStatus({
+        loading: false,
+        error:
+          error.message || t("bookingPage.form.errorMessage"),
+        success: "",
+      });
+    }
+  };
 
   return (
     <div className="booking-page">
@@ -127,14 +206,19 @@ function Booking() {
         >
           <h2>{t("bookingPage.form.title")}</h2>
 
-          <form className="booking-form-page">
+          <form className="booking-form-page" onSubmit={handleSubmit}>
             <div className="booking-form-page__grid">
               <div className="booking-field-page">
                 <label htmlFor="service">
                   {t("bookingPage.form.serviceLabel")}
                 </label>
 
-                <select id="service" name="service">
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                >
                   <option value="">
                     {t("bookingPage.form.selectPlaceholder")}
                   </option>
@@ -166,7 +250,12 @@ function Booking() {
                   {t("bookingPage.form.vehicleLabel")}
                 </label>
 
-                <select id="vehicle" name="vehicle">
+                <select
+                  id="vehicle"
+                  name="vehicle"
+                  value={formData.vehicle}
+                  onChange={handleChange}
+                >
                   <option value="">
                     {t("bookingPage.form.selectPlaceholder")}
                   </option>
@@ -194,6 +283,8 @@ function Booking() {
                   id="pickup"
                   name="pickup"
                   type="text"
+                  value={formData.pickup}
+                  onChange={handleChange}
                   placeholder={t("bookingPage.form.pickupPlaceholder")}
                 />
               </div>
@@ -207,6 +298,8 @@ function Booking() {
                   id="destination"
                   name="destination"
                   type="text"
+                  value={formData.destination}
+                  onChange={handleChange}
                   placeholder={t("bookingPage.form.destinationPlaceholder")}
                 />
               </div>
@@ -216,7 +309,13 @@ function Booking() {
                   {t("bookingPage.form.dateLabel")}
                 </label>
 
-                <input id="date" name="date" type="date" />
+                <input
+                  id="date"
+                  name="date"
+                  type="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="booking-field-page">
@@ -224,7 +323,13 @@ function Booking() {
                   {t("bookingPage.form.timeLabel")}
                 </label>
 
-                <input id="time" name="time" type="time" />
+                <input
+                  id="time"
+                  name="time"
+                  type="time"
+                  value={formData.time}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="booking-field-page">
@@ -237,6 +342,8 @@ function Booking() {
                   name="passengers"
                   type="number"
                   min="1"
+                  value={formData.passengers}
+                  onChange={handleChange}
                   placeholder={t("bookingPage.form.passengersPlaceholder")}
                 />
               </div>
@@ -251,6 +358,8 @@ function Booking() {
                   name="luggage"
                   type="number"
                   min="0"
+                  value={formData.luggage}
+                  onChange={handleChange}
                   placeholder={t("bookingPage.form.luggagePlaceholder")}
                 />
               </div>
@@ -264,6 +373,8 @@ function Booking() {
                   id="name"
                   name="name"
                   type="text"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder={t("bookingPage.form.namePlaceholder")}
                 />
               </div>
@@ -277,6 +388,8 @@ function Booking() {
                   id="phone"
                   name="phone"
                   type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder={t("bookingPage.form.phonePlaceholder")}
                 />
               </div>
@@ -290,6 +403,8 @@ function Booking() {
                   id="email"
                   name="email"
                   type="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder={t("bookingPage.form.emailPlaceholder")}
                 />
               </div>
@@ -303,13 +418,33 @@ function Booking() {
                   id="details"
                   name="details"
                   rows="6"
+                  value={formData.details}
+                  onChange={handleChange}
                   placeholder={t("bookingPage.form.detailsPlaceholder")}
                 ></textarea>
               </div>
             </div>
 
-            <button type="submit" className="booking-submit">
-              {t("bookingPage.form.submitButton")}
+            {status.error && (
+              <p style={{ marginTop: "16px", color: "#ffb3b3" }}>
+                {status.error}
+              </p>
+            )}
+
+            {status.success && (
+              <p style={{ marginTop: "16px", color: "#b9f5c5" }}>
+                {status.success}
+              </p>
+            )}
+
+            <button
+              type="submit"
+              className="booking-submit"
+              disabled={status.loading}
+            >
+              {status.loading
+                ? t("bookingPage.form.loadingButton")
+                : t("bookingPage.form.submitButton")}
             </button>
           </form>
         </motion.div>

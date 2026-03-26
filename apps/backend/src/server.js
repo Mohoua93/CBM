@@ -36,6 +36,14 @@ function escapeHtml(value = "") {
     .replace(/'/g, "&#039;");
 }
 
+function sanitizeHeader(value = "") {
+  return String(value).replace(/[\r\n]+/g, " ").trim();
+}
+
+function isValidEmail(value = "") {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value).trim());
+}
+
 async function sendBrevoEmail({ subject, replyTo, htmlContent }) {
   const response = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
@@ -93,6 +101,12 @@ app.post("/api/contact", async (req, res) => {
       });
     }
 
+    if (!isValidEmail(email)) {
+      return res.status(400).json({
+        message: "Veuillez renseigner une adresse email valide.",
+      });
+    }
+
     if (
       !process.env.BREVO_API_KEY ||
       !process.env.FROM_EMAIL ||
@@ -103,14 +117,22 @@ app.post("/api/contact", async (req, res) => {
       });
     }
 
-    const safeName = escapeHtml(name);
-    const safePhone = escapeHtml(phone || "Non renseigné");
-    const safeEmail = escapeHtml(email);
-    const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
+    const trimmedName = String(name).trim();
+    const trimmedPhone = String(phone || "").trim();
+    const trimmedEmail = String(email).trim();
+    const trimmedMessage = String(message).trim();
+
+    const safeName = escapeHtml(trimmedName);
+    const safePhone = escapeHtml(trimmedPhone || "Non renseigné");
+    const safeEmail = escapeHtml(trimmedEmail);
+    const safeMessage = escapeHtml(trimmedMessage).replace(/\n/g, "<br />");
 
     await sendBrevoEmail({
-      subject: `Nouveau message de contact - ${name}`,
-      replyTo: email,
+      subject: `Nouveau message de contact - ${sanitizeHeader(trimmedName).slice(
+        0,
+        80
+      )}`,
+      replyTo: sanitizeHeader(trimmedEmail),
       htmlContent: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111;">
           <h2>Nouveau message depuis le site CBM</h2>
@@ -132,6 +154,15 @@ app.post("/api/contact", async (req, res) => {
       message: "Une erreur est survenue lors de l'envoi du message.",
     });
   }
+});
+
+app.use((err, req, res, next) => {
+  if (err.message === "Origin not allowed by CORS") {
+    return res.status(403).json({ message: "Requête bloquée par CORS." });
+  }
+
+  console.error("Erreur serveur :", err);
+  return res.status(500).json({ message: "Erreur interne du serveur." });
 });
 
 app.listen(PORT, () => {
