@@ -73,6 +73,8 @@ async function sendBrevoEmail({ subject, replyTo, htmlContent }) {
 
   const data = await response.json().catch(() => ({}));
 
+  console.log("BREVO RESPONSE:", data);
+
   if (!response.ok) {
     throw new Error(data.message || "Erreur lors de l'envoi de l'email.");
   }
@@ -156,7 +158,6 @@ app.post("/api/contact", async (req, res) => {
     });
   }
 });
-
 
 app.post("/api/reservation", async (req, res) => {
   try {
