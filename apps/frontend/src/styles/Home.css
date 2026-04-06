@@ -10,7 +10,9 @@
   grid-template-columns: 1.02fr 0.98fr;
   align-items: stretch;
   overflow: hidden;
-  background: #050505;
+  background:
+    radial-gradient(circle at left center, rgba(201, 162, 75, 0.08) 0%, transparent 34%),
+    #050505;
 }
 
 .home__hero-overlay {
@@ -18,9 +20,9 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.94) 0%,
-    rgba(0, 0, 0, 0.85) 28%,
-    rgba(0, 0, 0, 0.55) 56%,
+    rgba(0, 0, 0, 0.96) 0%,
+    rgba(0, 0, 0, 0.88) 26%,
+    rgba(0, 0, 0, 0.58) 56%,
     rgba(0, 0, 0, 0.18) 100%
   );
   z-index: 1;
@@ -40,6 +42,21 @@
 .home__hero-media {
   position: relative;
   min-height: 100%;
+  overflow: hidden;
+}
+
+.home__hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    transparent 28%,
+    transparent 72%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+  pointer-events: none;
 }
 
 .home__hero-image {
@@ -48,7 +65,8 @@
   display: block;
   object-fit: cover;
   object-position: center top;
-  filter: brightness(1.72);
+  filter: brightness(1.68) contrast(1.02);
+  transform-origin: center center;
 }
 
 .home__title {
@@ -58,6 +76,8 @@
   font-size: clamp(3.4rem, 6vw, 5.8rem);
   line-height: 0.95;
   font-weight: 500;
+  letter-spacing: 0.01em;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
 .home__subtitle {
@@ -81,35 +101,46 @@
   min-width: 190px;
   height: 58px;
   padding: 0 28px;
-  border-radius: 2px;
+  border-radius: 20px;
   text-decoration: none;
   font-size: 1.08rem;
   font-weight: 500;
-  transition: all 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
   cursor: pointer;
+}
+
+.home__btn:hover {
+  transform: translateY(-2px);
 }
 
 .home__btn--gold {
   background: #c9a24b;
   border: 1px solid #c9a24b;
   color: #111111;
-  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(201, 162, 75, 0.18);
 }
 
 .home__btn--gold:hover {
   background: #d7b15f;
   border-color: #d7b15f;
+  box-shadow: 0 14px 30px rgba(215, 177, 95, 0.22);
 }
 
 .home__btn--outline {
   background: transparent;
   border: 1px solid #c9a24b;
   color: #ffffff;
-  border-radius: 20px;
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 75, 0.05);
 }
 
 .home__btn--outline:hover {
   background: rgba(201, 162, 75, 0.12);
+  box-shadow: 0 10px 24px rgba(201, 162, 75, 0.1);
 }
 
 .home__services,
@@ -150,14 +181,30 @@
 
 .service-card {
   min-height: 280px;
-    padding: 40px 30px 34px;
-    border: 2.5px solid #c9a24b;
-    background: #060606;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: 20px;
+  padding: 40px 30px 34px;
+  border: 2.5px solid #c9a24b;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.015) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #060606;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  border-color: #d7b15f;
 }
 
 .service-card__icon-wrap {
@@ -190,10 +237,12 @@
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
+  transition: color 0.25s ease;
 }
 
 .service-card__link:hover {
   text-decoration: underline;
+  color: #d7b15f;
 }
 
 .home__booking {
@@ -223,20 +272,26 @@
 
 .booking-field select,
 .booking-field input {
-  border-radius: 20px;
   width: 100%;
   height: 62px;
   padding: 0 18px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: #0a0a0a;
   color: #f5f1e8;
   font-size: 1rem;
   outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
 }
 
 .booking-field select:focus,
 .booking-field input:focus {
   border-color: #c9a24b;
+  box-shadow: 0 0 0 4px rgba(201, 162, 75, 0.12);
+  background: #0d0d0d;
 }
 
 .booking-form__actions {
@@ -244,6 +299,79 @@
   justify-content: flex-end;
   margin-top: 20px;
 }
+
+/* =========================
+   ANIMATIONS D'ARRIVÉE
+========================= */
+
+.home__hero--reveal {
+  animation: homeHeroReveal 1.2s ease;
+}
+
+.home__hero-content--reveal {
+  animation: homeContentReveal 1.4s ease;
+}
+
+.home__hero-media--reveal .home__hero-image {
+  animation: homeImageReveal 1.6s ease;
+}
+
+.home__services--reveal,
+.services-grid--reveal {
+  animation: sectionFadeUp 1.5s ease;
+}
+
+.home__booking--reveal {
+  animation: sectionFadeUp 1.8s ease;
+}
+
+@keyframes homeHeroReveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes homeContentReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes homeImageReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sectionFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 1100px) {
   .home__hero {

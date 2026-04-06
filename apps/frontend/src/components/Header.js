@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import logo from "../assets/Logo-transp.png";
 import "../styles/Header.css";
 
 function Header() {
@@ -40,8 +41,17 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <NavLink to="/" className="header__logo">
-          CBM
+        <NavLink
+          to="/"
+          className="header__logo"
+          onClick={closeMenu}
+          aria-label="CBM Services & Cars"
+        >
+          <img
+            src={logo}
+            alt="CBM Services & Cars"
+            className="header__logo-image"
+          />
         </NavLink>
 
         <nav className="header__nav">
@@ -90,8 +100,17 @@ function Header() {
         }`}
       >
         <div className="header__mobile-top">
-          <NavLink to="/" className="header__mobile-logo" onClick={closeMenu}>
-            CBM
+          <NavLink
+            to="/"
+            className="header__mobile-logo"
+            onClick={closeMenu}
+            aria-label="CBM Services & Cars"
+          >
+            <img
+              src={logo}
+              alt="CBM Services & Cars"
+              className="header__mobile-logo-image"
+            />
           </NavLink>
 
           <button

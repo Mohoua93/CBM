@@ -78,10 +78,10 @@ function Home() {
 
   return (
     <div className="home">
-      <section className="home__hero">
+      <section className="home__hero home__hero--reveal">
         <div className="home__hero-overlay"></div>
 
-        <div className="home__hero-content">
+        <div className="home__hero-content home__hero-content--reveal">
           <h1 className="home__title">
             {t("home.hero.titleLine1")}
             <br />
@@ -101,7 +101,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="home__hero-media">
+        <div className="home__hero-media home__hero-media--reveal">
           <img
             src={heroImage}
             alt={t("home.hero.imageAlt")}
@@ -110,12 +110,12 @@ function Home() {
         </div>
       </section>
 
-      <section className="home__services">
+      <section className="home__services home__services--reveal">
         <div className="section-heading section-heading--center">
           <h2>{t("home.services.title")}</h2>
         </div>
 
-        <div className="services-grid">
+        <div className="services-grid services-grid--reveal">
           <article className="service-card">
             <div className="service-card__icon-wrap">
               <CarIcon />
@@ -151,7 +151,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="home__booking">
+      <section className="home__booking home__booking--reveal">
         <div className="section-heading section-heading--center">
           <h2>{t("home.booking.title")}</h2>
           <p>{t("home.booking.subtitle")}</p>
