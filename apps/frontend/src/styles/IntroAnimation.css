@@ -22,6 +22,8 @@
 
 .intro__logo {
   width: min(220px, 58vw);
+  max-width: 100%;
+  display: block;
   opacity: 0;
   transform: translateY(10px) scale(0.95);
   filter: drop-shadow(0 0 18px rgba(201, 162, 75, 0.16));
@@ -107,6 +109,11 @@
 @media (max-width: 768px) {
   .intro__content {
     gap: 16px;
+    padding: 20px;
+  }
+
+  .intro__logo {
+    width: min(180px, 60vw);
   }
 
   .intro__text {
