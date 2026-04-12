@@ -44,7 +44,7 @@ function Footer() {
           <h3 className="footer__title">{t("footer.contactTitle")}</h3>
           <p className="footer__text">{t("footer.availability")}</p>
           <a href="tel:+33000000000" className="footer__link">
-            +33 0 00 00 00 00
+            +33 6 67 86 27 28
           </a>
           <a href="mailto:contact@cbm.fr" className="footer__link">
             contact@cbm.fr

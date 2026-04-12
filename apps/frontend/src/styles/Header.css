@@ -1,197 +1,172 @@
+/* --- CONFIGURATION DU HEADER --- */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
   width: 100%;
-  background: rgba(5, 5, 5, 0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(201, 162, 75, 0.08);
+  z-index: 1000;
+  /* Transition allongée à 1.2s pour un effet de fondu très fluide et premium */
+  transition: 
+    background 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    border-bottom 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 15px 0;
+}
+
+/* ÉTAT INITIAL : Transparent total sur le Hero */
+.header--transparent {
+  background: transparent !important;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(0px);
+}
+
+/* ÉTAT AU SCROLL : Dégradé Noir progressif */
+.header--scrolled {
+  /* On utilise un dégradé un peu plus doux pour éviter l'effet "bloc" */
+  background: linear-gradient(
+    to bottom, 
+    rgba(5, 5, 5, 0.98) 0%, 
+    rgba(5, 5, 5, 0.90) 60%, 
+    rgba(5, 5, 5, 0.75) 100%
+  ) !important;
+  
+  /* Flou artistique qui monte progressivement avec la couleur */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* Affinement de la barre */
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .header__container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 18px 48px;
+  padding: 0 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  height: 60px;
 }
 
-.header__logo,
-.header__mobile-logo {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
+/* --- LOGO --- */
 .header__logo-image {
-  height: 68px;
+  height: 50px;
   width: auto;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(201, 162, 75, 0.14));
-  transition: transform 0.25s ease, filter 0.25s ease;
+  /* Le logo suit aussi la transition lente */
+  transition: height 1.2s ease, transform 0.25s ease;
 }
 
-.header__logo:hover .header__logo-image {
-  transform: scale(1.03);
-  filter: drop-shadow(0 0 14px rgba(201, 162, 75, 0.22));
+.header--scrolled .header__logo-image {
+  height: 42px;
 }
 
-.header__mobile-logo-image {
-  height: 58px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(201, 162, 75, 0.14));
-}
-
+/* --- NAVIGATION DESKTOP --- */
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .header__link {
-  color: #f5f1e8;
+  color: #f5f1e8 !important;
   text-decoration: none;
-  font-size: 1rem;
-  transition:
-    color 0.25s ease,
-    border-color 0.25s ease,
-    background-color 0.25s ease,
-    transform 0.25s ease;
-  border: 1.5px solid #c9a24b;
-  border-radius: 20px;
-  padding: 8px 14px;
-  line-height: 1;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.25s ease;
+  /* Ombre de texte pour la lisibilité sur l'image au début */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-.header__link:hover,
-.header__link--active {
-  color: #c9a24b;
-  background: rgba(201, 162, 75, 0.08);
+.header__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #c9a24b;
+  transition: width 0.3s ease;
 }
 
 .header__link:hover {
-  transform: translateY(-1px);
+  color: #c9a24b !important;
 }
 
+.header__link:hover::after {
+  width: 100%;
+}
+
+/* --- SÉLECTEUR DE LANGUES --- */
+.header__languages {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* --- BURGER MOBILE --- */
 .header__burger {
   display: none;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: none;
   background: transparent;
+  border: none;
   cursor: pointer;
-  z-index: 1101;
+  padding: 10px;
 }
 
 .header__burger span {
   display: block;
-  width: 26px;
+  width: 25px;
   height: 2px;
-  margin: 6px auto;
   background: #f5f1e8;
-  transition: 0.3s ease;
+  margin: 5px 0;
+  transition: 0.3s;
 }
 
+/* --- MENU MOBILE --- */
 .header__mobile-menu {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100vh;
   background: #050505;
   z-index: 1100;
   transform: translateX(100%);
-  transition: transform 0.35s ease;
+  transition: transform 0.35s ease-in-out;
   display: flex;
   flex-direction: column;
-  padding: 28px 20px 40px;
+  padding: 30px;
 }
 
 .header__mobile-menu--open {
   transform: translateX(0);
 }
 
-.header__mobile-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 48px;
-  gap: 16px;
-}
-
-.header__mobile-close {
-  border: none;
-  background: transparent;
-  color: #f5f1e8;
-  font-size: 2.2rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.header__mobile-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 24px;
-  flex: 1;
-}
-
 .header__mobile-link {
   color: #f5f1e8;
   text-decoration: none;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2rem;
-  font-weight: 500;
-  transition: color 0.25s ease;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 15px 0;
+  font-weight: 600;
 }
 
-.header__mobile-link:hover,
-.header__mobile-link--active {
-  color: #c9a24b;
-}
-
-.header__languages {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-}
-
-.header__mobile-languages {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
+/* --- RESPONSIVE --- */
 @media (max-width: 992px) {
   .header__container {
-    padding: 16px 20px;
+    padding: 0 20px;
   }
-
+  
   .header__nav {
     display: none;
   }
-
+  
   .header__burger {
     display: block;
-  }
-
-  .header__logo-image {
-    height: 48px;
-  }
-
-  .header__mobile-logo-image {
-    height: 42px;
-  }
-}
-
-@media (min-width: 993px) {
-  .header__mobile-menu {
-    display: none;
   }
 }

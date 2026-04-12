@@ -8,6 +8,7 @@ import Fleet from "../pages/Fleet";
 import Booking from "../pages/Booking";
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
+import Greeter from "../pages/Greeter";
 
 import ScrollToTop from "../components/ScrollToTop";
 import IntroAnimation from "../components/IntroAnimation";
@@ -43,6 +44,7 @@ function AppRouter() {
         <Route path="/reservation" element={<Booking />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/greeter" element={<Greeter />} />
       </Routes>
     </>
   );

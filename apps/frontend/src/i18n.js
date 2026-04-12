@@ -22,7 +22,7 @@ const resources = {
       },
       hero: {
         title: "Transport privé premium",
-        subtitle: "Une expérience haut de gamme avec chauffeur privé.",
+        subtitle: "Une expérience premium avec chauffeur privé.",
         cta: "Réserver maintenant"
       },
       services: {
@@ -34,9 +34,9 @@ const resources = {
       home: {
         hero: {
           titleLine1: "Chauffeur Privé",
-          titleLine2: "de Prestige",
+          titleLine2: "Premium",
           subtitle:
-            "Transport haut de gamme pour événements, mariages, soirées...",
+            "Transport premium pour événements, mariages, soirées...",
           bookingButton: "Réserver",
           contactButton: "Contactez-nous",
           imageAlt: "Chauffeur privé CBM"
@@ -82,7 +82,7 @@ const resources = {
             "Réservez votre trajet en quelques instants. CBM vous accompagne pour vos transferts privés, déplacements professionnels, événements, mariages et mises à disposition.",
           highlights: {
             availability: "Disponibilité sur réservation",
-            premium: "Service discret et haut de gamme",
+            premium: "Service discret et premium",
             customLabel: "Sur mesure",
             customText: "Prestations adaptées à vos besoins"
           }
@@ -108,7 +108,7 @@ const resources = {
           passengersPlaceholder: "1",
           luggagePlaceholder: "0",
           namePlaceholder: "Votre nom",
-          phonePlaceholder: "+33 6 00 00 00 00",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "votre@email.com",
           detailsPlaceholder:
             "Ajoutez ici toute précision utile : numéro de vol, attente, trajet retour, besoins spécifiques...",
@@ -140,7 +140,7 @@ const resources = {
           premiumService: {
             title: "Service premium",
             text:
-              "Chauffeurs professionnels, véhicules haut de gamme et accompagnement discret pour une expérience irréprochable."
+              "Chauffeurs professionnels, véhicules premium et accompagnement discret pour une expérience irréprochable."
           }
         }
       },
@@ -150,7 +150,7 @@ const resources = {
           titleLine1: "L’exigence d’un service",
           titleLine2: "transmis de père en fils",
           text:
-            "CBM est une entreprise familiale spécialisée dans le transport privé haut de gamme. Depuis plus de 20 ans, nous mettons notre expérience, notre rigueur et notre sens du service au profit d’une clientèle exigeante, à la recherche de confort, de discrétion et de fiabilité."
+            "CBM est une entreprise familiale spécialisée dans le transport privé premium. Depuis plus de 20 ans, nous mettons notre expérience, notre rigueur et notre sens du service au profit d’une clientèle exigeante, à la recherche de confort, de discrétion et de fiabilité."
         },
         story: {
           title: "Une histoire de famille",
@@ -171,7 +171,7 @@ const resources = {
           premium: {
             title: "Un service premium",
             text:
-              "Nous mettons à disposition des véhicules haut de gamme avec chauffeur pour garantir une expérience de transport confortable, élégante et parfaitement adaptée à une clientèle privée et professionnelle."
+              "Nous mettons à disposition des véhicules premium avec chauffeur pour garantir une expérience de transport confortable, élégante et parfaitement adaptée à une clientèle privée et professionnelle."
           }
         },
         values: {
@@ -200,9 +200,9 @@ const resources = {
         text1:
           "CBM met à votre disposition une flotte premium sélectionnée pour répondre aux exigences d’une clientèle recherchant confort, discrétion et excellence de service.",
         text2:
-          "Que ce soit pour un transfert privé, une mise à disposition, un événement ou un déplacement professionnel, nos véhicules offrent une expérience haut de gamme avec chauffeur.",
+          "Que ce soit pour un transfert privé, une mise à disposition, un événement ou un déplacement professionnel, nos véhicules offrent une expérience premium avec chauffeur.",
         text3:
-          "Notre sélection comprend des berlines de prestige, des vans luxueux et des SUV emblématiques, parfaitement adaptés à tous types de trajets.",
+          "Notre sélection comprend des berlines premium, des vans premium et des SUV emblématiques, parfaitement adaptés à tous types de trajets.",
         vehicles: {
           mercedesSE: {
             alt: "Mercedes Classe S ou Classe E",
@@ -220,7 +220,7 @@ const resources = {
             alt: "Range Rover",
             title: "Range Rover",
             text:
-              "SUV haut de gamme alliant prestance, espace et confort absolu."
+              "SUV premium alliant prestance, espace et confort absolu."
           }
         }
       },
@@ -228,7 +228,7 @@ const resources = {
         hero: {
           eyebrow: "Nos services",
           titleLine1: "Une prestation",
-          titleLine2: "haut de gamme",
+          titleLine2: "premium",
           text:
             "CBM vous propose un service de chauffeur privé premium pour tous vos déplacements en France et en Europe, avec discrétion, ponctualité et exigence de qualité."
         },
@@ -241,7 +241,7 @@ const resources = {
           availability: {
             title: "Mise à disposition",
             description:
-              "Un chauffeur privé et un véhicule haut de gamme à votre service pendant plusieurs heures ou une journée entière."
+              "Un chauffeur privé et un véhicule premium à votre service pendant plusieurs heures ou une journée entière."
           },
           excursions: {
             title: "Excursions en France et en Europe",
@@ -262,7 +262,7 @@ const resources = {
         highlight: {
           title: "Un accompagnement sur mesure",
           text:
-            "Chaque prestation est pensée pour répondre aux attentes d’une clientèle recherchant un transport fiable, confortable et raffiné. Que ce soit pour un transfert, une journée de rendez-vous, une excursion privée ou un événement important, CBM met à votre disposition des véhicules de prestige avec chauffeur.",
+            "Chaque prestation est pensée pour répondre aux attentes d’une clientèle recherchant un transport fiable, confortable et raffiné. Que ce soit pour un transfert, une journée de rendez-vous, une excursion privée ou un événement important, CBM met à votre disposition des véhicules premium avec chauffeur.",
           bookingButton: "Réserver",
           contactButton: "Nous contacter"
         }
@@ -279,7 +279,7 @@ const resources = {
         },
         form: {
           namePlaceholder: "Nom",
-          phonePlaceholder: "Téléphone",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "Email",
           messagePlaceholder: "Message",
           submitButton: "Envoyer"
@@ -319,7 +319,7 @@ const resources = {
       },
       hero: {
         title: "Premium private transport",
-        subtitle: "A high-end experience with a private chauffeur.",
+        subtitle: "A premium experience with a private chauffeur.",
         cta: "Book now"
       },
       services: {
@@ -331,8 +331,8 @@ const resources = {
       home: {
         hero: {
           titleLine1: "Private Chauffeur",
-          titleLine2: "of Prestige",
-          subtitle: "High-end transport for events, weddings, evenings...",
+          titleLine2: "Premium",
+          subtitle: "Premium transport for events, weddings, evenings...",
           bookingButton: "Book now",
           contactButton: "Contact us",
           imageAlt: "CBM private chauffeur"
@@ -378,7 +378,7 @@ const resources = {
             "Book your journey in just a few moments. CBM supports you for private transfers, business trips, events, weddings, and hourly services.",
           highlights: {
             availability: "Availability by reservation",
-            premium: "Discreet high-end service",
+            premium: "Discreet premium service",
             customLabel: "Tailor-made",
             customText: "Services adapted to your needs"
           }
@@ -404,7 +404,7 @@ const resources = {
           passengersPlaceholder: "1",
           luggagePlaceholder: "0",
           namePlaceholder: "Your name",
-          phonePlaceholder: "+33 6 00 00 00 00",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "your@email.com",
           detailsPlaceholder:
             "Add any useful details here: flight number, waiting time, return trip, specific needs...",
@@ -436,7 +436,7 @@ const resources = {
           premiumService: {
             title: "Premium service",
             text:
-              "Professional chauffeurs, high-end vehicles, and discreet support for an impeccable experience."
+              "Professional chauffeurs, premium vehicles, and discreet support for an impeccable experience."
           }
         }
       },
@@ -446,7 +446,7 @@ const resources = {
           titleLine1: "The high standards of a service",
           titleLine2: "passed from father to son",
           text:
-            "CBM is a family-run company specializing in high-end private transport. For more than 20 years, we have placed our experience, discipline, and sense of service at the disposal of demanding clients seeking comfort, discretion, and reliability."
+            "CBM is a family-run company specializing in premium private transport. For more than 20 years, we have placed our experience, discipline, and sense of service at the disposal of demanding clients seeking comfort, discretion, and reliability."
         },
         story: {
           title: "A family story",
@@ -467,7 +467,7 @@ const resources = {
           premium: {
             title: "A premium service",
             text:
-              "We provide high-end vehicles with chauffeur to guarantee a comfortable, elegant transport experience perfectly suited to private and business clients."
+              "We provide premium vehicles with chauffeur to guarantee a comfortable, elegant transport experience perfectly suited to private and business clients."
           }
         },
         values: {
@@ -496,9 +496,9 @@ const resources = {
         text1:
           "CBM provides you with a premium fleet selected to meet the expectations of clients seeking comfort, discretion, and excellence in service.",
         text2:
-          "Whether for a private transfer, hourly service, an event, or a business trip, our vehicles offer a high-end chauffeured experience.",
+          "Whether for a private transfer, hourly service, an event, or a business trip, our vehicles offer a premium chauffeured experience.",
         text3:
-          "Our selection includes prestigious sedans, luxury vans, and iconic SUVs, perfectly suited to all types of journeys.",
+          "Our selection includes premium sedans, premium vans, and iconic SUVs, perfectly suited to all types of journeys.",
         vehicles: {
           mercedesSE: {
             alt: "Mercedes S-Class or E-Class",
@@ -515,14 +515,14 @@ const resources = {
             alt: "Range Rover",
             title: "Range Rover",
             text:
-              "A high-end SUV combining prestige, space, and absolute comfort."
+              "A premium SUV combining prestige, space, and absolute comfort."
           }
         }
       },
       servicesPage: {
         hero: {
           eyebrow: "Our services",
-          titleLine1: "A high-end",
+          titleLine1: "A premium",
           titleLine2: "service",
           text:
             "CBM offers you a premium private chauffeur service for all your journeys in France and Europe, with discretion, punctuality, and high standards of quality."
@@ -536,7 +536,7 @@ const resources = {
           availability: {
             title: "Hourly service",
             description:
-              "A private chauffeur and a high-end vehicle at your service for several hours or a full day."
+              "A private chauffeur and a premium vehicle at your service for several hours or a full day."
           },
           excursions: {
             title: "Excursions in France and Europe",
@@ -557,7 +557,7 @@ const resources = {
         highlight: {
           title: "Tailor-made support",
           text:
-            "Each service is designed to meet the expectations of clients seeking reliable, comfortable, and refined transport. Whether for a transfer, a full day of appointments, a private excursion, or an important event, CBM provides prestige vehicles with chauffeur.",
+            "Each service is designed to meet the expectations of clients seeking reliable, comfortable, and refined transport. Whether for a transfer, a full day of appointments, a private excursion, or an important event, CBM provides premium vehicles with chauffeur.",
           bookingButton: "Book now",
           contactButton: "Contact us"
         }
@@ -574,7 +574,7 @@ const resources = {
         },
         form: {
           namePlaceholder: "Name",
-          phonePlaceholder: "Phone",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "Email",
           messagePlaceholder: "Message",
           submitButton: "Send"
@@ -614,7 +614,7 @@ const resources = {
       },
       hero: {
         title: "Premium özel ulaşım",
-        subtitle: "Özel şoförle üst düzey bir deneyim.",
+        subtitle: "Özel şoförle premium bir deneyim.",
         cta: "Şimdi rezervasyon yap"
       },
       services: {
@@ -625,10 +625,10 @@ const resources = {
       },
       home: {
         hero: {
-          titleLine1: "Prestijli",
+          titleLine1: "Premium",
           titleLine2: "Özel Şoför",
           subtitle:
-            "Etkinlikler, düğünler ve özel geceler için üst düzey ulaşım.",
+            "Etkinlikler, düğünler ve özel geceler için premium ulaşım.",
           bookingButton: "Rezervasyon",
           contactButton: "Bize ulaşın",
           imageAlt: "CBM özel şoför"
@@ -674,7 +674,7 @@ const resources = {
             "Yolculuğunuzu birkaç dakika içinde rezerve edin. CBM; özel transferler, iş seyahatleri, etkinlikler, düğünler ve araç tahsisi için yanınızdadır.",
           highlights: {
             availability: "Rezervasyonla hizmet",
-            premium: "Gizli ve üst düzey hizmet",
+            premium: "Gizli ve premium hizmet",
             customLabel: "Özel",
             customText: "İhtiyaçlarınıza uygun hizmetler"
           }
@@ -700,7 +700,7 @@ const resources = {
           passengersPlaceholder: "1",
           luggagePlaceholder: "0",
           namePlaceholder: "Adınız",
-          phonePlaceholder: "+33 6 00 00 00 00",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "eposta@ornek.com",
           detailsPlaceholder:
             "Buraya yararlı bilgileri ekleyin: uçuş numarası, bekleme, dönüş yolculuğu, özel ihtiyaçlar...",
@@ -732,7 +732,7 @@ const resources = {
           premiumService: {
             title: "Premium hizmet",
             text:
-              "Profesyonel şoförler, üst segment araçlar ve kusursuz bir deneyim için gizli destek."
+              "Profesyonel şoförler, premium araçlar ve kusursuz bir deneyim için gizli destek."
           }
         }
       },
@@ -742,7 +742,7 @@ const resources = {
           titleLine1: "Bir hizmet anlayışının titizliği",
           titleLine2: "babadan oğula aktarıldı",
           text:
-            "CBM, üst segment özel ulaşım alanında uzmanlaşmış aile şirketidir. 20 yılı aşkın süredir deneyimimizi, disiplinimizi ve hizmet anlayışımızı; konfor, gizlilik ve güvenilirlik arayan seçkin müşterilerimizin hizmetine sunuyoruz."
+            "CBM, premium özel ulaşım alanında uzmanlaşmış aile şirketidir. 20 yılı aşkın süredir deneyimimizi, disiplinimizi ve hizmet anlayışımızı; konfor, gizlilik ve güvenilirlik arayan seçkin müşterilerimizin hizmetine sunuyoruz."
         },
         story: {
           title: "Bir aile hikâyesi",
@@ -763,7 +763,7 @@ const resources = {
           premium: {
             title: "Premium hizmet",
             text:
-              "Özel ve profesyonel müşterilere uygun, konforlu ve zarif bir ulaşım deneyimi sunmak için şoförlü üst segment araçlar sağlıyoruz."
+              "Özel ve profesyonel müşterilere uygun, konforlu ve zarif bir ulaşım deneyimi sunmak için şoförlü premium araçlar sağlıyoruz."
           }
         },
         values: {
@@ -792,9 +792,9 @@ const resources = {
         text1:
           "CBM, konfor, gizlilik ve hizmette mükemmellik arayan seçkin müşterilerin beklentilerini karşılamak için özenle seçilmiş premium bir filo sunar.",
         text2:
-          "İster özel transfer, ister araç tahsisi, etkinlik ya da iş seyahati olsun, araçlarımız şoförlü üst düzey bir deneyim sunar.",
+          "İster özel transfer, ister araç tahsisi, etkinlik ya da iş seyahati olsun, araçlarımız şoförlü premium bir deneyim sunar.",
         text3:
-          "Seçkimiz; prestijli sedanlar, lüks vanlar ve ikonik SUV modellerinden oluşur ve her türlü yolculuk için mükemmel şekilde uygundur.",
+          "Seçkimiz; premium sedanlar, premium vanlar ve ikonik SUV modellerinden oluşur ve her türlü yolculuk için mükemmel şekilde uygundur.",
         vehicles: {
           mercedesSE: {
             alt: "Mercedes S Serisi veya E Serisi",
@@ -811,14 +811,14 @@ const resources = {
             alt: "Range Rover",
             title: "Range Rover",
             text:
-              "Prestij, genişlik ve mutlak konforu birleştiren üst segment SUV."
+              "Prestij, genişlik ve mutlak konforu birleştiren premium SUV."
           }
         }
       },
       servicesPage: {
         hero: {
           eyebrow: "Hizmetlerimiz",
-          titleLine1: "Üst düzey",
+          titleLine1: "Premium",
           titleLine2: "hizmet",
           text:
             "CBM, Fransa ve Avrupa’daki tüm yolculuklarınız için gizlilik, dakiklik ve yüksek kalite anlayışıyla premium özel şoför hizmeti sunar."
@@ -832,7 +832,7 @@ const resources = {
           availability: {
             title: "Araç tahsisi",
             description:
-              "Birkaç saat veya tam gün boyunca hizmetinizde özel şoför ve üst segment araç."
+              "Birkaç saat veya tam gün boyunca hizmetinizde özel şoför ve premium araç."
           },
           excursions: {
             title: "Fransa ve Avrupa’da geziler",
@@ -853,7 +853,7 @@ const resources = {
         highlight: {
           title: "Size özel destek",
           text:
-            "Her hizmet, güvenilir, konforlu ve seçkin bir ulaşım arayan müşterilerin beklentilerine göre tasarlanır. İster transfer, ister toplantılarla dolu bir gün, ister özel gezi ya da önemli bir etkinlik olsun, CBM size şoförlü prestij araçlar sunar.",
+            "Her hizmet, güvenilir, konforlu ve seçkin bir ulaşım arayan müşterilerin beklentilerine göre tasarlanır. İster transfer, ister toplantılarla dolu bir gün, ister özel gezi ya da önemli bir etkinlik olsun, CBM size premium araçlar sunar.",
           bookingButton: "Rezervasyon",
           contactButton: "Bize ulaşın"
         }
@@ -870,7 +870,7 @@ const resources = {
         },
         form: {
           namePlaceholder: "Ad Soyad",
-          phonePlaceholder: "Telefon",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "E-posta",
           messagePlaceholder: "Mesaj",
           submitButton: "Gönder"
@@ -910,7 +910,7 @@ const resources = {
       },
       hero: {
         title: "Premium-Privattransport",
-        subtitle: "Ein hochwertiges Erlebnis mit privatem Chauffeur.",
+        subtitle: "Ein Premium-Erlebnis mit privatem Chauffeur.",
         cta: "Jetzt buchen"
       },
       services: {
@@ -922,9 +922,9 @@ const resources = {
       home: {
         hero: {
           titleLine1: "Privatchauffeur",
-          titleLine2: "mit Prestige",
+          titleLine2: "Premium",
           subtitle:
-            "Hochwertiger Transport für Events, Hochzeiten und Abendveranstaltungen.",
+            "Premium-Transport für Events, Hochzeiten und Abendveranstaltungen.",
           bookingButton: "Buchen",
           contactButton: "Kontaktieren Sie uns",
           imageAlt: "CBM Privatchauffeur"
@@ -996,7 +996,7 @@ const resources = {
           passengersPlaceholder: "1",
           luggagePlaceholder: "0",
           namePlaceholder: "Ihr Name",
-          phonePlaceholder: "+33 6 00 00 00 00",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "ihre@email.com",
           detailsPlaceholder:
             "Fügen Sie hier alle nützlichen Informationen hinzu: Flugnummer, Wartezeit, Rückfahrt, besondere Anforderungen...",
@@ -1028,7 +1028,7 @@ const resources = {
           premiumService: {
             title: "Premium-Service",
             text:
-              "Professionelle Chauffeure, hochwertige Fahrzeuge und diskrete Begleitung für ein einwandfreies Erlebnis."
+              "Professionelle Chauffeure, Premium-Fahrzeuge und diskrete Begleitung für ein einwandfreies Erlebnis."
           }
         }
       },
@@ -1038,7 +1038,7 @@ const resources = {
           titleLine1: "Der Anspruch an einen Service",
           titleLine2: "vom Vater an den Sohn weitergegeben",
           text:
-            "CBM ist ein Familienunternehmen, das sich auf hochwertigen Privattransport spezialisiert hat. Seit mehr als 20 Jahren stellen wir unsere Erfahrung, unsere Genauigkeit und unser Serviceverständnis einer anspruchsvollen Kundschaft zur Verfügung, die Komfort, Diskretion und Zuverlässigkeit sucht."
+            "CBM ist ein Familienunternehmen, das sich auf Premium-Privattransport spezialisiert hat. Seit mehr als 20 Jahren stellen wir unsere Erfahrung, unsere Genauigkeit und unser Serviceverständnis einer anspruchsvollen Kundschaft zur Verfügung, die Komfort, Diskretion und Zuverlässigkeit sucht."
         },
         story: {
           title: "Eine Familiengeschichte",
@@ -1059,7 +1059,7 @@ const resources = {
           premium: {
             title: "Ein Premium-Service",
             text:
-              "Wir stellen hochwertige Fahrzeuge mit Chauffeur zur Verfügung, um ein komfortables, elegantes Transporterlebnis zu garantieren, das perfekt auf private und geschäftliche Kunden abgestimmt ist."
+              "Wir stellen Premium-Fahrzeuge mit Chauffeur zur Verfügung, um ein komfortables, elegantes Transporterlebnis zu garantieren, das perfekt auf private und geschäftliche Kunden abgestimmt ist."
           }
         },
         values: {
@@ -1088,9 +1088,9 @@ const resources = {
         text1:
           "CBM stellt Ihnen eine Premium-Flotte zur Verfügung, die ausgewählt wurde, um die Erwartungen einer Kundschaft zu erfüllen, die Komfort, Diskretion und exzellenten Service sucht.",
         text2:
-          "Ob Privattransfer, Bereitstellung, Veranstaltung oder Geschäftsreise - unsere Fahrzeuge bieten ein hochwertiges Erlebnis mit Chauffeur.",
+          "Ob Privattransfer, Bereitstellung, Veranstaltung oder Geschäftsreise - unsere Fahrzeuge bieten ein Premium-Erlebnis mit Chauffeur.",
         text3:
-          "Unsere Auswahl umfasst prestigeträchtige Limousinen, luxuriöse Vans und ikonische SUVs, perfekt geeignet für jede Art von Fahrt.",
+          "Unsere Auswahl umfasst Premium-Limousinen, Premium-Vans und ikonische SUVs, perfekt geeignet für jede Art von Fahrt.",
         vehicles: {
           mercedesSE: {
             alt: "Mercedes S-Klasse oder E-Klasse",
@@ -1107,15 +1107,15 @@ const resources = {
             alt: "Range Rover",
             title: "Range Rover",
             text:
-              "Ein hochwertiger SUV, der Prestige, Platz und absoluten Komfort vereint."
+              "Ein Premium-SUV, der Prestige, Platz und absoluten Komfort vereint."
           }
         }
       },
       servicesPage: {
         hero: {
           eyebrow: "Unsere Leistungen",
-          titleLine1: "Ein Service",
-          titleLine2: "der Extraklasse",
+          titleLine1: "Ein",
+          titleLine2: "Premium-Service",
           text:
             "CBM bietet Ihnen einen Premium-Privatchauffeurservice für all Ihre Fahrten in Frankreich und Europa - mit Diskretion, Pünktlichkeit und höchstem Qualitätsanspruch."
         },
@@ -1128,7 +1128,7 @@ const resources = {
           availability: {
             title: "Bereitstellung",
             description:
-              "Ein privater Chauffeur und ein hochwertiges Fahrzeug stehen Ihnen mehrere Stunden oder einen ganzen Tag zur Verfügung."
+              "Ein privater Chauffeur und ein Premium-Fahrzeug stehen Ihnen mehrere Stunden oder einen ganzen Tag zur Verfügung."
           },
           excursions: {
             title: "Ausflüge in Frankreich und Europa",
@@ -1149,7 +1149,7 @@ const resources = {
         highlight: {
           title: "Maßgeschneiderte Begleitung",
           text:
-            "Jede Leistung ist darauf ausgelegt, die Erwartungen einer Kundschaft zu erfüllen, die zuverlässigen, komfortablen und stilvollen Transport sucht. Ob Transfer, ein ganzer Tag mit Terminen, ein privater Ausflug oder ein wichtiges Ereignis - CBM stellt Ihnen Prestige-Fahrzeuge mit Chauffeur zur Verfügung.",
+            "Jede Leistung ist darauf ausgelegt, die Erwartungen einer Kundschaft zu erfüllen, die zuverlässigen, komfortablen und stilvollen Transport sucht. Ob Transfer, ein ganzer Tag mit Terminen, ein privater Ausflug oder ein wichtiges Ereignis - CBM stellt Ihnen Premium-Fahrzeuge mit Chauffeur zur Verfügung.",
           bookingButton: "Buchen",
           contactButton: "Kontaktieren Sie uns"
         }
@@ -1166,7 +1166,7 @@ const resources = {
         },
         form: {
           namePlaceholder: "Name",
-          phonePlaceholder: "Telefon",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "E-Mail",
           messagePlaceholder: "Nachricht",
           submitButton: "Senden"
@@ -1206,7 +1206,7 @@ const resources = {
       },
       hero: {
         title: "บริการรถรับส่งส่วนตัวระดับพรีเมียม",
-        subtitle: "ประสบการณ์ระดับสูงพร้อมพนักงานขับรถส่วนตัว",
+        subtitle: "ประสบการณ์ระดับพรีเมียมพร้อมพนักงานขับรถส่วนตัว",
         cta: "จองตอนนี้"
       },
       services: {
@@ -1220,7 +1220,7 @@ const resources = {
           titleLine1: "คนขับรถส่วนตัว",
           titleLine2: "ระดับพรีเมียม",
           subtitle:
-            "บริการเดินทางระดับสูงสำหรับงานอีเวนต์ งานแต่งงาน และโอกาสพิเศษ",
+            "บริการเดินทางระดับพรีเมียมสำหรับงานอีเวนต์ งานแต่งงาน และโอกาสพิเศษ",
           bookingButton: "จอง",
           contactButton: "ติดต่อเรา",
           imageAlt: "คนขับรถส่วนตัว CBM"
@@ -1292,7 +1292,7 @@ const resources = {
           passengersPlaceholder: "1",
           luggagePlaceholder: "0",
           namePlaceholder: "ชื่อของคุณ",
-          phonePlaceholder: "+33 6 00 00 00 00",
+          phonePlaceholder: "๐๖ ๖๗ ๘๖ ๒๗ ๒๘",
           emailPlaceholder: "your@email.com",
           detailsPlaceholder:
             "เพิ่มรายละเอียดที่เป็นประโยชน์ได้ที่นี่: หมายเลขเที่ยวบิน เวลารอ ขากลับ ความต้องการเฉพาะ...",
@@ -1324,7 +1324,7 @@ const resources = {
           premiumService: {
             title: "บริการพรีเมียม",
             text:
-              "คนขับมืออาชีพ รถระดับสูง และการดูแลอย่างเป็นส่วนตัวเพื่อประสบการณ์ที่ไร้ที่ติ"
+              "คนขับมืออาชีพ รถพรีเมียม และการดูแลอย่างเป็นส่วนตัวเพื่อประสบการณ์ที่ไร้ที่ติ"
           }
         }
       },
@@ -1334,7 +1334,7 @@ const resources = {
           titleLine1: "มาตรฐานของการบริการ",
           titleLine2: "ที่ส่งต่อจากพ่อสู่ลูก",
           text:
-            "CBM เป็นธุรกิจครอบครัวที่เชี่ยวชาญด้านบริการรถรับส่งส่วนตัวระดับสูง มากกว่า 20 ปีที่เราได้นำประสบการณ์ ความพิถีพิถัน และจิตวิญญาณแห่งการบริการมอบให้แก่ลูกค้าที่ต้องการความสะดวกสบาย ความเป็นส่วนตัว และความน่าเชื่อถือ"
+            "CBM เป็นธุรกิจครอบครัวที่เชี่ยวชาญด้านบริการรถรับส่งส่วนตัวระดับพรีเมียม มากกว่า 20 ปีที่เราได้นำประสบการณ์ ความพิถีพิถัน และจิตวิญญาณแห่งการบริการมอบให้แก่ลูกค้าที่ต้องการความสะดวกสบาย ความเป็นส่วนตัว และความน่าเชื่อถือ"
         },
         story: {
           title: "เรื่องราวของครอบครัว",
@@ -1355,7 +1355,7 @@ const resources = {
           premium: {
             title: "บริการระดับพรีเมียม",
             text:
-              "เราจัดเตรียมรถระดับสูงพร้อมคนขับ เพื่อรับประกันประสบการณ์การเดินทางที่สะดวกสบาย สง่างาม และเหมาะสมอย่างยิ่งสำหรับทั้งลูกค้าส่วนตัวและลูกค้าองค์กร"
+              "เราจัดเตรียมรถพรีเมียมพร้อมคนขับ เพื่อรับประกันประสบการณ์การเดินทางที่สะดวกสบาย สง่างาม และเหมาะสมอย่างยิ่งสำหรับทั้งลูกค้าส่วนตัวและลูกค้าองค์กร"
           }
         },
         values: {
@@ -1384,9 +1384,9 @@ const resources = {
         text1:
           "CBM ให้บริการรถระดับพรีเมียมที่ได้รับการคัดสรร เพื่อตอบโจทย์ลูกค้าที่มองหาความสะดวกสบาย ความเป็นส่วนตัว และความเป็นเลิศด้านการบริการ",
         text2:
-          "ไม่ว่าจะเป็นการรับส่งส่วนตัว การให้บริการพร้อมรถและคนขับ งานอีเวนต์ หรือการเดินทางเพื่อธุรกิจ รถของเรามอบประสบการณ์ระดับสูงพร้อมคนขับ",
+          "ไม่ว่าจะเป็นการรับส่งส่วนตัว การให้บริการพร้อมรถและคนขับ งานอีเวนต์ หรือการเดินทางเพื่อธุรกิจ รถของเรามอบประสบการณ์ระดับพรีเมียมพร้อมคนขับ",
         text3:
-          "เราคัดสรรทั้งรถซีดานหรู รถแวนระดับลักชัวรี และ SUV ระดับไอคอน ที่เหมาะกับการเดินทางทุกรูปแบบ",
+          "เราคัดสรรทั้งรถซีดานพรีเมียม รถแวนพรีเมียม และ SUV ระดับไอคอน ที่เหมาะกับการเดินทางทุกรูปแบบ",
         vehicles: {
           mercedesSE: {
             alt: "Mercedes Classe S หรือ Classe E",
@@ -1403,7 +1403,7 @@ const resources = {
             alt: "Range Rover",
             title: "Range Rover",
             text:
-              "SUV ระดับสูงที่ผสานความสง่างาม พื้นที่ใช้สอย และความสบายอย่างเต็มที่"
+              "SUV ระดับพรีเมียมที่ผสานความสง่างาม พื้นที่ใช้สอย และความสบายอย่างเต็มที่"
           }
         }
       },
@@ -1424,7 +1424,7 @@ const resources = {
           availability: {
             title: "บริการพร้อมรถและคนขับ",
             description:
-              "คนขับส่วนตัวและรถระดับสูงพร้อมให้บริการคุณหลายชั่วโมงหรือทั้งวัน"
+              "คนขับส่วนตัวและรถพรีเมียมพร้อมให้บริการคุณหลายชั่วโมงหรือทั้งวัน"
           },
           excursions: {
             title: "ทริปในฝรั่งเศสและยุโรป",
@@ -1445,7 +1445,7 @@ const resources = {
         highlight: {
           title: "การดูแลแบบเฉพาะคุณ",
           text:
-            "ทุกบริการได้รับการออกแบบเพื่อตอบโจทย์ลูกค้าที่ต้องการการเดินทางที่เชื่อถือได้ สะดวกสบาย และหรูหรา ไม่ว่าจะเป็นการรับส่ง วันนัดหมายส่วนตัว ทริปส่วนตัว หรืออีเวนต์สำคัญ CBM พร้อมมอบรถหรูพร้อมคนขับให้คุณ",
+            "ทุกบริการได้รับการออกแบบเพื่อตอบโจทย์ลูกค้าที่ต้องการการเดินทางที่เชื่อถือได้ สะดวกสบาย และหรูหรา ไม่ว่าจะเป็นการรับส่ง วันนัดหมายส่วนตัว ทริปส่วนตัว หรืออีเวนต์สำคัญ CBM พร้อมมอบรถพรีเมียมพร้อมคนขับให้คุณ",
           bookingButton: "จอง",
           contactButton: "ติดต่อเรา"
         }
@@ -1462,7 +1462,7 @@ const resources = {
         },
         form: {
           namePlaceholder: "ชื่อ",
-          phonePlaceholder: "โทรศัพท์",
+          phonePlaceholder: "๐๖ ๖๗ ๘๖ ๒๗ ๒๘",
           emailPlaceholder: "อีเมล",
           messagePlaceholder: "ข้อความ",
           submitButton: "ส่ง"
@@ -1501,8 +1501,8 @@ const resources = {
         closeMenu: "关闭菜单"
       },
       hero: {
-        title: "高端私人出行服务",
-        subtitle: "尊享私人司机带来的高品质出行体验。",
+        title: "Premium 私人出行服务",
+        subtitle: "尊享私人司机带来的 Premium 出行体验。",
         cta: "立即预订"
       },
       services: {
@@ -1513,9 +1513,9 @@ const resources = {
       },
       home: {
         hero: {
-          titleLine1: "尊享",
+          titleLine1: "Premium",
           titleLine2: "私人司机服务",
-          subtitle: "为活动、婚礼、晚宴等提供高端出行服务。",
+          subtitle: "为活动、婚礼、晚宴等提供 Premium 出行服务。",
           bookingButton: "预订",
           contactButton: "联系我们",
           imageAlt: "CBM 私人司机"
@@ -1561,7 +1561,7 @@ const resources = {
             "只需片刻即可完成您的行程预订。CBM 为您的私人接送、商务出行、活动、婚礼和包车服务提供支持。",
           highlights: {
             availability: "可预约服务",
-            premium: "低调高端服务",
+            premium: "低调的 Premium 服务",
             customLabel: "定制化",
             customText: "根据您的需求提供服务"
           }
@@ -1587,7 +1587,7 @@ const resources = {
           passengersPlaceholder: "1",
           luggagePlaceholder: "0",
           namePlaceholder: "您的姓名",
-          phonePlaceholder: "+33 6 00 00 00 00",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "your@email.com",
           detailsPlaceholder:
             "请在此补充任何有用信息：航班号、等待时间、返程、特殊需求……",
@@ -1617,9 +1617,9 @@ const resources = {
               "我们的团队会迅速处理您的需求，并尽快为您提供合适的解决方案。"
           },
           premiumService: {
-            title: "高端服务",
+            title: "Premium 服务",
             text:
-              "专业司机、高端车辆以及低调贴心的陪同服务，为您带来无可挑剔的体验。"
+              "专业司机、Premium 车辆以及低调贴心的陪同服务，为您带来无可挑剔的体验。"
           }
         }
       },
@@ -1629,7 +1629,7 @@ const resources = {
           titleLine1: "一份服务的高标准",
           titleLine2: "由父传子，代代相承",
           text:
-            "CBM 是一家专注于高端私人出行的家族企业。二十多年来，我们始终以丰富经验、严谨态度和服务精神，服务于追求舒适、私密与可靠性的高要求客户。"
+            "CBM 是一家专注于 Premium 私人出行的家族企业。二十多年来，我们始终以丰富经验、严谨态度和服务精神，服务于追求舒适、私密与可靠性的高要求客户。"
         },
         story: {
           title: "一个家族的故事",
@@ -1648,9 +1648,9 @@ const resources = {
               "我们以坚定的价值观建立了 CBM：信任、认真、随时响应以及个性化陪伴。正是这种家族特质，让我们能够为每一项需求提供更有人情味且细致周到的服务。"
           },
           premium: {
-            title: "高端服务",
+            title: "Premium 服务",
             text:
-              "我们提供配备司机的高端车辆，为私人客户和商务客户带来舒适、优雅且高度契合需求的出行体验。"
+              "我们提供配备司机的 Premium 车辆，为私人客户和商务客户带来舒适、优雅且高度契合需求的出行体验。"
           }
         },
         values: {
@@ -1674,16 +1674,16 @@ const resources = {
         titleLine1: "非凡",
         titleLine2: "座驾",
         text1:
-          "CBM 为您提供精心挑选的高端车队，满足追求舒适、私密性与卓越服务品质客户的需求。",
+          "CBM 为您提供精心挑选的 Premium 车队，满足追求舒适、私密性与卓越服务品质客户的需求。",
         text2:
-          "无论是私人接送、包车服务、活动出行还是商务行程，我们的车辆都能提供高端司机服务体验。",
+          "无论是私人接送、包车服务、活动出行还是商务行程，我们的车辆都能提供 Premium 司机服务体验。",
         text3:
-          "我们的车型涵盖豪华轿车、奢华商务车以及标志性 SUV，完美适配各种出行需求。",
+          "我们的车型涵盖 Premium 轿车、Premium 商务车以及标志性 SUV，完美适配各种出行需求。",
         vehicles: {
           mercedesSE: {
             alt: "奔驰 S 级或 E 级",
             title: "奔驰 S 级 / E 级",
-            text: "优雅轿车，适合您的高端接送与商务会面。"
+            text: "优雅轿车，适合您的 Premium 接送与商务会面。"
           },
           mercedesV: {
             alt: "奔驰 V 级",
@@ -1693,17 +1693,17 @@ const resources = {
           rangeRover: {
             alt: "揽胜",
             title: "Range Rover",
-            text: "高端 SUV，兼具气场、空间与极致舒适。"
+            text: "Premium SUV，兼具气场、空间与极致舒适。"
           }
         }
       },
       servicesPage: {
         hero: {
           eyebrow: "我们的服务",
-          titleLine1: "高端",
+          titleLine1: "Premium",
           titleLine2: "专属服务",
           text:
-            "CBM 为您在法国及欧洲的所有行程提供高端私人司机服务，兼具私密性、准时性与高品质标准。"
+            "CBM 为您在法国及欧洲的所有行程提供 Premium 私人司机服务，兼具私密性、准时性与高品质标准。"
         },
         list: {
           airportTransfers: {
@@ -1714,7 +1714,7 @@ const resources = {
           availability: {
             title: "包车服务",
             description:
-              "高端车辆与私人司机，可按数小时或全天为您服务。"
+              "Premium 车辆与私人司机，可按数小时或全天为您服务。"
           },
           excursions: {
             title: "法国及欧洲出游",
@@ -1735,7 +1735,7 @@ const resources = {
         highlight: {
           title: "量身定制的陪伴服务",
           text:
-            "每一项服务都旨在满足追求可靠、舒适与精致出行体验客户的期待。无论是接送服务、全天商务安排、私人出游还是重要活动，CBM 都可为您提供配备司机的高端礼宾车辆。",
+            "每一项服务都旨在满足追求可靠、舒适与精致出行体验客户的期待。无论是接送服务、全天商务安排、私人出游还是重要活动，CBM 都可为您提供 Premium 车辆与司机服务。",
           bookingButton: "预订",
           contactButton: "联系我们"
         }
@@ -1752,7 +1752,7 @@ const resources = {
         },
         form: {
           namePlaceholder: "姓名",
-          phonePlaceholder: "电话",
+          phonePlaceholder: "06 67 86 27 28",
           emailPlaceholder: "邮箱",
           messagePlaceholder: "留言",
           submitButton: "发送"
@@ -1766,7 +1766,7 @@ const resources = {
         }
       },
       footer: {
-        description: "为您的出行、活动和定制预订提供高端私人司机服务。",
+        description: "为您的出行、活动和定制预订提供 Premium 私人司机服务。",
         navigationTitle: "导航",
         contactTitle: "联系",
         availability: "全天候 24/7 为您提供服务",
