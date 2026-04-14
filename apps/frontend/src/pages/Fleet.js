@@ -74,7 +74,7 @@ function Fleet() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              L’excellence du transport haut de gamme
+              L’excellence du transport premium
             </motion.h1>
 
             <motion.p
@@ -135,7 +135,7 @@ function Fleet() {
                     <p className="fleet-card-mini__description">
                       Expérimentez l’excellence du transport avec notre Classe S.
                       Un service ultra premium alliant confort absolu, discrétion et
-                      prestations haut de gamme pour vos trajets les plus exigeants.
+                      prestations premium pour vos trajets les plus exigeants.
                     </p>
                   </>
                 ) : vehicle.id === "mercedesE" ? (
