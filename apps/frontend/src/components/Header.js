@@ -15,6 +15,7 @@ function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 150);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -28,50 +29,143 @@ function Header() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
-    return () => { document.body.style.overflow = "auto"; };
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [menuOpen]);
 
-  const getDesktopLinkClass = () => "header__link";
-  const getMobileLinkClass = () => "header__mobile-link";
+  const getDesktopLinkClass = ({ isActive }) =>
+    `header__link ${isActive ? "header__link--active" : ""}`;
+
+  const getMobileLinkClass = ({ isActive }) =>
+    `header__mobile-link ${isActive ? "header__mobile-link--active" : ""}`;
 
   return (
-    <header className={`header ${scrolled ? "header--scrolled" : "header--transparent"}`}>
+    <header
+      className={`header ${
+        scrolled ? "header--scrolled" : "header--transparent"
+      }`}
+    >
       <div className="header__container">
         <NavLink to="/" className="header__logo" onClick={closeMenu}>
-          <img src={logo} alt="CBM Services & Cars" className="header__logo-image" />
+          <img
+            src={logo}
+            alt="CBM Services & Cars"
+            className="header__logo-image"
+          />
         </NavLink>
 
         <nav className="header__nav">
-          <NavLink to="/" end className={getDesktopLinkClass}>{t("nav.home")}</NavLink>
-          <NavLink to="/a-propos" className={getDesktopLinkClass}>{t("nav.about")}</NavLink>
-          <NavLink to="/services" className={getDesktopLinkClass}>{t("nav.services")}</NavLink>
-          <NavLink to="/flotte" className={getDesktopLinkClass}>{t("nav.fleet")}</NavLink>
-          <NavLink to="/reservation" className={getDesktopLinkClass}>{t("nav.booking")}</NavLink>
-          <NavLink to="/contact" className={getDesktopLinkClass}>{t("nav.contact")}</NavLink>
-          <div className="header__languages"><LanguageSwitcher /></div>
+          <NavLink to="/" end className={getDesktopLinkClass}>
+            {t("nav.home")}
+          </NavLink>
+          <NavLink to="/a-propos" className={getDesktopLinkClass}>
+            {t("nav.about")}
+          </NavLink>
+          <NavLink to="/services" className={getDesktopLinkClass}>
+            {t("nav.services")}
+          </NavLink>
+          <NavLink to="/flotte" className={getDesktopLinkClass}>
+            {t("nav.fleet")}
+          </NavLink>
+          <NavLink to="/reservation" className={getDesktopLinkClass}>
+            {t("nav.booking")}
+          </NavLink>
+          <NavLink to="/contact" className={getDesktopLinkClass}>
+            {t("nav.contact")}
+          </NavLink>
+
+          <div className="header__languages">
+            <LanguageSwitcher />
+          </div>
         </nav>
 
         {!menuOpen && (
-          <button className="header__burger" type="button" onClick={toggleMenu}>
-            <span></span><span></span><span></span>
+          <button
+            className="header__burger"
+            type="button"
+            onClick={toggleMenu}
+            aria-label={t("header.openMenu")}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         )}
       </div>
 
-      <div className={`header__mobile-menu ${menuOpen ? "header__mobile-menu--open" : ""}`}>
+      <div
+        className={`header__mobile-menu ${
+          menuOpen ? "header__mobile-menu--open" : ""
+        }`}
+      >
         <div className="header__mobile-top">
-          <NavLink to="/" className="header__mobile-logo" onClick={closeMenu}>
-            <img src={logo} alt="CBM" className="header__mobile-logo-image" />
-          </NavLink>
-          <button className="header__mobile-close" type="button" onClick={closeMenu}>×</button>
+          <button
+            className="header__mobile-close"
+            type="button"
+            onClick={closeMenu}
+            aria-label={t("header.closeMenu")}
+          >
+            ×
+          </button>
         </div>
-        <nav className="header__mobile-nav">
-          <NavLink to="/" end className={getMobileLinkClass} onClick={closeMenu}>{t("nav.home")}</NavLink>
-          <NavLink to="/a-propos" className={getMobileLinkClass} onClick={closeMenu}>{t("nav.about")}</NavLink>
-          <NavLink to="/services" className={getMobileLinkClass} onClick={closeMenu}>{t("nav.services")}</NavLink>
-          <NavLink to="/flotte" className={getMobileLinkClass} onClick={closeMenu}>{t("nav.fleet")}</NavLink>
-          <NavLink to="/reservation" className={getMobileLinkClass} onClick={closeMenu}>{t("nav.booking")}</NavLink>
-          <NavLink to="/contact" className={getMobileLinkClass} onClick={closeMenu}>{t("nav.contact")}</NavLink>
+
+        <nav id="mobile-navigation" className="header__mobile-nav">
+          <NavLink
+            to="/"
+            end
+            className={getMobileLinkClass}
+            onClick={closeMenu}
+          >
+            {t("nav.home")}
+          </NavLink>
+
+          <NavLink
+            to="/a-propos"
+            className={getMobileLinkClass}
+            onClick={closeMenu}
+          >
+            {t("nav.about")}
+          </NavLink>
+
+          <NavLink
+            to="/services"
+            className={getMobileLinkClass}
+            onClick={closeMenu}
+          >
+            {t("nav.services")}
+          </NavLink>
+
+          <NavLink
+            to="/flotte"
+            className={getMobileLinkClass}
+            onClick={closeMenu}
+          >
+            {t("nav.fleet")}
+          </NavLink>
+
+          <NavLink
+            to="/reservation"
+            className={getMobileLinkClass}
+            onClick={closeMenu}
+          >
+            {t("nav.booking")}
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={getMobileLinkClass}
+            onClick={closeMenu}
+          >
+            {t("nav.contact")}
+          </NavLink>
+
+          <div className="header__mobile-languages">
+            <LanguageSwitcher />
+          </div>
         </nav>
       </div>
     </header>
