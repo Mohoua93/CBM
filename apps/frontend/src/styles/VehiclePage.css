@@ -1,0 +1,90 @@
+/* VehiclePage.css */
+
+.vehicle-page {
+  padding-top: 80px; /* Espace pour le header du site */
+  color: #fff;
+  background-color: #0a0a0a; /* Fond très sombre */
+}
+
+.vehicle-page__header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.vehicle-page__header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.vehicle-page__header .subtitle {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+/* Style du Carrousel */
+.vehicle-page__carousel {
+  width: 100%;
+  max-width: 1200px; /* Optionnel : pour ne pas que ça prenne toute la largeur sur grand écran */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.carousel__img {
+  width: 100%;
+  height: 70vh; /* Hauteur immersive mais pas immense */
+  object-fit: cover; /* Recadre proprement */
+  border-radius: 8px;
+}
+
+/* Swiper navigation colors */
+.swiper-button-next, .swiper-button-prev {
+  color: #fff; /* Flèches blanches */
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+/* Style du Texte Structuré */
+.vehicle-page__content {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.descr-block {
+  margin-bottom: 40px;
+}
+
+.descr-block h2, .descr-block h3 {
+  color: #c9a063; /* Couleur OR/Premium pour les titres */
+  margin-bottom: 15px;
+}
+
+.descr-block h2 {
+  font-size: 2.2rem;
+}
+
+.descr-block p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.descr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.premium-highlight {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-left: 4px solid #c9a063;
+  border-radius: 4px;
+}
