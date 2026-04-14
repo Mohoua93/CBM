@@ -194,21 +194,25 @@ const resources = {
         }
       },
       fleetPage: {
-        eyebrow: "Notre flotte",
-        titleLine1: "Des véhicules",
-        titleLine2: "d’exception",
-        text1:
-          "CBM met à votre disposition une flotte premium sélectionnée pour répondre aux exigences d’une clientèle recherchant confort, discrétion et excellence de service.",
-        text2:
-          "Que ce soit pour un transfert privé, une mise à disposition, un événement ou un déplacement professionnel, nos véhicules offrent une expérience premium avec chauffeur.",
-        text3:
-          "Notre sélection comprend des berlines premium, des vans premium et des SUV emblématiques, parfaitement adaptés à tous types de trajets.",
+        hero: {
+          title: "L’excellence du transport premium",
+          subtitle:
+            "Découvrez une sélection de véhicules d’exception alliant élégance, confort et prestige pour chacun de vos trajets.",
+          cta: "Découvrir la flotte"
+        },
+        cta: "En savoir plus",
         vehicles: {
           mercedesSE: {
-            alt: "Mercedes Classe S ou Classe E",
-            title: "Mercedes Classe S / Classe E",
+            alt: "Mercedes Classe S",
+            title: "Class S",
             text:
-              "Berlines élégantes pour vos transferts et rendez-vous premium."
+              "Expérimentez l’excellence du transport avec notre Classe S. Un service ultra premium alliant confort absolu, discrétion et prestations haut de gamme pour vos trajets les plus exigeants."
+          },
+          mercedesE: {
+            alt: "Mercedes Classe E",
+            title: "Class E",
+            text:
+              "Une solution premium idéale pour vos déplacements quotidiens. Profitez d’un confort supérieur et d’un service élégant."
           },
           mercedesV: {
             alt: "Mercedes Classe V",
@@ -490,26 +494,31 @@ const resources = {
         }
       },
       fleetPage: {
-        eyebrow: "Our fleet",
-        titleLine1: "Exceptional",
-        titleLine2: "vehicles",
-        text1:
-          "CBM provides you with a premium fleet selected to meet the expectations of clients seeking comfort, discretion, and excellence in service.",
-        text2:
-          "Whether for a private transfer, hourly service, an event, or a business trip, our vehicles offer a premium chauffeured experience.",
-        text3:
-          "Our selection includes premium sedans, premium vans, and iconic SUVs, perfectly suited to all types of journeys.",
+        hero: {
+          title: "The excellence of high-end transportation",
+          subtitle:
+            "Discover a selection of exceptional vehicles combining elegance, comfort and prestige for each of your journeys.",
+          cta: "Discover the fleet"
+        },
+        cta: "Learn more",
         vehicles: {
           mercedesSE: {
-            alt: "Mercedes S-Class or E-Class",
-            title: "Mercedes S-Class / E-Class",
+            alt: "Mercedes S-Class",
+            title: "S Class",
             text:
-              "Elegant sedans for your premium transfers and appointments."
+              "Experience transport excellence with our S Class. An ultra-premium service combining absolute comfort, discretion and high-end amenities for your most demanding journeys."
+          },
+          mercedesE: {
+            alt: "Mercedes E-Class",
+            title: "E Class",
+            text:
+              "An ideal premium solution for your daily trips. Enjoy superior comfort and elegant service while remaining more accessible than the S Class."
           },
           mercedesV: {
             alt: "Mercedes V-Class",
             title: "Mercedes V-Class",
-            text: "Ideal for groups, families, and business travel."
+            text:
+              "Ideal for groups, families, and business travel."
           },
           rangeRover: {
             alt: "Range Rover",
@@ -786,26 +795,31 @@ const resources = {
         }
       },
       fleetPage: {
-        eyebrow: "Filomuz",
-        titleLine1: "Olağanüstü",
-        titleLine2: "araçlar",
-        text1:
-          "CBM, konfor, gizlilik ve hizmette mükemmellik arayan seçkin müşterilerin beklentilerini karşılamak için özenle seçilmiş premium bir filo sunar.",
-        text2:
-          "İster özel transfer, ister araç tahsisi, etkinlik ya da iş seyahati olsun, araçlarımız şoförlü premium bir deneyim sunar.",
-        text3:
-          "Seçkimiz; premium sedanlar, premium vanlar ve ikonik SUV modellerinden oluşur ve her türlü yolculuk için mükemmel şekilde uygundur.",
+        hero: {
+          title: "Üst düzey ulaşımın mükemmelliği",
+          subtitle:
+            "Her yolculuğunuz için zarafet, konfor ve prestiji bir araya getiren seçkin araçlarımızı keşfedin.",
+          cta: "Filoyu keşfedin"
+        },
+        cta: "Daha fazla bilgi",
         vehicles: {
           mercedesSE: {
-            alt: "Mercedes S Serisi veya E Serisi",
-            title: "Mercedes S Serisi / E Serisi",
+            alt: "Mercedes S Serisi",
+            title: "S Serisi",
             text:
-              "Premium transferleriniz ve randevularınız için zarif sedanlar."
+              "S Serisi ile ulaşımın en seçkin halini deneyimleyin. En zorlu yolculuklarınız için mutlak konfor, gizlilik ve üst düzey hizmet sunan ultra premium bir deneyim."
+          },
+          mercedesE: {
+            alt: "Mercedes E Serisi",
+            title: "E Serisi",
+            text:
+              "Günlük yolculuklarınız için ideal premium çözüm. S Serisi’nden daha erişilebilir kalırken üstün konfor ve zarif hizmetin keyfini çıkarın."
           },
           mercedesV: {
             alt: "Mercedes V Serisi",
             title: "Mercedes V Serisi",
-            text: "Gruplar, aileler ve iş seyahatleri için idealdir."
+            text:
+              "Gruplar, aileler ve iş seyahatleri için idealdir."
           },
           rangeRover: {
             alt: "Range Rover",
@@ -1082,26 +1096,31 @@ const resources = {
         }
       },
       fleetPage: {
-        eyebrow: "Unsere Flotte",
-        titleLine1: "Außergewöhnliche",
-        titleLine2: "Fahrzeuge",
-        text1:
-          "CBM stellt Ihnen eine Premium-Flotte zur Verfügung, die ausgewählt wurde, um die Erwartungen einer Kundschaft zu erfüllen, die Komfort, Diskretion und exzellenten Service sucht.",
-        text2:
-          "Ob Privattransfer, Bereitstellung, Veranstaltung oder Geschäftsreise - unsere Fahrzeuge bieten ein Premium-Erlebnis mit Chauffeur.",
-        text3:
-          "Unsere Auswahl umfasst Premium-Limousinen, Premium-Vans und ikonische SUVs, perfekt geeignet für jede Art von Fahrt.",
+        hero: {
+          title: "Die Exzellenz des gehobenen Transports",
+          subtitle:
+            "Entdecken Sie eine Auswahl außergewöhnlicher Fahrzeuge, die Eleganz, Komfort und Prestige für jede Ihrer Fahrten vereinen.",
+          cta: "Die Flotte entdecken"
+        },
+        cta: "Mehr erfahren",
         vehicles: {
           mercedesSE: {
-            alt: "Mercedes S-Klasse oder E-Klasse",
-            title: "Mercedes S-Klasse / E-Klasse",
+            alt: "Mercedes S-Klasse",
+            title: "S-Klasse",
             text:
-              "Elegante Limousinen für Ihre Premium-Transfers und Termine."
+              "Erleben Sie Transport auf höchstem Niveau mit unserer S-Klasse. Ein ultra-premium Service mit absolutem Komfort, Diskretion und exklusiven Leistungen für Ihre anspruchsvollsten Fahrten."
+          },
+          mercedesE: {
+            alt: "Mercedes E-Klasse",
+            title: "E-Klasse",
+            text:
+              "Eine ideale Premium-Lösung für Ihre täglichen Fahrten. Genießen Sie hohen Komfort und eleganten Service, während sie zugänglicher als die S-Klasse bleibt."
           },
           mercedesV: {
             alt: "Mercedes V-Klasse",
             title: "Mercedes V-Klasse",
-            text: "Ideal für Gruppen, Familien und Geschäftsreisen."
+            text:
+              "Ideal für Gruppen, Familien und Geschäftsreisen."
           },
           rangeRover: {
             alt: "Range Rover",
@@ -1378,26 +1397,31 @@ const resources = {
         }
       },
       fleetPage: {
-        eyebrow: "รถของเรา",
-        titleLine1: "รถระดับ",
-        titleLine2: "พรีเมียม",
-        text1:
-          "CBM ให้บริการรถระดับพรีเมียมที่ได้รับการคัดสรร เพื่อตอบโจทย์ลูกค้าที่มองหาความสะดวกสบาย ความเป็นส่วนตัว และความเป็นเลิศด้านการบริการ",
-        text2:
-          "ไม่ว่าจะเป็นการรับส่งส่วนตัว การให้บริการพร้อมรถและคนขับ งานอีเวนต์ หรือการเดินทางเพื่อธุรกิจ รถของเรามอบประสบการณ์ระดับพรีเมียมพร้อมคนขับ",
-        text3:
-          "เราคัดสรรทั้งรถซีดานพรีเมียม รถแวนพรีเมียม และ SUV ระดับไอคอน ที่เหมาะกับการเดินทางทุกรูปแบบ",
+        hero: {
+          title: "ความเป็นเลิศของบริการเดินทางระดับสูง",
+          subtitle:
+            "ค้นพบรถระดับพรีเมียมที่ผสานความสง่างาม ความสบาย และภาพลักษณ์อันโดดเด่นในทุกการเดินทางของคุณ",
+          cta: "ดูรถของเรา"
+        },
+        cta: "ดูเพิ่มเติม",
         vehicles: {
           mercedesSE: {
-            alt: "Mercedes Classe S หรือ Classe E",
-            title: "Mercedes Classe S / Classe E",
+            alt: "Mercedes S-Class",
+            title: "S Class",
             text:
-              "รถซีดานหรูสำหรับการรับส่งและนัดหมายระดับพรีเมียมของคุณ"
+              "สัมผัสความเป็นเลิศของการเดินทางกับ S Class ของเรา บริการ ultra premium ที่รวมความสบายสูงสุด ความเป็นส่วนตัว และการบริการระดับสูงสำหรับทุกเส้นทางสำคัญของคุณ"
+          },
+          mercedesE: {
+            alt: "Mercedes E-Class",
+            title: "E Class",
+            text:
+              "ทางเลือก premium ที่เหมาะสำหรับการเดินทางประจำวันของคุณ เพลิดเพลินกับความสบายที่เหนือกว่าและบริการที่หรูหรา ในระดับที่เข้าถึงได้มากกว่า S Class"
           },
           mercedesV: {
-            alt: "Mercedes Classe V",
-            title: "Mercedes Classe V",
-            text: "เหมาะสำหรับกลุ่ม ครอบครัว และการเดินทางเพื่อธุรกิจ"
+            alt: "Mercedes V-Class",
+            title: "Mercedes V-Class",
+            text:
+              "เหมาะสำหรับกลุ่ม ครอบครัว และการเดินทางเพื่อธุรกิจ"
           },
           rangeRover: {
             alt: "Range Rover",
@@ -1670,30 +1694,37 @@ const resources = {
         }
       },
       fleetPage: {
-        eyebrow: "我们的车队",
-        titleLine1: "非凡",
-        titleLine2: "座驾",
-        text1:
-          "CBM 为您提供精心挑选的 Premium 车队，满足追求舒适、私密性与卓越服务品质客户的需求。",
-        text2:
-          "无论是私人接送、包车服务、活动出行还是商务行程，我们的车辆都能提供 Premium 司机服务体验。",
-        text3:
-          "我们的车型涵盖 Premium 轿车、Premium 商务车以及标志性 SUV，完美适配各种出行需求。",
+        hero: {
+          title: "高端出行的卓越体验",
+          subtitle:
+            "探索一系列兼具优雅、舒适与尊贵感的非凡车型，满足您的每一次出行需求。",
+          cta: "探索车队"
+        },
+        cta: "了解更多",
         vehicles: {
           mercedesSE: {
-            alt: "奔驰 S 级或 E 级",
-            title: "奔驰 S 级 / E 级",
-            text: "优雅轿车，适合您的 Premium 接送与商务会面。"
+            alt: "奔驰 S 级",
+            title: "S Class",
+            text:
+              "体验我们的 S Class 所带来的卓越出行服务。为您最重要的行程提供极致舒适、私密性与高端礼遇的 ultra premium 体验。"
+          },
+          mercedesE: {
+            alt: "奔驰 E 级",
+            title: "E Class",
+            text:
+              "适合日常出行的理想 premium 方案。在比 S Class 更易接近的定位下，依然享受更高舒适度与优雅服务。"
           },
           mercedesV: {
             alt: "奔驰 V 级",
-            title: "奔驰 V 级",
-            text: "非常适合团体、家庭和商务出行。"
+            title: "Mercedes V-Class",
+            text:
+              "非常适合团体、家庭和商务出行。"
           },
           rangeRover: {
             alt: "揽胜",
             title: "Range Rover",
-            text: "Premium SUV，兼具气场、空间与极致舒适。"
+            text:
+              "兼具气场、空间与极致舒适的 premium SUV。"
           }
         }
       },

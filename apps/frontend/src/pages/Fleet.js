@@ -6,7 +6,7 @@ import "../styles/Fleet.css";
 // Import des images
 import fleetHero from "../assets/fleet-hero.jpg";
 import mercedesS from "../assets/class-S.png";
-import mercedesE from "../assets/class-E.png";
+import mercedesE from "../assets/class-E-black.png";
 import mercedesV from "../assets/class-V.png";
 import rangeRover from "../assets/range-rover.png";
 
@@ -56,8 +56,6 @@ function Fleet() {
   return (
     <div className="fleet-page">
       <section className="fleet">
-
-        {/* HERO */}
         <motion.section
           className="fleet-hero"
           initial={{ opacity: 0, scale: 1.02 }}
@@ -74,7 +72,7 @@ function Fleet() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              L’excellence du transport premium
+              {t("fleetPage.hero.title")}
             </motion.h1>
 
             <motion.p
@@ -83,8 +81,7 @@ function Fleet() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 }}
             >
-              Découvrez une sélection de véhicules d’exception alliant
-              élégance, confort et prestige pour chacun de vos trajets.
+              {t("fleetPage.hero.subtitle")}
             </motion.p>
 
             <motion.div
@@ -94,13 +91,12 @@ function Fleet() {
               transition={{ delay: 0.6 }}
             >
               <a href="#fleet-grid" className="fleet-hero__btn">
-                Découvrir la flotte
+                {t("fleetPage.hero.cta")}
               </a>
             </motion.div>
           </div>
         </motion.section>
 
-        {/* GRID VEHICULES */}
         <motion.div
           id="fleet-grid"
           className="fleet__grid"
@@ -124,52 +120,21 @@ function Fleet() {
               </div>
 
               <div className="fleet-card-mini__content">
+                <h2 className="fleet-card-mini__title">
+                  {t(`fleetPage.vehicles.${vehicle.id}.title`)}
+                </h2>
 
-                {/* 🔥 PERSONNALISATION DES 2 PREMIÈRES CARDS */}
-                {vehicle.id === "mercedesSE" ? (
-                  <>
-                    <h2 className="fleet-card-mini__title">
-                      Class S
-                    </h2>
-
-                    <p className="fleet-card-mini__description">
-                      Expérimentez l’excellence du transport avec notre Classe S.
-                      Un service ultra premium alliant confort absolu, discrétion et
-                      prestations premium pour vos trajets les plus exigeants.
-                    </p>
-                  </>
-                ) : vehicle.id === "mercedesE" ? (
-                  <>
-                    <h2 className="fleet-card-mini__title">
-                      Class E
-                    </h2>
-
-                    <p className="fleet-card-mini__description">
-                      Une solution premium idéale pour vos déplacements quotidiens.
-                      Profitez d’un confort supérieur et d’un service élégant,
-                      tout en restant plus accessible que la Classe S.
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <h2 className="fleet-card-mini__title">
-                      {t(`fleetPage.vehicles.${vehicle.id}.title`)}
-                    </h2>
-
-                    <p className="fleet-card-mini__description">
-                      {t(`fleetPage.vehicles.${vehicle.id}.text`)}
-                    </p>
-                  </>
-                )}
+                <p className="fleet-card-mini__description">
+                  {t(`fleetPage.vehicles.${vehicle.id}.text`)}
+                </p>
 
                 <Link to={vehicle.path} className="btn-know-more">
-                  En savoir plus
+                  {t("fleetPage.cta")}
                 </Link>
               </div>
             </motion.article>
           ))}
         </motion.div>
-
       </section>
     </div>
   );
