@@ -10,6 +10,12 @@ import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import Greeter from "../pages/Greeter";
 
+// 🔽 IMPORT DES PAGES VÉHICULES
+import MercedesClasseS from "../pages/MercedesClasseS";
+import MercedesClasseE from "../pages/MercedesClasseE";
+import MercedesClasseV from "../pages/MercedesClasseV";
+import RangeRover from "../pages/RangeRover";
+
 import ScrollToTop from "../components/ScrollToTop";
 import IntroAnimation from "../components/IntroAnimation";
 
@@ -37,14 +43,23 @@ function AppRouter() {
       {showIntro && <IntroAnimation />}
 
       <Routes>
+        {/* ROUTES PRINCIPALES */}
         <Route path="/" element={<Home />} />
         <Route path="/a-propos" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/flotte" element={<Fleet />} />
         <Route path="/reservation" element={<Booking />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
         <Route path="/greeter" element={<Greeter />} />
+
+        {/* 🔽 ROUTES VÉHICULES */}
+        <Route path="/flotte/mercedes-classe-s" element={<MercedesClasseS />} />
+        <Route path="/flotte/mercedes-classe-e" element={<MercedesClasseE />} />
+        <Route path="/flotte/mercedes-classe-v" element={<MercedesClasseV />} />
+        <Route path="/flotte/range-rover" element={<RangeRover />} />
+
+        {/* 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
