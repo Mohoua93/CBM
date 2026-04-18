@@ -1,3 +1,4 @@
+
 import fleetHero from "../assets/fleet-hero.jpg";
 
 export const vehiclesData = {

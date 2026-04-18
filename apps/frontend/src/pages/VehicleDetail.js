@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import VehicleMarquee from "../components/VehicleMarquee";
 import "../styles/VehicleDetail.css";
