@@ -1,17 +1,46 @@
+import mercedesSHero from "../assets/class-s/2.jpeg";
+import mercedesS1 from "../assets/class-s/1.jpeg";
+import mercedesS2 from "../assets/class-s/2.jpeg";
+import mercedesS3 from "../assets/class-s/3.jpeg";
+import mercedesS4 from "../assets/class-s/4.jpeg";
+import mercedesS5 from "../assets/class-s/5.jpeg";
+import mercedesS6 from "../assets/class-s/6.jpeg";
 
-import fleetHero from "../assets/fleet-hero.jpg";
+
+import mercedesEHero from "../assets/class-e/4.jpeg";
+import mercedesE1 from "../assets/class-e/1.jpeg";
+import mercedesE2 from "../assets/class-e/2.jpeg";
+import mercedesE3 from "../assets/class-e/3.jpeg";
+import mercedesE4 from "../assets/class-e/4.jpeg"; 
+
+import mercedesVHero from "../assets/class-v/1.jpeg";
+import mercedesV1 from "../assets/class-v/1.jpeg";
+import mercedesV2 from "../assets/class-v/2.jpeg";
+import mercedesV3 from "../assets/class-v/3.jpeg";
+import mercedesV4 from "../assets/class-v/4.jpeg";
+
+import rangeRoverHero from "../assets/range-rover/5.jpeg";
+import rangeRover1 from "../assets/range-rover/1.jpeg";
+import rangeRover2 from "../assets/range-rover/2.jpeg";
+import rangeRover3 from "../assets/range-rover/3.jpeg";
+import rangeRover4 from "../assets/range-rover/4.jpeg";
+import rangeRover5 from "../assets/range-rover/5.jpeg";
+import rangeRover6 from "../assets/range-rover/6.jpeg";
 
 export const vehiclesData = {
   mercedesS: {
     name: "Mercedes Classe S",
     subtitle:
       "L’excellence absolue pour une clientèle exigeante en quête de prestige, de silence et d’élégance.",
-    image: fleetHero,
-    heroImage: fleetHero,
+    image: mercedesS1,
+    heroImage: mercedesSHero,
     gallery: [
-      { src: fleetHero, alt: "Mercedes Classe S vue 1" },
-      { src: fleetHero, alt: "Mercedes Classe S vue 2" },
-      { src: fleetHero, alt: "Mercedes Classe S vue 3" },
+      { src: mercedesS1, alt: "Mercedes Classe S vue 1" },
+      { src: mercedesS2, alt: "Mercedes Classe S vue 2" },
+      { src: mercedesS3, alt: "Mercedes Classe S vue 3" },
+      { src: mercedesS4, alt: "Mercedes Classe S vue 4" },
+      { src: mercedesS5, alt: "Mercedes Classe S vue 5" },
+      { src: mercedesS6, alt: "Mercedes Classe S vue 6" },
     ],
     beauty:
       "La Mercedes Classe S incarne le raffinement automobile dans sa forme la plus aboutie. Sa silhouette longue, fluide et majestueuse inspire immédiatement le respect. Chaque détail de son design a été pensé pour exprimer le prestige : une calandre imposante, des lignes épurées, une signature lumineuse sophistiquée et une allure qui conjugue puissance discrète et distinction naturelle. C’est un véhicule qui attire le regard sans jamais en faire trop, parfaitement adapté à un service haut de gamme.",
@@ -33,12 +62,13 @@ export const vehiclesData = {
     name: "Mercedes Classe E",
     subtitle:
       "L’équilibre parfait entre élégance, confort et discrétion pour les déplacements haut de gamme du quotidien.",
-    image: fleetHero,
-    heroImage: fleetHero,
+    image: mercedesE1,
+    heroImage: mercedesEHero,
     gallery: [
-      { src: fleetHero, alt: "Mercedes Classe E vue 1" },
-      { src: fleetHero, alt: "Mercedes Classe E vue 2" },
-      { src: fleetHero, alt: "Mercedes Classe E vue 3" },
+      { src: mercedesE1, alt: "Mercedes Classe E vue 1" },
+      { src: mercedesE2, alt: "Mercedes Classe E vue 2" },
+      { src: mercedesE3, alt: "Mercedes Classe E vue 3" },
+      { src: mercedesE4, alt: "Mercedes Classe E vue 4" },
     ],
     beauty:
       "La Mercedes Classe E séduit par son élégance sobre et moderne. Son design exprime immédiatement le sérieux, la distinction et la qualité allemande. Moins démonstrative qu’une limousine, elle conserve pourtant une allure statutaire très appréciée dans l’univers du transport premium. Sa ligne harmonieuse, son profil dynamique et sa présentation soignée en font une voiture à la fois chic, professionnelle et intemporelle.",
@@ -60,12 +90,13 @@ export const vehiclesData = {
     name: "Mercedes Classe V",
     subtitle:
       "Le van premium par excellence pour voyager en groupe sans compromis sur le confort et le standing.",
-    image: fleetHero,
-    heroImage: fleetHero,
+    image: mercedesV1,
+    heroImage: mercedesVHero,
     gallery: [
-      { src: fleetHero, alt: "Mercedes Classe V vue 1" },
-      { src: fleetHero, alt: "Mercedes Classe V vue 2" },
-      { src: fleetHero, alt: "Mercedes Classe V vue 3" },
+      { src: mercedesV1, alt: "Mercedes Classe V vue 1" },
+      { src: mercedesV2, alt: "Mercedes Classe V vue 2" },
+      { src: mercedesV3, alt: "Mercedes Classe V vue 3" },
+      { src: mercedesV4, alt: "Mercedes Classe V vue 4" },
     ],
     beauty:
       "La Mercedes Classe V redéfinit l’image du transport en van avec une esthétique moderne, valorisante et haut de gamme. Son design imposant, ses lignes soignées et sa finition premium lui permettent de se distinguer des véhicules utilitaires classiques. Elle renvoie une image sérieuse, élégante et parfaitement adaptée à un service de transport de luxe pour familles, groupes ou clientèle événementielle.",
@@ -87,12 +118,15 @@ export const vehiclesData = {
     name: "Range Rover",
     subtitle:
       "Le luxe SUV dans toute sa splendeur, entre présence, confort souverain et prestige assumé.",
-    image: fleetHero,
-    heroImage: fleetHero,
+    image: rangeRover1,
+    heroImage: rangeRoverHero,
     gallery: [
-      { src: fleetHero, alt: "Range Rover vue 1" },
-      { src: fleetHero, alt: "Range Rover vue 2" },
-      { src: fleetHero, alt: "Range Rover vue 3" },
+      { src: rangeRover1, alt: "Range Rover vue 1" },
+      { src: rangeRover2, alt: "Range Rover vue 2" },
+      { src: rangeRover3, alt: "Range Rover vue 3" },
+      { src: rangeRover4, alt: "Range Rover vue 4" },
+      { src: rangeRover5, alt: "Range Rover vue 5" },
+      { src: rangeRover6, alt: "Range Rover vue 6" },
     ],
     beauty:
       "Le Range Rover impose une signature visuelle unique. Son allure noble, puissante et contemporaine exprime immédiatement le luxe, la confiance et le caractère. Sa silhouette statutaire, ses proportions équilibrées et sa présence naturelle sur la route en font un véhicule particulièrement apprécié par une clientèle en quête d’exclusivité. Il dégage une image à la fois moderne, haut de gamme et prestigieuse.",
