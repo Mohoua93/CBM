@@ -1,63 +1,17 @@
-// =====================================================
-// IMPORTS HERO
-// 👉 Mets ici les images utilisées dans la section Hero
-// =====================================================
-
-// Exemple de structure recommandée :
-// import mercedesSHero from "../assets/class-s/hero.jpg";
-// import mercedesEHero from "../assets/class-e/hero.jpg";
-// import mercedesVHero from "../assets/class-v/hero.jpg";
-// import rangeRoverHero from "../assets/range-rover/hero.jpg";
-
-// Si tu n’as pas encore d’image hero dédiée, tu peux garder fleetHero temporairement
 import fleetHero from "../assets/fleet-hero.jpg";
-
-
-// =====================================================
-// IMPORTS CARROUSEL
-// 👉 Mets ici toutes les images qui doivent défiler dans le carousel
-// =====================================================
-
-// MERCEDES S
-// import mercedesS1 from "../assets/class-s/1.jpg";
-// import mercedesS2 from "../assets/class-s/2.jpg";
-// import mercedesS3 from "../assets/class-s/3.jpg";
-
-// MERCEDES E
-// import mercedesE1 from "../assets/class-e/1.jpg";
-// import mercedesE2 from "../assets/class-e/2.jpg";
-// import mercedesE3 from "../assets/class-e/3.jpg";
-
-// MERCEDES V
-// import mercedesV1 from "../assets/class-v/1.jpg";
-// import mercedesV2 from "../assets/class-v/2.jpg";
-// import mercedesV3 from "../assets/class-v/3.jpg";
-
-// RANGE ROVER
-// import rangeRover1 from "../assets/range-rover/1.jpg";
-// import rangeRover2 from "../assets/range-rover/2.jpg";
-// import rangeRover3 from "../assets/range-rover/3.jpg";
-
 
 export const vehiclesData = {
   mercedesS: {
     name: "Mercedes Classe S",
     subtitle:
       "L’excellence absolue pour une clientèle exigeante en quête de prestige, de silence et d’élégance.",
-    image: mercedesS,
-
-    // 👉 HERO :
-    // Remplace fleetHero par mercedesSHero quand tu auras importé l’image hero dédiée
+    image: fleetHero,
     heroImage: fleetHero,
-
-    // 👉 CARROUSEL :
-    // Remplace les images ci-dessous par tes vrais imports quand ils seront ajoutés en haut
     gallery: [
-      { src: mercedesS, alt: "Mercedes Classe S vue 1" },
-      { src: mercedesS, alt: "Mercedes Classe S vue 2" },
-      { src: mercedesS, alt: "Mercedes Classe S vue 3" },
+      { src: fleetHero, alt: "Mercedes Classe S vue 1" },
+      { src: fleetHero, alt: "Mercedes Classe S vue 2" },
+      { src: fleetHero, alt: "Mercedes Classe S vue 3" },
     ],
-
     beauty:
       "La Mercedes Classe S incarne le raffinement automobile dans sa forme la plus aboutie. Sa silhouette longue, fluide et majestueuse inspire immédiatement le respect. Chaque détail de son design a été pensé pour exprimer le prestige : une calandre imposante, des lignes épurées, une signature lumineuse sophistiquée et une allure qui conjugue puissance discrète et distinction naturelle. C’est un véhicule qui attire le regard sans jamais en faire trop, parfaitement adapté à un service haut de gamme.",
     comfort:
@@ -78,20 +32,13 @@ export const vehiclesData = {
     name: "Mercedes Classe E",
     subtitle:
       "L’équilibre parfait entre élégance, confort et discrétion pour les déplacements haut de gamme du quotidien.",
-    image: mercedesE,
-
-    // 👉 HERO :
-    // Remplace fleetHero par mercedesEHero quand tu auras importé l’image hero dédiée
+    image: fleetHero,
     heroImage: fleetHero,
-
-    // 👉 CARROUSEL :
-    // Remplace les images ci-dessous par tes vrais imports quand ils seront ajoutés en haut
     gallery: [
-      { src: mercedesE, alt: "Mercedes Classe E vue 1" },
-      { src: mercedesE, alt: "Mercedes Classe E vue 2" },
-      { src: mercedesE, alt: "Mercedes Classe E vue 3" },
+      { src: fleetHero, alt: "Mercedes Classe E vue 1" },
+      { src: fleetHero, alt: "Mercedes Classe E vue 2" },
+      { src: fleetHero, alt: "Mercedes Classe E vue 3" },
     ],
-
     beauty:
       "La Mercedes Classe E séduit par son élégance sobre et moderne. Son design exprime immédiatement le sérieux, la distinction et la qualité allemande. Moins démonstrative qu’une limousine, elle conserve pourtant une allure statutaire très appréciée dans l’univers du transport premium. Sa ligne harmonieuse, son profil dynamique et sa présentation soignée en font une voiture à la fois chic, professionnelle et intemporelle.",
     comfort:
@@ -112,20 +59,13 @@ export const vehiclesData = {
     name: "Mercedes Classe V",
     subtitle:
       "Le van premium par excellence pour voyager en groupe sans compromis sur le confort et le standing.",
-    image: mercedesV,
-
-    // 👉 HERO :
-    // Remplace fleetHero par mercedesVHero quand tu auras importé l’image hero dédiée
+    image: fleetHero,
     heroImage: fleetHero,
-
-    // 👉 CARROUSEL :
-    // Remplace les images ci-dessous par tes vrais imports quand ils seront ajoutés en haut
     gallery: [
-      { src: mercedesV, alt: "Mercedes Classe V vue 1" },
-      { src: mercedesV, alt: "Mercedes Classe V vue 2" },
-      { src: mercedesV, alt: "Mercedes Classe V vue 3" },
+      { src: fleetHero, alt: "Mercedes Classe V vue 1" },
+      { src: fleetHero, alt: "Mercedes Classe V vue 2" },
+      { src: fleetHero, alt: "Mercedes Classe V vue 3" },
     ],
-
     beauty:
       "La Mercedes Classe V redéfinit l’image du transport en van avec une esthétique moderne, valorisante et haut de gamme. Son design imposant, ses lignes soignées et sa finition premium lui permettent de se distinguer des véhicules utilitaires classiques. Elle renvoie une image sérieuse, élégante et parfaitement adaptée à un service de transport de luxe pour familles, groupes ou clientèle événementielle.",
     comfort:
@@ -146,20 +86,13 @@ export const vehiclesData = {
     name: "Range Rover",
     subtitle:
       "Le luxe SUV dans toute sa splendeur, entre présence, confort souverain et prestige assumé.",
-    image: rangeRover,
-
-    // 👉 HERO :
-    // Remplace fleetHero par rangeRoverHero quand tu auras importé l’image hero dédiée
+    image: fleetHero,
     heroImage: fleetHero,
-
-    // 👉 CARROUSEL :
-    // Remplace les images ci-dessous par tes vrais imports quand ils seront ajoutés en haut
     gallery: [
-      { src: rangeRover, alt: "Range Rover vue 1" },
-      { src: rangeRover, alt: "Range Rover vue 2" },
-      { src: rangeRover, alt: "Range Rover vue 3" },
+      { src: fleetHero, alt: "Range Rover vue 1" },
+      { src: fleetHero, alt: "Range Rover vue 2" },
+      { src: fleetHero, alt: "Range Rover vue 3" },
     ],
-
     beauty:
       "Le Range Rover impose une signature visuelle unique. Son allure noble, puissante et contemporaine exprime immédiatement le luxe, la confiance et le caractère. Sa silhouette statutaire, ses proportions équilibrées et sa présence naturelle sur la route en font un véhicule particulièrement apprécié par une clientèle en quête d’exclusivité. Il dégage une image à la fois moderne, haut de gamme et prestigieuse.",
     comfort:
