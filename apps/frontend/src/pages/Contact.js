@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../styles/Contact.css";
-import heroImage from "../assets/hero-vtc.png";
+import heroImage from "../assets/hero-contact.png";
 
 const API_URL =
   process.env.REACT_APP_API_URL || "https://api.cbmservicesandcar.fr";
@@ -140,132 +140,145 @@ function Contact() {
     }
   }
 
+  const heroStyle = {
+    backgroundImage: `url(${heroImage})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    width: "100%",
+  };
+
   return (
     <div className="contact-page">
-      <section className="contact-hero">
-        <div className="contact-hero__overlay"></div>
+      {/* HERO */}
+      <section className="contact-hero" style={heroStyle}>
+        <div className="contact-hero__overlay" />
 
         <div className="contact-hero__content">
           <h1>{t("contactPage.hero.title")}</h1>
-        </div>
-
-        <div className="contact-hero__media">
-          <img
-            src={heroImage}
-            alt={t("contactPage.hero.imageAlt")}
-            className="contact-hero__image"
-          />
+          <p>{t("contactPage.intro.text")}</p>
         </div>
       </section>
 
+      <div className="contact-divider contact-divider--hero-to-content" />
+
+      {/* CONTENT */}
       <section className="contact-section">
-        <div className="contact-card">
-          <div className="contact-card__intro">
-            <h2>{t("contactPage.intro.title")}</h2>
-            <p>{t("contactPage.intro.text")}</p>
-          </div>
-
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="contact-form__row contact-form__row--full">
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder={t("contactPage.form.namePlaceholder")}
-              />
+        <div className="contact-section__container">
+          <div className="contact-card">
+            <div className="contact-card__intro">
+              <h2>{t("contactPage.intro.title")}</h2>
+              <p>{t("contactPage.intro.text")}</p>
             </div>
 
-            <div className="contact-form__row">
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder={t("contactPage.form.phonePlaceholder")}
-              />
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder={t("contactPage.form.emailPlaceholder")}
-              />
+            <div className="contact-layout">
+              {/* FORMULAIRE */}
+              <div className="contact-form-wrapper">
+                <form className="contact-form" onSubmit={handleSubmit}>
+                  <div className="contact-form__row contact-form__row--full">
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder={t("contactPage.form.namePlaceholder")}
+                    />
+                  </div>
+
+                  <div className="contact-form__row">
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder={t("contactPage.form.phonePlaceholder")}
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder={t("contactPage.form.emailPlaceholder")}
+                    />
+                  </div>
+
+                  <div className="contact-form__row contact-form__row--full">
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder={t("contactPage.form.messagePlaceholder")}
+                      rows="8"
+                    />
+                  </div>
+
+                  {feedback.message && (
+                    <p
+                      className={`contact-form__feedback ${
+                        feedback.type === "success"
+                          ? "contact-form__feedback--success"
+                          : "contact-form__feedback--error"
+                      }`}
+                    >
+                      {feedback.message}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    className="contact-form__submit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting
+                      ? "Envoi en cours..."
+                      : t("contactPage.form.submitButton")}
+                  </button>
+                </form>
+              </div>
+
+              {/* INFOS */}
+              <div className="contact-info">
+                <article className="contact-info__block">
+                  <h3>{t("contactPage.info.title")}</h3>
+
+                  <div className="contact-info__item">
+                    <PhoneIcon />
+                    <a href="tel:+33780901234">+33 7 80 90 12 34</a>
+                  </div>
+
+                  <div className="contact-info__item">
+                    <MailIcon />
+                    <a href="mailto:contact@cbmservicesandcar.fr">
+                      contact@cbmservicesandcar.fr
+                    </a>
+                  </div>
+                </article>
+
+                <article className="contact-info__block">
+                  <h3>{t("contactPage.whatsapp.title")}</h3>
+
+                  <div className="contact-info__item">
+                    <WhatsAppIcon />
+                    <a
+                      href="https://wa.me/33780901234"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      +33 7 80 90 12 34
+                    </a>
+                  </div>
+
+                  <a
+                    href="https://wa.me/33780901234"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="contact-info__whatsapp-btn"
+                  >
+                    {t("contactPage.whatsapp.button")}
+                  </a>
+                </article>
+              </div>
             </div>
-
-            <div className="contact-form__row contact-form__row--full">
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder={t("contactPage.form.messagePlaceholder")}
-                rows="8"
-              ></textarea>
-            </div>
-
-            {feedback.message && (
-              <p
-                className={`contact-form__feedback ${
-                  feedback.type === "success"
-                    ? "contact-form__feedback--success"
-                    : "contact-form__feedback--error"
-                }`}
-              >
-                {feedback.message}
-              </p>
-            )}
-
-            <button
-              type="submit"
-              className="contact-form__submit"
-              disabled={isSubmitting}
-            >
-              {isSubmitting
-                ? "Envoi en cours..."
-                : t("contactPage.form.submitButton")}
-            </button>
-          </form>
-
-          <div className="contact-info">
-            <article className="contact-info__block">
-              <h3>{t("contactPage.info.title")}</h3>
-
-              <div className="contact-info__item">
-                <PhoneIcon />
-                <a href="tel:+33780901234">+33 7 80 90 12 34</a>
-              </div>
-
-              <div className="contact-info__item">
-                <MailIcon />
-                <a href="mailto:contact@cbmservicesandcar.fr">
-                  contact@cbmservicesandcar.fr
-                </a>
-              </div>
-            </article>
-
-            <article className="contact-info__block">
-              <h3>{t("contactPage.whatsapp.title")}</h3>
-
-              <div className="contact-info__item">
-                <WhatsAppIcon />
-                <a
-                  href="https://wa.me/33780901234"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  +33 7 80 90 12 34
-                </a>
-              </div>
-
-              <a
-                href="https://wa.me/33780901234"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-info__whatsapp-btn"
-              >
-                {t("contactPage.whatsapp.button")}
-              </a>
-            </article>
           </div>
         </div>
       </section>

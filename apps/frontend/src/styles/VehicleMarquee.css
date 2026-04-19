@@ -149,8 +149,11 @@
     font-size: 1.5rem;
   }
 
+  /* ❌ SUPPRESSION DU DÉGRADÉ SUR MOBILE */
   .vehicle-marquee__wrapper::before,
   .vehicle-marquee__wrapper::after {
-    width: 80px;
+    content: none;
+    display: none;
+    background: none;
   }
 }
