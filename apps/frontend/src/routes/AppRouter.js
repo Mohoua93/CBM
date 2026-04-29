@@ -9,6 +9,7 @@ import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import Availability from "../pages/Availability";
 import Greeter from "../pages/Greeter";
+import Concierge from "../pages/Concierge";
 
 // 🔽 IMPORT DES PAGES VÉHICULES
 import MercedesClasseS from "../pages/MercedesClasseS";
@@ -54,6 +55,7 @@ function AppRouter() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/mise-a-disposition" element={<Availability />} />
         <Route path="/greeter" element={<Greeter />} />
+        <Route path="/conciergerie" element={<Concierge />} />
 
         {/* 🔽 ROUTES VÉHICULES */}
         <Route path="/flotte/mercedes-classe-s" element={<MercedesClasseS />} />
