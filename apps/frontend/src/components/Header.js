@@ -63,9 +63,7 @@ function Header() {
           <NavLink to="/a-propos" className={getDesktopLinkClass}>
             {t("nav.about")}
           </NavLink>
-          <NavLink to="/services" className={getDesktopLinkClass}>
-            {t("nav.services")}
-          </NavLink>
+          
           <NavLink to="/flotte" className={getDesktopLinkClass}>
             {t("nav.fleet")}
           </NavLink>
@@ -131,13 +129,6 @@ function Header() {
             {t("nav.about")}
           </NavLink>
 
-          <NavLink
-            to="/services"
-            className={getMobileLinkClass}
-            onClick={closeMenu}
-          >
-            {t("nav.services")}
-          </NavLink>
 
           <NavLink
             to="/flotte"

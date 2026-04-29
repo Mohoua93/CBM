@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/Fleet.css";
 
 // Import des images
-import fleetHero from "../assets/fleet-hero.jpg";
+import fleetHero from "../assets/hero-flotte.png";
 import mercedesS from "../assets/ClassS.png";
 import mercedesE from "../assets/ClassE.png";
 import mercedesV from "../assets/ClassV.png";

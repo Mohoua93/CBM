@@ -97,7 +97,7 @@ function About() {
             whileHover={{ y: -8 }}
             transition={{ type: "spring", stiffness: 220, damping: 18 }}
           >
-            <span className="about-card__number">01</span>
+            
             <h3>{t("aboutPage.cards.experience.title")}</h3>
             <p>{t("aboutPage.cards.experience.text")}</p>
           </motion.article>
@@ -108,7 +108,7 @@ function About() {
             whileHover={{ y: -8 }}
             transition={{ type: "spring", stiffness: 220, damping: 18 }}
           >
-            <span className="about-card__number">02</span>
+            
             <h3>{t("aboutPage.cards.family.title")}</h3>
             <p>{t("aboutPage.cards.family.text")}</p>
           </motion.article>
@@ -119,7 +119,7 @@ function About() {
             whileHover={{ y: -8 }}
             transition={{ type: "spring", stiffness: 220, damping: 18 }}
           >
-            <span className="about-card__number">03</span>
+            
             <h3>{t("aboutPage.cards.premium.title")}</h3>
             <p>{t("aboutPage.cards.premium.text")}</p>
           </motion.article>

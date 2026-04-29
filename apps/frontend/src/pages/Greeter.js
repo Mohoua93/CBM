@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import '../styles/Greeter.css';
 
 // Import de l'image (assure-toi d'avoir une image nommée greeter-service.jpg dans assets)
-import greeterImg from '../assets/hero-mercedes.png'; 
+import greeterImg from '../assets/hero-greater.png'; 
 
 function Greeter() {
   const { t } = useTranslation();
