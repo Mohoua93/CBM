@@ -1,31 +1,37 @@
-import mercedesSHero from "../assets/class-s/2.jpeg";
-import mercedesS1 from "../assets/class-s/1.jpeg";
-import mercedesS2 from "../assets/class-s/2.jpeg";
-import mercedesS3 from "../assets/class-s/3.jpeg";
-import mercedesS4 from "../assets/class-s/4.jpeg";
-import mercedesS5 from "../assets/class-s/5.jpeg";
-import mercedesS6 from "../assets/class-s/6.jpeg";
+import mercedesSHero from "../assets/ClassS.png";
+import mercedesS1 from "../assets/1.png";
+import mercedesS2 from "../assets/2.png";
+import mercedesS3 from "../assets/3.png";
+import mercedesS4 from "../assets/4.png";
+import mercedesS5 from "../assets/5.png";
+import mercedesS6 from "../assets/6.png";
 
 
-import mercedesEHero from "../assets/class-e/4.jpeg";
-import mercedesE1 from "../assets/class-e/1.jpeg";
-import mercedesE2 from "../assets/class-e/2.jpeg";
-import mercedesE3 from "../assets/class-e/3.jpeg";
-import mercedesE4 from "../assets/class-e/4.jpeg"; 
+import mercedesEHero from "../assets/class-e/E1.png";
+import mercedesE1 from "../assets/class-e/E1.png";
+import mercedesE2 from "../assets/class-e/E2.png";
+import mercedesE3 from "../assets/class-e/E3.png";
+import mercedesE4 from "../assets/class-e/E4.png";
+import mercedesE5 from "../assets/class-e/E5.png"; 
 
-import mercedesVHero from "../assets/class-v/1.jpeg";
-import mercedesV1 from "../assets/class-v/1.jpeg";
-import mercedesV2 from "../assets/class-v/2.jpeg";
-import mercedesV3 from "../assets/class-v/3.jpeg";
-import mercedesV4 from "../assets/class-v/4.jpeg";
+import mercedesVHero from "../assets/class-v/V1.png";
+import mercedesV1 from "../assets/class-v/V1.png";
+import mercedesV2 from "../assets/class-v/V2.png";
+import mercedesV3 from "../assets/class-v/V3.png";
+import mercedesV4 from "../assets/class-v/V4.png";
+import mercedesV5 from "../assets/class-v/V5.png";
+import mercedesV6 from "../assets/class-v/V6.png";
+import mercedesV7 from "../assets/class-v/V7.png";
 
-import rangeRoverHero from "../assets/range-rover/5.jpeg";
-import rangeRover1 from "../assets/range-rover/1.jpeg";
-import rangeRover2 from "../assets/range-rover/2.jpeg";
-import rangeRover3 from "../assets/range-rover/3.jpeg";
-import rangeRover4 from "../assets/range-rover/4.jpeg";
-import rangeRover5 from "../assets/range-rover/5.jpeg";
-import rangeRover6 from "../assets/range-rover/6.jpeg";
+import rangeRoverHero from "../assets/range-rover/RR1.png";
+import rangeRover1 from "../assets/range-rover/RR1.png";
+import rangeRover2 from "../assets/range-rover/RR2.png";
+import rangeRover3 from "../assets/range-rover/RR3.png";
+import rangeRover4 from "../assets/range-rover/RR4.png";
+import rangeRover5 from "../assets/range-rover/RR5.png";
+import rangeRover6 from "../assets/range-rover/RR6.png";
+import rangeRover7 from "../assets/range-rover/RR7.png";
+
 
 export const vehiclesData = {
   mercedesS: {
@@ -69,6 +75,7 @@ export const vehiclesData = {
       { src: mercedesE2, alt: "Mercedes Classe E vue 2" },
       { src: mercedesE3, alt: "Mercedes Classe E vue 3" },
       { src: mercedesE4, alt: "Mercedes Classe E vue 4" },
+      { src: mercedesE5, alt: "Mercedes Classe E vue 5" },
     ],
     beauty:
       "La Mercedes Classe E séduit par son élégance sobre et moderne. Son design exprime immédiatement le sérieux, la distinction et la qualité allemande. Moins démonstrative qu’une limousine, elle conserve pourtant une allure statutaire très appréciée dans l’univers du transport premium. Sa ligne harmonieuse, son profil dynamique et sa présentation soignée en font une voiture à la fois chic, professionnelle et intemporelle.",
@@ -97,6 +104,9 @@ export const vehiclesData = {
       { src: mercedesV2, alt: "Mercedes Classe V vue 2" },
       { src: mercedesV3, alt: "Mercedes Classe V vue 3" },
       { src: mercedesV4, alt: "Mercedes Classe V vue 4" },
+      { src: mercedesV5, alt: "Mercedes Classe V vue 5" },
+      { src: mercedesV6, alt: "Mercedes Classe V vue 6" },
+      { src: mercedesV7, alt: "Mercedes Classe V vue 7" },
     ],
     beauty:
       "La Mercedes Classe V redéfinit l’image du transport en van avec une esthétique moderne, valorisante et haut de gamme. Son design imposant, ses lignes soignées et sa finition premium lui permettent de se distinguer des véhicules utilitaires classiques. Elle renvoie une image sérieuse, élégante et parfaitement adaptée à un service de transport de luxe pour familles, groupes ou clientèle événementielle.",
@@ -127,6 +137,7 @@ export const vehiclesData = {
       { src: rangeRover4, alt: "Range Rover vue 4" },
       { src: rangeRover5, alt: "Range Rover vue 5" },
       { src: rangeRover6, alt: "Range Rover vue 6" },
+      { src: rangeRover7, alt: "Range Rover vue 7" },
     ],
     beauty:
       "Le Range Rover impose une signature visuelle unique. Son allure noble, puissante et contemporaine exprime immédiatement le luxe, la confiance et le caractère. Sa silhouette statutaire, ses proportions équilibrées et sa présence naturelle sur la route en font un véhicule particulièrement apprécié par une clientèle en quête d’exclusivité. Il dégage une image à la fois moderne, haut de gamme et prestigieuse.",

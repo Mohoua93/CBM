@@ -5,10 +5,10 @@ import "../styles/Fleet.css";
 
 // Import des images
 import fleetHero from "../assets/fleet-hero.jpg";
-import mercedesS from "../assets/class-S.png";
-import mercedesE from "../assets/class-E-black.png";
-import mercedesV from "../assets/class-V.png";
-import rangeRover from "../assets/range-rover.png";
+import mercedesS from "../assets/ClassS.png";
+import mercedesE from "../assets/ClassE.png";
+import mercedesV from "../assets/ClassV.png";
+import rangeRover from "../assets/RangeRover.png";
 
 const VEHICLES_CATALOG = [
   {
