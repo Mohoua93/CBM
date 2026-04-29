@@ -172,9 +172,7 @@ function Booking() {
             initial="hidden"
             animate="show"
           >
-            <span className="booking-hero__eyebrow">
-              {t("bookingPage.hero.eyebrow")}
-            </span>
+            
 
             <h1 className="booking-hero__title">
               {t("bookingPage.hero.titleLine1")}
@@ -229,9 +227,7 @@ function Booking() {
             initial="hidden"
             animate="show"
           >
-            <span className="booking-form-card__label">
-              {t("bookingPage.form.title")}
-            </span>
+            
 
             <h2>Demande de réservation</h2>
 

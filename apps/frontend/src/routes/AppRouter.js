@@ -24,8 +24,11 @@ function AppRouter() {
   const [showIntro, setShowIntro] = useState(false);
 
   useEffect(() => {
-    if (location.pathname === "/") {
+    const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
+
+    if (location.pathname === "/" && !hasSeenIntro) {
       setShowIntro(true);
+      sessionStorage.setItem("hasSeenIntro", "true");
 
       const timer = setTimeout(() => {
         setShowIntro(false);
