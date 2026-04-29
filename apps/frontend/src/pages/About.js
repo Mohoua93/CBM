@@ -57,14 +57,11 @@ function About() {
           initial="hidden"
           animate="show"
         >
-          <span className="about-hero__eyebrow">
-            {t("aboutPage.hero.eyebrow")}
-          </span>
-
+          
           <h1 className="about-hero__title">
             {t("aboutPage.hero.titleLine1")}
             <br />
-            <span>{t("aboutPage.hero.titleLine2")}</span>
+            
           </h1>
 
           <p className="about-hero__text">{t("aboutPage.hero.text")}</p>
@@ -79,7 +76,7 @@ function About() {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="about-section__label">Notre approche</span>
+          
           <h2>{t("aboutPage.story.title")}</h2>
           <p>{t("aboutPage.story.text")}</p>
         </motion.div>
@@ -135,7 +132,7 @@ function About() {
           viewport={{ once: true, amount: 0.25 }}
         >
           <div className="about-values__heading">
-            <span className="about-section__label">Nos engagements</span>
+            
             <h2>{t("aboutPage.values.title")}</h2>
           </div>
 

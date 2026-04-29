@@ -1,10 +1,62 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
 import "../styles/Contact.css";
 import heroImage from "../assets/hero-contact.png";
 
 const API_URL =
   process.env.REACT_APP_API_URL || "https://api.cbmservicesandcar.fr";
+
+const heroVariants = {
+  hidden: { opacity: 0, y: 35 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const formVariants = {
+  hidden: { opacity: 0, y: 35, scale: 0.98 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const infoContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const infoItem = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+    scale: 0.97,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 function PhoneIcon() {
   return (
@@ -140,76 +192,98 @@ function Contact() {
     }
   }
 
-  const heroStyle = {
-    backgroundImage: `url(${heroImage})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center center",
-    width: "100%",
-  };
-
   return (
-    <div className="contact-page">
-      {/* HERO */}
-      <section className="contact-hero" style={heroStyle}>
+    <main className="contact-page">
+      <section
+        className="contact-hero"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
         <div className="contact-hero__overlay" />
 
-        <div className="contact-hero__content">
+        <motion.div
+          className="contact-hero__content"
+          variants={heroVariants}
+          initial="hidden"
+          animate="show"
+        >
+
           <h1>{t("contactPage.hero.title")}</h1>
+
           <p>{t("contactPage.intro.text")}</p>
-        </div>
+        </motion.div>
       </section>
 
-      <div className="contact-divider contact-divider--hero-to-content" />
-
-      {/* CONTENT */}
       <section className="contact-section">
         <div className="contact-section__container">
-          <div className="contact-card">
+          <motion.div
+            className="contact-card"
+            variants={formVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="contact-card__intro">
+             
               <h2>{t("contactPage.intro.title")}</h2>
+
               <p>{t("contactPage.intro.text")}</p>
             </div>
 
             <div className="contact-layout">
-              {/* FORMULAIRE */}
               <div className="contact-form-wrapper">
                 <form className="contact-form" onSubmit={handleSubmit}>
                   <div className="contact-form__row contact-form__row--full">
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder={t("contactPage.form.namePlaceholder")}
-                    />
+                    <div className="contact-field">
+                      <label htmlFor="name">Nom</label>
+                      <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder={t("contactPage.form.namePlaceholder")}
+                      />
+                    </div>
                   </div>
 
                   <div className="contact-form__row">
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder={t("contactPage.form.phonePlaceholder")}
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder={t("contactPage.form.emailPlaceholder")}
-                    />
+                    <div className="contact-field">
+                      <label htmlFor="phone">Téléphone</label>
+                      <input
+                        id="phone"
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder={t("contactPage.form.phonePlaceholder")}
+                      />
+                    </div>
+
+                    <div className="contact-field">
+                      <label htmlFor="email">Email</label>
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder={t("contactPage.form.emailPlaceholder")}
+                      />
+                    </div>
                   </div>
 
                   <div className="contact-form__row contact-form__row--full">
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder={t("contactPage.form.messagePlaceholder")}
-                      rows="8"
-                    />
+                    <div className="contact-field">
+                      <label htmlFor="message">Message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder={t("contactPage.form.messagePlaceholder")}
+                        rows="8"
+                      />
+                    </div>
                   </div>
 
                   {feedback.message && (
@@ -236,14 +310,26 @@ function Contact() {
                 </form>
               </div>
 
-              {/* INFOS */}
-              <div className="contact-info">
-                <article className="contact-info__block">
+              <motion.div
+                className="contact-info"
+                variants={infoContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <motion.article
+                  className="contact-info__block"
+                  variants={infoItem}
+                  whileHover={{ y: -8 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                >
+                  
+
                   <h3>{t("contactPage.info.title")}</h3>
 
                   <div className="contact-info__item">
                     <PhoneIcon />
-                    <a href="tel:+33780901234">+33 7 80 90 12 34</a>
+                    <a href="tel:+33667862728">+33 6 67 86 27 28</a>
                   </div>
 
                   <div className="contact-info__item">
@@ -252,37 +338,45 @@ function Contact() {
                       contact@cbmservicesandcar.fr
                     </a>
                   </div>
-                </article>
+                </motion.article>
 
-                <article className="contact-info__block">
+                <motion.article
+                  className="contact-info__block"
+                  variants={infoItem}
+                  whileHover={{ y: -8 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                >
+                  
+
                   <h3>{t("contactPage.whatsapp.title")}</h3>
 
                   <div className="contact-info__item">
                     <WhatsAppIcon />
                     <a
-                      href="https://wa.me/33780901234"
+                      href="https://wa.me/33667862728"
                       target="_blank"
+
                       rel="noreferrer"
                     >
-                      +33 7 80 90 12 34
+                      +33 6 67 86 27 28
                     </a>
                   </div>
 
                   <a
-                    href="https://wa.me/33780901234"
+                    href="https://wa.me/33667862728"
                     target="_blank"
                     rel="noreferrer"
                     className="contact-info__whatsapp-btn"
                   >
                     {t("contactPage.whatsapp.button")}
                   </a>
-                </article>
-              </div>
+                </motion.article>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
 

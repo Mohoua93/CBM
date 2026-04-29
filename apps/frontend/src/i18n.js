@@ -121,7 +121,8 @@ const resources = {
             concierge: "Conciergerie"
           },
           vehicleOptions: {
-            classSE: "Mercedes Classe S / Classe E",
+            classS: "Mercedes Classe S",
+            classE: "Mercedes Classe E",
             classV: "Mercedes Classe V",
             rangeRover: "Range Rover"
           }
