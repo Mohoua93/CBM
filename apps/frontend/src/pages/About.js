@@ -6,7 +6,22 @@ const cardsContainer = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.18,
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 36,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
     },
   },
 };
@@ -22,7 +37,7 @@ const cardItem = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.65,
       ease: "easeOut",
     },
   },
@@ -32,9 +47,16 @@ function About() {
   const { t } = useTranslation();
 
   return (
-    <div className="about-page">
+    <main className="about-page">
       <section className="about-hero">
-        <div className="about-hero__content">
+        <div className="about-hero__overlay" />
+
+        <motion.div
+          className="about-hero__content"
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+        >
           <span className="about-hero__eyebrow">
             {t("aboutPage.hero.eyebrow")}
           </span>
@@ -42,18 +64,25 @@ function About() {
           <h1 className="about-hero__title">
             {t("aboutPage.hero.titleLine1")}
             <br />
-            {t("aboutPage.hero.titleLine2")}
+            <span>{t("aboutPage.hero.titleLine2")}</span>
           </h1>
 
           <p className="about-hero__text">{t("aboutPage.hero.text")}</p>
-        </div>
+        </motion.div>
       </section>
 
       <section className="about-story">
-        <div className="about-story__intro">
+        <motion.div
+          className="about-story__intro"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <span className="about-section__label">Notre approche</span>
           <h2>{t("aboutPage.story.title")}</h2>
           <p>{t("aboutPage.story.text")}</p>
-        </div>
+        </motion.div>
 
         <motion.div
           className="about-story__grid"
@@ -65,9 +94,10 @@ function About() {
           <motion.article
             className="about-card"
             variants={cardItem}
-            whileHover={{ y: -8, scale: 1.02 }}
+            whileHover={{ y: -8 }}
             transition={{ type: "spring", stiffness: 220, damping: 18 }}
           >
+            <span className="about-card__number">01</span>
             <h3>{t("aboutPage.cards.experience.title")}</h3>
             <p>{t("aboutPage.cards.experience.text")}</p>
           </motion.article>
@@ -75,9 +105,10 @@ function About() {
           <motion.article
             className="about-card"
             variants={cardItem}
-            whileHover={{ y: -8, scale: 1.02 }}
+            whileHover={{ y: -8 }}
             transition={{ type: "spring", stiffness: 220, damping: 18 }}
           >
+            <span className="about-card__number">02</span>
             <h3>{t("aboutPage.cards.family.title")}</h3>
             <p>{t("aboutPage.cards.family.text")}</p>
           </motion.article>
@@ -85,9 +116,10 @@ function About() {
           <motion.article
             className="about-card"
             variants={cardItem}
-            whileHover={{ y: -8, scale: 1.02 }}
+            whileHover={{ y: -8 }}
             transition={{ type: "spring", stiffness: 220, damping: 18 }}
           >
+            <span className="about-card__number">03</span>
             <h3>{t("aboutPage.cards.premium.title")}</h3>
             <p>{t("aboutPage.cards.premium.text")}</p>
           </motion.article>
@@ -95,8 +127,17 @@ function About() {
       </section>
 
       <section className="about-values">
-        <div className="about-values__content">
-          <h2>{t("aboutPage.values.title")}</h2>
+        <motion.div
+          className="about-values__content"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          <div className="about-values__heading">
+            <span className="about-section__label">Nos engagements</span>
+            <h2>{t("aboutPage.values.title")}</h2>
+          </div>
 
           <div className="about-values__list">
             <div className="about-value">
@@ -120,9 +161,9 @@ function About() {
               <p>{t("aboutPage.values.excellence.text")}</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
-    </div>
+    </main>
   );
 }
 
