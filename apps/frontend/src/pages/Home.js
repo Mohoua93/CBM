@@ -184,35 +184,27 @@ function Home() {
 
         <div className="services-grid">
           {/* SERVICE 1 : TRANSPORT PRIVÉ */}
-          <article className="service-card">
+          <Link to="/transport-prive" className="service-card">
             <div className="service-card__icon-wrap">
               <CarIcon />
             </div>
 
             <h3>{t("home.services.privateTransport.title")}</h3>
             <p>{t("home.services.privateTransport.description")}</p>
-
-            <Link to="/transport-prive" className="service-card__link">
-              {t("home.services.learnMore")}
-            </Link>
-          </article>
+          </Link>
 
           {/* SERVICE 2 : CONCIERGERIE */}
-          <article className="service-card">
+          <Link to="/conciergerie" className="service-card">
             <div className="service-card__icon-wrap">
               <BellIcon />
             </div>
 
             <h3>{t("home.services.concierge.title")}</h3>
             <p>{t("home.services.concierge.description")}</p>
-
-            <Link to="/conciergerie" className="service-card__link">
-              {t("home.services.learnMore")}
-            </Link>
-          </article>
+          </Link>
 
           {/* SERVICE 3 : GREETER */}
-          <article className="service-card">
+          <Link to="/greeter" className="service-card">
             <div className="service-card__icon-wrap">
               <GreeterIcon />
             </div>
@@ -225,25 +217,17 @@ function Home() {
                 "Un accueil personnalisé et privilégié dès votre arrivée pour une transition fluide et sans attente."
               )}
             </p>
-
-            <Link to="/greeter" className="service-card__link">
-              {t("home.services.learnMore")}
-            </Link>
-          </article>
+          </Link>
 
           {/* SERVICE 4 : MISE À DISPOSITION */}
-          <article className="service-card">
+          <Link to="/mise-a-disposition" className="service-card">
             <div className="service-card__icon-wrap">
               <ClockIcon />
             </div>
 
             <h3>{t("home.services.availability.title")}</h3>
             <p>{t("home.services.availability.description")}</p>
-
-            <Link to="/mise-a-disposition" className="service-card__link">
-              {t("home.services.learnMore")}
-            </Link>
-          </article>
+          </Link>
         </div>
       </section>
     </main>

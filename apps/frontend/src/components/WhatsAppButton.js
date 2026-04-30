@@ -1,7 +1,7 @@
 import "../styles/WhatsAppButton.css";
 
 function WhatsAppButton() {
-  const phoneNumber = "33600000000"; // Remplace par ton numéro WhatsApp
+  const phoneNumber = "33667862728"; // Remplace par ton numéro WhatsApp
   const instagramUrl = "https://www.instagram.com/cbmservicesandcar/"; // Remplace par ton lien Instagram
 
   const message =

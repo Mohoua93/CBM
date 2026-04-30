@@ -170,12 +170,15 @@
 }
 
 .service-card {
+  display: block;
   background: rgba(255, 255, 255, 0.02);
   padding: 40px 30px;
   border: 1px solid rgba(201, 162, 75, 0.1);
   border-radius: 15px;
   text-align: center;
   transition: all 0.4s ease;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .service-card:hover {
@@ -207,15 +210,6 @@
   font-size: 0.95rem;
 }
 
-.service-card__link {
-  display: inline-block;
-  margin-top: 20px;
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: 600;
-}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {

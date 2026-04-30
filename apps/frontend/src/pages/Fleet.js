@@ -106,33 +106,31 @@ function Fleet() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {VEHICLES_CATALOG.map((vehicle) => (
-            <motion.article
+            <motion.div
               key={vehicle.id}
               className="fleet-card-mini"
               variants={cardVariants}
             >
-              <div className="fleet-card-mini__image-container">
-                <img
-                  src={vehicle.img}
-                  alt={t(`fleetPage.vehicles.${vehicle.id}.alt`)}
-                  className="fleet-card-mini__img"
-                />
-              </div>
+              <Link to={vehicle.path} className="fleet-card-mini__link">
+                <div className="fleet-card-mini__image-container">
+                  <img
+                    src={vehicle.img}
+                    alt={t(`fleetPage.vehicles.${vehicle.id}.alt`)}
+                    className="fleet-card-mini__img"
+                  />
+                </div>
 
-              <div className="fleet-card-mini__content">
-                <h2 className="fleet-card-mini__title">
-                  {t(`fleetPage.vehicles.${vehicle.id}.title`)}
-                </h2>
+                <div className="fleet-card-mini__content">
+                  <h2 className="fleet-card-mini__title">
+                    {t(`fleetPage.vehicles.${vehicle.id}.title`)}
+                  </h2>
 
-                <p className="fleet-card-mini__description">
-                  {t(`fleetPage.vehicles.${vehicle.id}.text`)}
-                </p>
-
-                <Link to={vehicle.path} className="btn-know-more">
-                  {t("fleetPage.cta")}
-                </Link>
-              </div>
-            </motion.article>
+                  <p className="fleet-card-mini__description">
+                    {t(`fleetPage.vehicles.${vehicle.id}.text`)}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </motion.div>
       </section>
