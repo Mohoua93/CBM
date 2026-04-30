@@ -1,32 +1,54 @@
-.whatsapp-button {
+.social-floating {
   position: fixed;
   right: 24px;
   bottom: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-floating__button {
+  position: relative;
   width: 62px;
   height: 62px;
   border-radius: 50%;
-  background: #25d366;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
   text-decoration: none;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.whatsapp-button:hover {
+.social-floating__button:hover {
   transform: translateY(-4px) scale(1.05);
+}
+
+.social-floating__button--instagram {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  box-shadow: 0 10px 25px rgba(221, 42, 123, 0.35);
+}
+
+.social-floating__button--instagram:hover {
+  box-shadow: 0 14px 30px rgba(221, 42, 123, 0.5);
+}
+
+.social-floating__button--whatsapp {
+  background: #25d366;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+}
+
+.social-floating__button--whatsapp:hover {
   box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
 }
 
-.whatsapp-button__icon {
+.social-floating__icon {
   width: 34px;
   height: 34px;
 }
 
-.whatsapp-button__tooltip {
+.social-floating__tooltip {
   position: absolute;
   right: 76px;
   top: 50%;
@@ -45,7 +67,7 @@
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
 }
 
-.whatsapp-button__tooltip::after {
+.social-floating__tooltip::after {
   content: "";
   position: absolute;
   right: -6px;
@@ -56,27 +78,31 @@
   background: #ffffff;
 }
 
-.whatsapp-button:hover .whatsapp-button__tooltip,
-.whatsapp-button:focus .whatsapp-button__tooltip {
+.social-floating__button--whatsapp:hover .social-floating__tooltip,
+.social-floating__button--whatsapp:focus .social-floating__tooltip {
   opacity: 1;
   visibility: visible;
   transform: translateY(-50%) translateX(0);
 }
 
 @media (max-width: 768px) {
-  .whatsapp-button {
+  .social-floating {
     right: 18px;
     bottom: 18px;
+    gap: 12px;
+  }
+
+  .social-floating__button {
     width: 56px;
     height: 56px;
   }
 
-  .whatsapp-button__icon {
+  .social-floating__icon {
     width: 31px;
     height: 31px;
   }
 
-  .whatsapp-button__tooltip {
+  .social-floating__tooltip {
     right: 68px;
     font-size: 0.8rem;
     padding: 9px 14px;
