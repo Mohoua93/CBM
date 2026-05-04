@@ -129,53 +129,7 @@ function Home() {
         </div>
       </section>
 
-      {/* 2. RÉSERVATION RAPIDE */}
-      <section className="home__booking">
-        <div className="section-heading">
-          <h2>{t("home.booking.title")}</h2>
-          <p>{t("home.booking.subtitle")}</p>
-        </div>
-
-        <form className="booking-form">
-          <div className="booking-form__grid">
-            <div className="booking-field">
-              <label htmlFor="service">{t("home.booking.serviceLabel")}</label>
-
-              <select id="service" name="service">
-                <option>{t("home.booking.servicePlaceholder")}</option>
-                <option>{t("home.booking.serviceOption1")}</option>
-                <option>{t("home.booking.serviceOption2")}</option>
-              </select>
-            </div>
-
-            <div className="booking-field">
-              <label htmlFor="date">{t("home.booking.dateLabel")}</label>
-              <input id="date" name="date" type="date" />
-            </div>
-
-            <div className="booking-field">
-              <label htmlFor="passengers">
-                {t("home.booking.passengersLabel")}
-              </label>
-
-              <input
-                id="passengers"
-                name="passengers"
-                type="number"
-                min="1"
-                placeholder="1"
-              />
-            </div>
-          </div>
-
-          <div className="booking-form__actions">
-            <button type="submit" className="home__btn home__btn--gold">
-              {t("home.booking.submitButton")}
-            </button>
-          </div>
-        </form>
-      </section>
-
+      
       {/* 3. NOS SERVICES */}
       <section className="home__services">
         <div className="section-heading">
