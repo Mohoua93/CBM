@@ -13,7 +13,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -99,7 +99,6 @@
   margin: 40px auto 0;
 }
 
-/* ✅ Grille propre et stable */
 .booking-form__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -107,15 +106,13 @@
   margin-bottom: 30px;
 }
 
-/* ✅ Champ complet */
 .booking-field {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-/* ✅ Inputs alignés parfaitement */
-.booking-field input, 
+.booking-field input,
 .booking-field select {
   width: 100%;
   height: 52px;
@@ -210,34 +207,73 @@
   font-size: 0.95rem;
 }
 
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-  .booking-form__grid {
-    grid-template-columns: 1fr;
+/* --- TABLETTE / IPAD --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home__hero {
+    background-attachment: scroll;
+    background-size: contain;
+    background-position: center center;
+    min-height: 75vh;
+    padding-top: 90px;
   }
 
-  .home__hero { 
-    background-attachment: scroll; 
+  .home__title {
+    font-size: 3rem;
   }
 
-  .home__title { 
-    font-size: 2.2rem; 
-  }
-
-  .home__actions { 
-    flex-direction: column; 
-  }
-
-  @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+  .home__hero {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+    min-height: 85vh;
+    padding-top: 90px;
+  }
+
+  .home__title {
+    font-size: 2.2rem;
+  }
+
+  .home__subtitle {
+    font-size: 1rem;
+  }
+
+  .home__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home__btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .booking-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- PETIT MOBILE --- */
 @media (max-width: 600px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
-}
+
+  .home__services {
+    padding: 70px 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
 }
