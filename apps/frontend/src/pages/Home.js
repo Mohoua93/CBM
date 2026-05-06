@@ -116,20 +116,22 @@ function Home() {
           </h1>
 
           <p className="home__subtitle">{t("home.hero.subtitle")}</p>
-
-          <div className="home__actions">
-            <Link to="/reservation" className="home__btn home__btn--gold">
-              {t("home.hero.bookingButton")}
-            </Link>
-
-            <Link to="/contact" className="home__btn home__btn--outline">
-              {t("home.hero.contactButton")}
-            </Link>
-          </div>
         </div>
       </section>
 
-      
+      {/* 2. CTA MOBILE / DESKTOP */}
+      <section className="home__cta">
+        <div className="home__actions">
+          <Link to="/reservation" className="home__btn home__btn--gold">
+            {t("home.hero.bookingButton")}
+          </Link>
+
+          <Link to="/contact" className="home__btn home__btn--outline">
+            {t("home.hero.contactButton")}
+          </Link>
+        </div>
+      </section>
+
       {/* 3. NOS SERVICES */}
       <section className="home__services">
         <div className="section-heading">
@@ -137,7 +139,6 @@ function Home() {
         </div>
 
         <div className="services-grid">
-          {/* SERVICE 1 : TRANSPORT PRIVÉ */}
           <Link to="/transport-prive" className="service-card">
             <div className="service-card__icon-wrap">
               <CarIcon />
@@ -147,7 +148,6 @@ function Home() {
             <p>{t("home.services.privateTransport.description")}</p>
           </Link>
 
-          {/* SERVICE 2 : CONCIERGERIE */}
           <Link to="/conciergerie" className="service-card">
             <div className="service-card__icon-wrap">
               <BellIcon />
@@ -157,7 +157,6 @@ function Home() {
             <p>{t("home.services.concierge.description")}</p>
           </Link>
 
-          {/* SERVICE 3 : GREETER */}
           <Link to="/greeter" className="service-card">
             <div className="service-card__icon-wrap">
               <GreeterIcon />
@@ -173,7 +172,6 @@ function Home() {
             </p>
           </Link>
 
-          {/* SERVICE 4 : MISE À DISPOSITION */}
           <Link to="/mise-a-disposition" className="service-card">
             <div className="service-card__icon-wrap">
               <ClockIcon />
