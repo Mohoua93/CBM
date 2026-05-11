@@ -6,6 +6,13 @@
   overflow: hidden;
 }
 
+.booking-page,
+.booking-page *,
+.booking-page *::before,
+.booking-page *::after {
+  box-sizing: border-box;
+}
+
 /* ================= HERO ================= */
 
 .booking-hero {
@@ -73,6 +80,7 @@
   width: 42px;
   height: 1px;
   background: #c9a46a;
+  flex-shrink: 0;
 }
 
 .booking-hero__title {
@@ -167,6 +175,9 @@
 .booking-form-card {
   position: sticky;
   top: 100px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 36px;
   border: 1px solid rgba(201, 164, 106, 0.22);
   border-radius: 34px;
@@ -193,18 +204,26 @@
 
 .booking-form-page {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .booking-form-page__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .booking-field-page {
   display: flex;
   flex-direction: column;
   gap: 9px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .booking-field-page--full {
@@ -212,17 +231,25 @@
 }
 
 .booking-field-page label {
+  display: block;
+  max-width: 100%;
   color: rgba(247, 243, 235, 0.78);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.12em;
+  line-height: 1.35;
   text-transform: uppercase;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .booking-field-page input,
 .booking-field-page select,
 .booking-field-page textarea {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   border: 1px solid rgba(247, 243, 235, 0.14);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.065);
@@ -395,8 +422,11 @@
 
   .booking-hero__eyebrow,
   .booking-form-card__label {
+    max-width: 100%;
     font-size: 0.72rem;
     letter-spacing: 0.16em;
+    line-height: 1.35;
+    white-space: normal;
   }
 
   .booking-hero__eyebrow::before,
@@ -406,8 +436,17 @@
 }
 
 @media (max-width: 480px) {
+  .booking-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .booking-hero__title {
     font-size: 2.75rem;
+  }
+
+  .booking-form-card {
+    padding: 26px 18px;
   }
 
   .booking-form-card h2 {
@@ -418,8 +457,26 @@
     padding: 24px;
   }
 
+  .booking-field-page label {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
   .booking-field-page input,
   .booking-field-page select {
     height: 48px;
+  }
+}
+
+@media (max-width: 390px) {
+  .booking-form-card {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .booking-field-page label {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
   }
 }
