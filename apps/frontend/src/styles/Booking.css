@@ -288,14 +288,36 @@
   box-shadow: 0 0 0 4px rgba(201, 164, 106, 0.09);
 }
 
+/* ================= SELECT WINDOWS / MAC ================= */
+
 .booking-field-page select {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.065);
+  color: #c9a46a;
+}
+
+.booking-field-page select:focus {
+  color: #c9a46a;
+  background-color: rgba(255, 255, 255, 0.095);
 }
 
 .booking-field-page select option {
-  background: #101010;
+  background-color: #101010;
   color: #c9a46a;
+}
+
+.booking-field-page select option:checked,
+.booking-field-page select option:hover {
+  background-color: #c9a46a;
+  color: #080808;
+}
+
+.booking-field-page select option:disabled {
+  background-color: #101010;
+  color: rgba(247, 243, 235, 0.42);
 }
 
 /* ================= STATUS ================= */
