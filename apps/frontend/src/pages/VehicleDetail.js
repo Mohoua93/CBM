@@ -3,20 +3,24 @@ import VehicleMarquee from "../components/VehicleMarquee";
 import "../styles/VehicleDetail.css";
 
 function VehicleDetail({ vehicle }) {
-  const isClasseV = vehicle.name === "Mercedes Classe V";
-
-  const heroStyle = {
-    backgroundImage: `url(${vehicle.heroImage})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: isClasseV ? "cover" : "cover",
-    backgroundPosition: isClasseV ? "center 68%" : "center center",
-    backgroundColor: "#000",
-    width: "100%",
-  };
+  const heroImage = vehicle.heroImage || vehicle.image;
 
   return (
     <div className="vehicle-detail-page">
-      <section className="vehicle-detail-hero" style={heroStyle}>
+      <section
+        className="vehicle-detail-hero"
+        style={{
+          "--vehicle-hero-image": `url(${heroImage})`,
+        }}
+      >
+        <div className="vehicle-detail-hero__bg" />
+
+        <img
+          src={heroImage}
+          alt={vehicle.name}
+          className="vehicle-detail-hero__image"
+        />
+
         <div className="vehicle-detail-hero__overlay" />
       </section>
 
