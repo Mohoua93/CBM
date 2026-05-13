@@ -1,65 +1,113 @@
 .footer {
-  background: #050505;
-  border-top: 1px solid rgba(201, 162, 75, 0.12);
+  width: 100%;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(201, 162, 75, 0.08),
+      transparent 34%
+    ),
+    #050505;
+  border-top: 1px solid rgba(201, 162, 75, 0.14);
   color: #f5f1e8;
 }
 
 .footer__container {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 64px 48px 40px;
+  padding: 72px 48px 52px;
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.7fr) minmax(240px, 0.9fr);
+  gap: 72px;
+  align-items: start;
+}
+
+/* ================= BRAND ================= */
+
+.footer__brand {
+  max-width: 420px;
 }
 
 .footer__logo {
-  color: #c9a24b;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-decoration: none;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.4rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  color: #c9a24b;
+  line-height: 1;
 }
 
-.footer__title {
-  margin: 0 0 18px;
-  color: #c9a24b;
+.footer__logo-main {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.footer__logo-sub {
+  margin-top: 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(201, 162, 75, 0.82);
 }
 
 .footer__text {
-  margin-top: 16px;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 1rem;
-  line-height: 1.7;
-  max-width: 340px;
+  margin: 20px 0 0;
+  color: rgba(245, 241, 232, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.75;
 }
 
-.footer__nav {
+/* ================= SECTIONS ================= */
+
+.footer__section {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  align-items: flex-start;
+}
+
+.footer__title {
+  position: relative;
+  margin: 0 0 24px;
+  color: #c9a24b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.footer__nav,
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 }
 
 .footer__link {
-  color: #f5f1e8;
+  width: fit-content;
+  color: rgba(245, 241, 232, 0.82);
   text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.25s ease;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .footer__link:hover {
   color: #c9a24b;
+  transform: translateX(4px);
 }
 
-.footer__contact {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.footer__contact-text {
+  max-width: 300px;
+  margin-top: 0;
+  margin-bottom: 18px;
 }
+
+/* ================= BOTTOM ================= */
 
 .footer__bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -69,14 +117,23 @@
 
 .footer__bottom p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.95rem;
+  color: rgba(245, 241, 232, 0.58);
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
   .footer__container {
-    grid-template-columns: 1fr;
-    padding: 56px 32px 36px;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding: 60px 32px 44px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    max-width: 620px;
   }
 
   .footer__bottom {
@@ -86,18 +143,60 @@
 
 @media (max-width: 768px) {
   .footer__container {
-    padding: 48px 20px 32px;
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 52px 22px 38px;
   }
 
-  .footer__bottom {
-    padding: 18px 20px;
+  .footer__brand,
+  .footer__section,
+  .footer__contact {
+    align-items: flex-start;
+    width: 100%;
   }
 
-  .footer__logo {
-    font-size: 2rem;
+  .footer__logo-main {
+    font-size: 2.15rem;
+  }
+
+  .footer__logo-sub {
+    font-size: 0.72rem;
   }
 
   .footer__title {
-    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+  }
+
+  .footer__text {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .footer__nav,
+  .footer__contact-list {
+    gap: 12px;
+  }
+
+  .footer__bottom {
+    padding: 18px 22px;
+  }
+
+  .footer__bottom p {
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__container {
+    padding: 46px 18px 34px;
+  }
+
+  .footer__logo-main {
+    font-size: 2rem;
+  }
+
+  .footer__link {
+    font-size: 0.95rem;
   }
 }
