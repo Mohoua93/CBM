@@ -352,7 +352,7 @@ function Booking() {
                 </div>
 
                 <div className="booking-field-page">
-                  <label htmlFor="startDate">Date de début</label>
+                  <label htmlFor="startDate">Date début</label>
 
                   <input
                     id="startDate"
@@ -364,7 +364,7 @@ function Booking() {
                 </div>
 
                 <div className="booking-field-page">
-                  <label htmlFor="endDate">Date de fin</label>
+                  <label htmlFor="endDate">Date fin</label>
 
                   <input
                     id="endDate"
@@ -377,7 +377,7 @@ function Booking() {
                 </div>
 
                 <div className="booking-field-page">
-                  <label htmlFor="startTime">Heure de début</label>
+                  <label htmlFor="startTime">Heure début</label>
 
                   <input
                     id="startTime"
@@ -389,7 +389,7 @@ function Booking() {
                 </div>
 
                 <div className="booking-field-page">
-                  <label htmlFor="endTime">Heure de fin</label>
+                  <label htmlFor="endTime">Heure fin</label>
 
                   <input
                     id="endTime"

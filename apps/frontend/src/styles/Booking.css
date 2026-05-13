@@ -479,10 +479,24 @@
     padding: 24px;
   }
 
+  .booking-form-page,
+  .booking-form-page__grid,
+  .booking-field-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
   .booking-field-page label {
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.66rem;
+    letter-spacing: 0.045em;
+    line-height: 1.35;
+    white-space: normal;
     overflow-wrap: anywhere;
+    word-break: normal;
   }
 
   .booking-field-page input,
@@ -498,7 +512,7 @@
   }
 
   .booking-field-page label {
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
+    font-size: 0.64rem;
+    letter-spacing: 0.035em;
   }
 }
