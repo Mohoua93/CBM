@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import "../styles/Booking.css";
@@ -59,25 +60,49 @@ const formVariants = {
   },
 };
 
-const initialFormData = {
+const getVehicleValue = (vehicleName) => {
+  switch (vehicleName) {
+    case "Mercedes Classe S":
+      return "classe-s";
+    case "Mercedes Classe E":
+      return "classe-e";
+    case "Mercedes Classe V":
+      return "classe-v";
+    case "Range Rover":
+    case "Range Rover Autobiography":
+      return "range-rover-autobiography";
+    default:
+      return "";
+  }
+};
+
+const createInitialFormData = (selectedVehicle = "") => ({
   service: "",
-  vehicle: "",
+  vehicle: selectedVehicle,
   pickup: "",
   destination: "",
-  date: "",
-  time: "",
+  startDate: "",
+  endDate: "",
+  startTime: "",
+  endTime: "",
   passengers: "",
   luggage: "",
   name: "",
   phone: "",
   email: "",
   details: "",
-};
+});
 
 function Booking() {
   const { t } = useTranslation();
+  const location = useLocation();
 
-  const [formData, setFormData] = useState(initialFormData);
+  const selectedVehicle = getVehicleValue(location.state?.selectedVehicle);
+
+  const [formData, setFormData] = useState(() =>
+    createInitialFormData(selectedVehicle)
+  );
+
   const [status, setStatus] = useState({
     loading: false,
     error: "",
@@ -107,14 +132,16 @@ function Booking() {
       !formData.email.trim() ||
       !formData.pickup.trim() ||
       !formData.destination.trim() ||
-      !formData.date.trim() ||
-      !formData.time.trim()
+      !formData.startDate.trim() ||
+      !formData.endDate.trim() ||
+      !formData.startTime.trim() ||
+      !formData.endTime.trim()
     ) {
       setStatus({
         loading: false,
         error:
           t("bookingPage.form.requiredFieldsError") ||
-          "Veuillez renseigner le nom, l'email, le départ, la destination, la date et l'heure.",
+          "Veuillez renseigner le nom, l'email, le départ, la destination, la date de début, la date de fin, l'heure de début et l'heure de fin.",
         success: "",
       });
       return;
@@ -147,7 +174,7 @@ function Booking() {
         success: data.message || t("bookingPage.form.successMessage"),
       });
 
-      setFormData(initialFormData);
+      setFormData(createInitialFormData(selectedVehicle));
     } catch (error) {
       setStatus({
         loading: false,
@@ -172,8 +199,6 @@ function Booking() {
             initial="hidden"
             animate="show"
           >
-            
-
             <h1 className="booking-hero__title">
               {t("bookingPage.hero.titleLine1")}
               <br />
@@ -227,8 +252,6 @@ function Booking() {
             initial="hidden"
             animate="show"
           >
-            
-
             <h2>Demande de réservation</h2>
 
             <form className="booking-form-page" onSubmit={handleSubmit}>
@@ -329,29 +352,50 @@ function Booking() {
                 </div>
 
                 <div className="booking-field-page">
-                  <label htmlFor="date">
-                    {t("bookingPage.form.dateLabel")}
-                  </label>
+                  <label htmlFor="startDate">Date de début</label>
 
                   <input
-                    id="date"
-                    name="date"
+                    id="startDate"
+                    name="startDate"
                     type="date"
-                    value={formData.date}
+                    value={formData.startDate}
                     onChange={handleChange}
                   />
                 </div>
 
                 <div className="booking-field-page">
-                  <label htmlFor="time">
-                    {t("bookingPage.form.timeLabel")}
-                  </label>
+                  <label htmlFor="endDate">Date de fin</label>
 
                   <input
-                    id="time"
-                    name="time"
+                    id="endDate"
+                    name="endDate"
+                    type="date"
+                    value={formData.endDate}
+                    onChange={handleChange}
+                    min={formData.startDate}
+                  />
+                </div>
+
+                <div className="booking-field-page">
+                  <label htmlFor="startTime">Heure de début</label>
+
+                  <input
+                    id="startTime"
+                    name="startTime"
                     type="time"
-                    value={formData.time}
+                    value={formData.startTime}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="booking-field-page">
+                  <label htmlFor="endTime">Heure de fin</label>
+
+                  <input
+                    id="endTime"
+                    name="endTime"
+                    type="time"
+                    value={formData.endTime}
                     onChange={handleChange}
                   />
                 </div>

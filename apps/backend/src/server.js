@@ -166,8 +166,10 @@ app.post("/api/reservation", async (req, res) => {
       vehicle,
       pickup,
       destination,
-      date,
-      time,
+      startDate,
+      endDate,
+      startTime,
+      endTime,
       passengers,
       luggage,
       name,
@@ -176,10 +178,19 @@ app.post("/api/reservation", async (req, res) => {
       details,
     } = req.body;
 
-    if (!name || !email || !pickup || !destination || !date || !time) {
+    if (
+      !name ||
+      !email ||
+      !pickup ||
+      !destination ||
+      !startDate ||
+      !endDate ||
+      !startTime ||
+      !endTime
+    ) {
       return res.status(400).json({
         message:
-          "Veuillez renseigner le nom, l'email, le départ, la destination, la date et l'heure.",
+          "Veuillez renseigner le nom, l'email, le départ, la destination, la date de début, la date de fin, l'heure de début et l'heure de fin.",
       });
     }
 
@@ -203,8 +214,10 @@ app.post("/api/reservation", async (req, res) => {
     const safeVehicle = escapeHtml(String(vehicle || "Non renseigné").trim());
     const safePickup = escapeHtml(String(pickup).trim());
     const safeDestination = escapeHtml(String(destination).trim());
-    const safeDate = escapeHtml(String(date).trim());
-    const safeTime = escapeHtml(String(time).trim());
+    const safeStartDate = escapeHtml(String(startDate).trim());
+    const safeEndDate = escapeHtml(String(endDate).trim());
+    const safeStartTime = escapeHtml(String(startTime).trim());
+    const safeEndTime = escapeHtml(String(endTime).trim());
     const safePassengers = escapeHtml(
       String(passengers || "Non renseigné").trim()
     );
@@ -227,8 +240,10 @@ app.post("/api/reservation", async (req, res) => {
           <p><strong>Véhicule :</strong> ${safeVehicle}</p>
           <p><strong>Départ :</strong> ${safePickup}</p>
           <p><strong>Destination :</strong> ${safeDestination}</p>
-          <p><strong>Date :</strong> ${safeDate}</p>
-          <p><strong>Heure :</strong> ${safeTime}</p>
+          <p><strong>Date de début :</strong> ${safeStartDate}</p>
+          <p><strong>Date de fin :</strong> ${safeEndDate}</p>
+          <p><strong>Heure de début :</strong> ${safeStartTime}</p>
+          <p><strong>Heure de fin :</strong> ${safeEndTime}</p>
           <p><strong>Passagers :</strong> ${safePassengers}</p>
           <p><strong>Bagages :</strong> ${safeLuggage}</p>
           <p><strong>Nom :</strong> ${safeName}</p>

@@ -10,28 +10,40 @@
 
 .about-hero {
   position: relative;
-  min-height: 72vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 120px 7%;
   background:
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.92) 0%,
-      rgba(0, 0, 0, 0.72) 45%,
-      rgba(0, 0, 0, 0.28) 100%
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.42) 42%,
+      rgba(0, 0, 0, 0.12) 100%
     ),
+    url("../assets/about-hero.jpeg"),
     url("../assets/about-hero.jpeg");
-  background-size: cover;
-  background-position: center;
+  background-size: auto, cover, 76%;
+  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-color: #080808;
 }
 
 .about-hero__overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 40%, rgba(193, 154, 107, 0.16), transparent 34%),
-    linear-gradient(to bottom, transparent 65%, #080808 100%);
+    radial-gradient(
+      circle at 20% 40%,
+      rgba(193, 154, 107, 0.1),
+      transparent 36%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, 0.06) 55%,
+      rgba(8, 8, 8, 0.78) 100%
+    );
   pointer-events: none;
 }
 
@@ -78,7 +90,7 @@
 .about-hero__text {
   max-width: 640px;
   margin-top: 30px;
-  color: rgba(247, 243, 235, 0.78);
+  color: rgba(247, 243, 235, 0.88);
   font-size: clamp(1rem, 1.4vw, 1.18rem);
   line-height: 1.8;
 }
@@ -248,6 +260,8 @@
   .about-hero {
     min-height: 68vh;
     padding: 110px 6%;
+    background-size: auto, cover, 88%;
+    background-position: center, center, center;
   }
 
   .about-story,
@@ -279,7 +293,8 @@
   .about-hero {
     min-height: 74vh;
     padding: 100px 22px 80px;
-    background-position: center;
+    background-size: auto, cover, 108%;
+    background-position: center, center, center;
   }
 
   .about-hero__text {

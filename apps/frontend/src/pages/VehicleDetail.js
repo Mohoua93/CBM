@@ -62,7 +62,11 @@ function VehicleDetail({ vehicle }) {
             <p>{vehicle.targetAudience}</p>
 
             <div className="vehicle-detail-actions">
-              <Link to="/reservation" className="vehicle-detail-btn">
+              <Link
+                to="/reservation"
+                state={{ selectedVehicle: vehicle.name }}
+                className="vehicle-detail-btn"
+              >
                 Réserver ce véhicule
               </Link>
 

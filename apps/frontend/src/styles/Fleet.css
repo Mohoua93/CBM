@@ -120,27 +120,6 @@
     linear-gradient(180deg, #080808 0%, #101010 100%);
 }
 
-.fleet__grid::before {
-  content: "Notre flotte";
-  position: absolute;
-  top: 58px;
-  left: 7%;
-  color: #c9a46a;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-.fleet__grid::after {
-  content: "";
-  position: absolute;
-  top: 68px;
-  left: calc(7% + 130px);
-  width: 42px;
-  height: 1px;
-  background: #c9a46a;
-}
 
 /* ================= CARD ================= */
 
