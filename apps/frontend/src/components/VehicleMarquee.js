@@ -13,15 +13,25 @@ function VehicleMarquee({ images = [], title }) {
 
       <div className="vehicle-marquee__wrapper">
         <div className="vehicle-marquee__track">
-          {doubledImages.map((image, index) => (
-            <div className="vehicle-marquee__item" key={`${image.src}-${index}`}>
-              <img
-                src={image.src}
-                alt={image.alt || `Véhicule ${index + 1}`}
-                className="vehicle-marquee__img"
+          {doubledImages.map((image, index) => {
+            const imageSrc = typeof image === "string" ? image : image.src;
+            const imageAlt =
+              typeof image === "string"
+                ? `Véhicule ${index + 1}`
+                : image.alt || `Véhicule ${index + 1}`;
+
+            return (
+              <div
+                className="vehicle-marquee__item"
+                key={`${imageSrc}-${index}`}
+                role="img"
+                aria-label={imageAlt}
+                style={{
+                  backgroundImage: `url(${imageSrc})`,
+                }}
               />
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

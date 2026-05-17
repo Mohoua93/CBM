@@ -1,10 +1,11 @@
 import mercedesSHero from "../assets/ClassS.png";
-import mercedesS1 from "../assets/1.png";
-import mercedesS2 from "../assets/2.png";
-import mercedesS3 from "../assets/3.png";
-import mercedesS4 from "../assets/4.png";
-import mercedesS5 from "../assets/5.png";
-import mercedesS6 from "../assets/6.png";
+import mercedesS1 from "../assets/class-s/1.png";
+import mercedesS2 from "../assets/class-s/2.png";
+import mercedesS3 from "../assets/class-s/3.png";
+import mercedesS4 from "../assets/class-s/4.png";
+import mercedesS5 from "../assets/class-s/5.png";
+import mercedesS6 from "../assets/class-s/6.png";
+import mercedesS7 from "../assets/class-s/7.png";
 
 
 import mercedesEHero from "../assets/class-e/E1.png";
@@ -47,6 +48,7 @@ export const vehiclesData = {
       { src: mercedesS4, alt: "Mercedes Classe S vue 4" },
       { src: mercedesS5, alt: "Mercedes Classe S vue 5" },
       { src: mercedesS6, alt: "Mercedes Classe S vue 6" },
+      { src: mercedesS7, alt: "Mercedes Classe S vue 7" },
     ],
     beauty:
       "La Mercedes Classe S incarne le raffinement automobile dans sa forme la plus aboutie. Sa silhouette longue, fluide et majestueuse inspire immédiatement le respect. Chaque détail de son design a été pensé pour exprimer le prestige : une calandre imposante, des lignes épurées, une signature lumineuse sophistiquée et une allure qui conjugue puissance discrète et distinction naturelle. C’est un véhicule qui attire le regard sans jamais en faire trop, parfaitement adapté à un service haut de gamme.",
