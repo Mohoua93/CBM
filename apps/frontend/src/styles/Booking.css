@@ -232,6 +232,7 @@
 
 .booking-field-page label {
   display: block;
+  width: 100%;
   max-width: 100%;
   color: rgba(247, 243, 235, 0.78);
   font-size: 0.76rem;
@@ -240,13 +241,14 @@
   line-height: 1.35;
   text-transform: uppercase;
   white-space: normal;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   word-break: normal;
 }
 
 .booking-field-page input,
 .booking-field-page select,
 .booking-field-page textarea {
+  display: block;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -257,6 +259,7 @@
   font-family: inherit;
   font-size: 0.95rem;
   outline: none;
+  box-sizing: border-box;
   transition:
     border-color 0.25s ease,
     background 0.25s ease,
@@ -381,23 +384,70 @@
   transform: none;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE DESKTOP / TABLETTE ================= */
 
 @media (max-width: 1200px) {
+  .booking-hero {
+    padding: 120px 24px 80px;
+    overflow-x: hidden;
+  }
+
   .booking-hero__inner {
     grid-template-columns: 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .booking-form-card {
     position: relative;
     top: auto;
+    width: 100%;
     max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 34px 28px;
+    overflow: hidden;
+  }
+
+  .booking-form-page,
+  .booking-form-page__grid,
+  .booking-field-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .booking-form-page__grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .booking-field-page,
+  .booking-field-page--full {
+    grid-column: 1 / -1 !important;
+  }
+
+  .booking-field-page label {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    line-height: 1.35;
+  }
+
+  .booking-field-page input,
+  .booking-field-page select,
+  .booking-field-page textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
 }
 
+/* ================= RESPONSIVE TABLETTE ================= */
+
 @media (max-width: 900px) {
   .booking-hero {
-    padding: 110px 6% 80px;
+    padding: 110px 18px 80px;
   }
 
   .booking-hero__content {
@@ -416,41 +466,15 @@
     margin-bottom: 28px;
   }
 
-  /* Correction iPad vertical */
   .booking-form-card {
-    width: 100%;
-    max-width: 100%;
-    padding: 32px 26px;
+    max-width: calc(100vw - 36px);
+    padding: 32px 24px;
     border-radius: 30px;
   }
-
-  .booking-form-page__grid {
-    grid-template-columns: 1fr !important;
-    gap: 18px;
-  }
-
-  .booking-field-page {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .booking-field-page label {
-    width: 100%;
-    max-width: 100%;
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-break: normal;
-    line-height: 1.35;
-  }
-
-  .booking-field-page input,
-  .booking-field-page select,
-  .booking-field-page textarea {
-    width: 100% !important;
-    max-width: 100%;
-    min-width: 0;
-  }
 }
+
+/* ================= RESPONSIVE MOBILE ================= */
+
 @media (max-width: 768px) {
   .booking-hero {
     min-height: auto;
@@ -470,10 +494,6 @@
   .booking-form-card {
     padding: 30px 24px;
     border-radius: 28px;
-  }
-
-  .booking-form-page__grid {
-    grid-template-columns: 1fr;
   }
 
   .booking-hero__eyebrow,
@@ -615,56 +635,5 @@
   .booking-field-page select {
     padding-left: 12px;
     padding-right: 12px;
-  }
-}
-
-/* ================= FIX FORMULAIRE IPAD / TABLETTE ================= */
-
-@media (max-width: 1200px) {
-  .booking-form-card {
-    width: 100%;
-    max-width: 860px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 32px 26px;
-    overflow: hidden;
-  }
-
-  .booking-form-page__grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 18px !important;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .booking-field-page,
-  .booking-field-page--full {
-    grid-column: 1 / -1 !important;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .booking-field-page label {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    line-height: 1.35;
-    white-space: normal;
-    overflow-wrap: break-word;
-  }
-
-  .booking-field-page input,
-  .booking-field-page select,
-  .booking-field-page textarea {
-    display: block;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
   }
 }
