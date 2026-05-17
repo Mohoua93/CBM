@@ -284,6 +284,33 @@
   resize: vertical;
 }
 
+/* ================= FIX BORDER RADIUS INPUTS NATIFS ================= */
+
+.booking-field-page input[type="date"],
+.booking-field-page input[type="time"],
+.booking-field-page input[type="datetime-local"],
+.booking-field-page input[type="number"],
+.booking-field-page select {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 16px !important;
+  overflow: hidden;
+  background-clip: padding-box;
+}
+
+.booking-field-page input[type="date"]::-webkit-date-and-time-value,
+.booking-field-page input[type="time"]::-webkit-date-and-time-value,
+.booking-field-page input[type="datetime-local"]::-webkit-date-and-time-value {
+  text-align: left;
+}
+
+.booking-field-page input[type="date"]::-webkit-calendar-picker-indicator,
+.booking-field-page input[type="time"]::-webkit-calendar-picker-indicator,
+.booking-field-page input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
 .booking-field-page input::placeholder,
 .booking-field-page textarea::placeholder {
   color: rgba(247, 243, 235, 0.36);
@@ -300,9 +327,6 @@
 /* ================= SELECT WINDOWS / MAC ================= */
 
 .booking-field-page select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.065);
   color: #c9a46a;
@@ -503,6 +527,7 @@
     inline-size: 100% !important;
     max-inline-size: 100% !important;
     box-sizing: border-box !important;
+    border-radius: 16px !important;
   }
 
   .booking-field-page input,
