@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/IntroAnimation.css";
-import logo from "../assets/Logo-transp.png";
+import logo from "../assets/logo-anim.jpeg";
 import { useNavigate } from "react-router-dom";
 
 function IntroAnimation({ onFinish }) {
