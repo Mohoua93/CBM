@@ -205,13 +205,13 @@ const resources = {
         vehicles: {
           mercedesSE: {
             alt: "Mercedes Classe S",
-            title: "Class S",
+            title: "Classe S",
             text:
               "Expérimentez l’excellence du transport avec notre Classe S. Un service ultra premium alliant confort absolu, discrétion et prestations haut de gamme pour vos trajets les plus exigeants."
           },
           mercedesE: {
             alt: "Mercedes Classe E",
-            title: "Class E",
+            title: "Classe E",
             text:
               "Une solution premium idéale pour vos déplacements quotidiens. Profitez d’un confort supérieur et d’un service élégant."
           },
