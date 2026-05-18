@@ -55,7 +55,7 @@ export const vehiclesData = {
       { src: mercedesS9, alt: "Mercedes Classe S vue 9" },
     ],
     beauty:
-      "La Mercedes Classe S incarne le raffinement automobile dans sa forme la plus aboutie. Sa silhouette longue, fluide et majestueuse inspire immédiatement le respect. Chaque détail de son design a été pensé pour exprimer le prestige : une calandre imposante, des lignes épurées, une signature lumineuse sophistiquée et une allure qui conjugue puissance discrète et distinction naturelle. C’est un véhicule qui attire le regard sans jamais en faire trop, parfaitement adapté à un service haut de gamme.",
+      "La Mercedes Classe S incarne le raffinement automobile dans sa forme la plus aboutie. Sa silhouette longue, fluide et majestueuse inspire immédiatement le respect. Chaque détail de son design a été pensé pour exprimer le prestige : une calandre imposante, des lignes épurées, une signature lumineuse sophistiquée et une allure qui conjugue puissance discrète et distinction naturelle. C’est un véhicule qui attire le regard sans jamais en faire trop, parfaitement adapté à un service premium.",
     comfort:
       "À bord, la Classe S offre une expérience d’un niveau exceptionnel. Les sièges spacieux, les finitions luxueuses, la qualité des matériaux et l’insonorisation remarquable créent une atmosphère apaisante, idéale pour les trajets professionnels comme privés. Chaque déplacement devient un moment de sérénité. Les passagers profitent d’un espace généreux, d’une assise premium, d’une conduite souple et d’un environnement pensé pour le repos, le confort et la discrétion.",
     advantages: [
