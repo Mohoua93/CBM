@@ -24,12 +24,12 @@ function IntroAnimation({ onFinish }) {
       }
     }
 
-    const tFade = setTimeout(() => setPhase("fade-out"), 5000);
+    const tFade = setTimeout(() => setPhase("fade-out"), 7000);
     const tEnd = setTimeout(() => {
       setPhase("hidden");
       if (typeof onFinish === "function") onFinish();
       navigate("/");
-    }, 5800);
+    }, 7800);
 
     return () => { clearTimeout(tFade); clearTimeout(tEnd); };
   }, [navigate, onFinish]);
